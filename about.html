@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>私たちについて | Miracle Egg 日光金乃卵®</title>
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200;300;400&family=Noto+Sans+JP:wght@200;300;400&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --black:#080806;
+  --white:#faf8f4;
+  --gold:#c9a84c;
+  --gold-dim:rgba(201,168,76,.28);
+  --gray:#8a8880;
+  --border:rgba(255,255,255,.1);
+  --serif:'Noto Serif JP',serif;
+  --sans:'Noto Sans JP',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--white);font-family:var(--sans);font-weight:300;-webkit-font-smoothing:antialiased}
+
+/* ── HEADER ── */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 3rem;height:60px;
+  border-bottom:0.5px solid rgba(201,168,76,.15);
+  background:rgba(8,8,6,.82);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+}
+.h-logo{
+  font-family:var(--serif);font-size:1rem;letter-spacing:.22em;
+  color:var(--white);text-decoration:none;
+}
+.h-logo span{display:none}
+nav{display:flex;align-items:center;gap:2.2rem}
+nav a{
+  font-size:.82rem;letter-spacing:.12em;color:rgba(250,248,244,.72);
+  text-decoration:none;text-transform:uppercase;transition:color .25s;
+}
+nav a:hover{color:var(--white)}
+.h-cta{
+  font-size:.72rem!important;letter-spacing:.14em!important;
+  color:var(--gold)!important;
+  border:0.5px solid var(--gold-dim);padding:.42rem 1.1rem;
+  transition:all .25s!important;
+}
+.h-cta:hover{background:var(--gold)!important;color:var(--black)!important}
+
+/* ── HERO ── */
+.hero{
+  height:100vh;position:relative;
+  display:flex;align-items:center;justify-content:center;
+  overflow:hidden;background:#080806;
+}
+.hero-img{
+  position:absolute;inset:0;
+  width:100%;height:100%;
+  object-fit:cover;object-position:center 40%;
+}
+.hero-center{
+  position:absolute;
+  top:50%;left:50%;transform:translate(-50%,-50%);
+  text-align:center;
+}
+.hero-sub{
+  font-size:.88rem;letter-spacing:.38em;color:rgba(255,255,255,.75);
+  text-transform:uppercase;margin-bottom:.9rem;
+  font-weight:300;font-family:var(--sans);
+}
+.hero-title{
+  font-family:var(--serif);font-size:clamp(3.5rem,9vw,8rem);
+  font-weight:200;letter-spacing:.08em;color:rgba(255,255,255,.88);
+  line-height:1;white-space:nowrap;
+}
+.hero-title sup{font-size:2rem;vertical-align:super;letter-spacing:0}
+.hero-bottom{
+  position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:.6rem;
+}
+.hero-scroll{
+  font-size:.48rem;letter-spacing:.32em;color:rgba(255,255,255,.3);
+  text-transform:uppercase;
+  display:flex;flex-direction:column;align-items:center;gap:.5rem;
+}
+.hero-scroll::after{
+  content:'';width:.5px;height:36px;background:rgba(255,255,255,.22);
+  animation:scrollLine 2s ease-in-out infinite;
+}
+@keyframes scrollLine{
+  0%,100%{opacity:.3;transform:scaleY(1)}
+  50%{opacity:.65;transform:scaleY(1.3)}
+}
+
+/* ── 01 PHILOSOPHY (白背景 左テキスト 右写真) ── */
+.philosophy{
+  background:var(--white);color:var(--black);
+  display:grid;grid-template-columns:1fr 1fr;
+  min-height:100vh;
+}
+.philosophy-text{
+  padding:8rem 5rem 8rem 6rem;
+  display:flex;flex-direction:column;justify-content:center;
+}
+.sec-num{
+  font-size:.7rem;letter-spacing:.16em;color:var(--gray);
+  margin-bottom:.4rem;font-family:var(--sans);
+}
+.sec-label{
+  font-size:.52rem;letter-spacing:.28em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:2.5rem;
+}
+.philosophy-title{
+  font-family:var(--serif);font-size:clamp(2rem,4vw,3.2rem);
+  font-weight:300;line-height:1.45;letter-spacing:.04em;
+  margin-bottom:2rem;color:var(--black);
+}
+.philosophy-en{
+  font-size:.78rem;letter-spacing:.1em;color:var(--gray);
+  margin-bottom:2.5rem;line-height:1.8;
+}
+.philosophy-body{
+  font-size:1rem;line-height:2.1;color:#4a4845;
+  max-width:38ch;
+}
+.philosophy-photo{
+  background:url('https://images.unsplash.com/photo-1612869538156-0e2491f89fec?w=900&q=85') center/cover no-repeat;
+}
+
+/* ── 02 PRODUCTION (黒背景 左テキスト 右写真) ── */
+.production{
+  background:var(--black);
+  display:grid;grid-template-columns:1fr 1fr;
+  min-height:100vh;
+}
+.production-text{
+  padding:8rem 5rem 8rem 6rem;
+  display:flex;flex-direction:column;justify-content:center;
+}
+.production-title{
+  font-family:var(--serif);font-size:clamp(1.8rem,3.5vw,2.8rem);
+  font-weight:300;line-height:1.5;letter-spacing:.04em;
+  margin-bottom:1.5rem;color:var(--white);
+}
+.production-body{
+  font-size:.95rem;line-height:2;color:rgba(250,248,244,.5);
+  margin-bottom:3rem;max-width:36ch;
+}
+.production-meta{
+  display:grid;grid-template-columns:1fr 1fr;gap:2rem;
+  border-top:.5px solid var(--border);padding-top:2rem;
+}
+.meta-item{}
+.meta-label{
+  font-size:.5rem;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:.4rem;
+}
+.meta-value{
+  font-family:var(--serif);font-size:1.6rem;font-weight:300;
+  color:var(--white);line-height:1;
+}
+.meta-unit{
+  font-size:.62rem;font-family:var(--sans);color:var(--gray);
+  letter-spacing:.1em;margin-left:.3rem;
+}
+.production-photo{
+  background:url('https://images.unsplash.com/photo-1548199569-3e1c6aa8f469?w=900&q=85') center 30%/cover no-repeat;
+}
+
+/* ── 03 SPEC (白背景 数字3カラム + 写真) ── */
+.spec{
+  background:var(--white);color:var(--black);
+  padding:8rem 6rem;
+}
+.spec-header{
+  display:flex;justify-content:space-between;align-items:flex-end;
+  margin-bottom:5rem;
+}
+.spec-title{
+  font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.8rem);
+  font-weight:300;letter-spacing:.04em;color:var(--black);
+}
+.spec-en{
+  font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);
+}
+.spec-grid{
+  display:grid;grid-template-columns:1fr 1fr 1fr;
+  gap:0;border:.5px solid #ddd;
+  margin-bottom:5rem;
+}
+.spec-card{
+  padding:3rem 2.5rem;border-right:.5px solid #ddd;
+}
+.spec-card:last-child{border-right:none}
+.sc-label{
+  font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--gray);margin-bottom:.3rem;
+}
+.sc-sub{
+  font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:1.2rem;
+}
+.sc-num{
+  font-family:var(--serif);font-size:3.5rem;font-weight:300;
+  color:var(--black);line-height:1;margin-bottom:.4rem;
+}
+.sc-unit{
+  font-size:.65rem;font-family:var(--sans);color:var(--gray);
+  letter-spacing:.1em;margin-left:.2rem;
+}
+.sc-desc{
+  font-size:.88rem;color:#6a6866;line-height:1.75;margin-top:1.2rem;
+}
+.spec-photo{
+  height:50vh;
+  background:url('https://images.unsplash.com/photo-1607283838483-5e9b03df5a1d?w=1800&q=85') center 30%/cover no-repeat;
+  position:relative;
+}
+.spec-photo-cap{
+  position:absolute;bottom:1.8rem;left:2.5rem;
+  font-size:.52rem;letter-spacing:.18em;color:rgba(250,248,244,.45);text-transform:uppercase;
+}
+.spec-photo-loc{
+  position:absolute;bottom:1.8rem;right:2.5rem;
+  font-size:.52rem;letter-spacing:.18em;color:rgba(250,248,244,.45);text-transform:uppercase;
+}
+
+
+/* ── 04 WHOLESALE (黒背景 中央CTA) ── */
+.wholesale{
+  background:var(--black);
+  padding:10rem 3rem;text-align:center;position:relative;overflow:hidden;
+}
+.wholesale::before{
+  content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:560px;height:560px;border-radius:50%;border:.5px solid rgba(201,168,76,.07);
+}
+.wholesale::after{
+  content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:360px;height:360px;border-radius:50%;border:.5px solid rgba(201,168,76,.1);
+}
+.ws-lbl{
+  font-size:.5rem;letter-spacing:.32em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:1.4rem;position:relative;
+}
+.ws-title{
+  font-family:var(--serif);font-size:clamp(1.8rem,3.5vw,3rem);
+  font-weight:300;line-height:1.55;letter-spacing:.04em;
+  margin-bottom:1rem;position:relative;color:var(--white);
+}
+.ws-body{
+  font-size:.88rem;color:rgba(250,248,244,.38);
+  line-height:2;letter-spacing:.08em;
+  margin-bottom:3rem;position:relative;
+}
+.ws-btn{
+  display:inline-block;font-size:.75rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--black);background:var(--gold);
+  padding:.95rem 3rem;text-decoration:none;position:relative;
+  transition:background .25s;
+}
+.ws-btn:hover{background:#d4b46a}
+.ws-note{
+  display:block;font-size:.56rem;letter-spacing:.1em;
+  color:rgba(250,248,244,.2);margin-top:1.4rem;position:relative;
+}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--black);border-top:.5px solid rgba(250,248,244,.06);
+  padding:3.5rem 6rem 2rem;
+}
+.footer-inner{
+  display:grid;grid-template-columns:1.4fr 1fr 1fr;
+  gap:3rem;margin-bottom:3rem;
+}
+.f-logo{
+  font-family:var(--serif);font-size:.9rem;letter-spacing:.2em;margin-bottom:.3rem;
+}
+.f-tag{font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+.f-desc{font-size:.8rem;color:rgba(250,248,244,.28);line-height:1.9;margin-top:1rem}
+.f-col-lbl{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gray);margin-bottom:1rem}
+.f-links{list-style:none;display:flex;flex-direction:column;gap:.52rem}
+.f-links a{font-size:.82rem;color:rgba(250,248,244,.38);text-decoration:none;letter-spacing:.05em;transition:color .2s}
+.f-links a:hover{color:var(--white)}
+.f-contact p{font-size:.82rem;color:rgba(250,248,244,.38);margin-bottom:.42rem;letter-spacing:.05em}
+.footer-btm{
+  border-top:.5px solid rgba(250,248,244,.05);padding-top:1.4rem;
+  display:flex;justify-content:space-between;align-items:center;
+}
+.f-copy{font-size:.68rem;letter-spacing:.08em;color:rgba(250,248,244,.18)}
+.f-shop{
+  font-size:.68rem;letter-spacing:.1em;color:rgba(250,248,244,.18);
+  text-decoration:none;border-bottom:.5px solid rgba(250,248,244,.12);
+  padding-bottom:1px;transition:color .2s;
+}
+.f-shop:hover{color:rgba(250,248,244,.45)}
+
+/* ── MOBILE ── */
+@media(max-width:768px){
+  header{padding:0 1.5rem}
+  nav{display:none}
+  .philosophy,.production{grid-template-columns:1fr;min-height:auto}
+  .philosophy-text,.production-text{padding:5rem 2rem}
+  .philosophy-photo,.production-photo{height:50vw}
+  .spec{padding:5rem 2rem}
+  .spec-grid{grid-template-columns:1fr}
+  .spec-card{border-right:none;border-bottom:.5px solid #ddd}
+  .media-bar{flex-direction:column;align-items:flex-start;padding:2.5rem 2rem;gap:1.5rem}
+  .media-bar-lbl{border-right:none;border-bottom:.5px solid #ddd;padding-right:0;padding-bottom:1rem}
+  .wholesale{padding:6rem 2rem}
+  footer{padding:3.5rem 2rem 2rem}
+  .footer-inner{grid-template-columns:1fr;gap:2rem}
+}
+
+/* ── DATA ANALYSIS ── */
+.analysis{
+  background:var(--white);color:var(--black);
+  padding:8rem 6rem;
+}
+.analysis-header{
+  display:flex;justify-content:space-between;align-items:flex-end;
+  margin-bottom:5rem;
+  padding-bottom:2rem;
+  border-bottom:.5px solid #ddd;
+}
+.analysis-title{
+  font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.8rem);
+  font-weight:300;line-height:1.4;letter-spacing:.04em;color:var(--black);
+  margin-top:.6rem;
+}
+.analysis-source{
+  font-size:.72rem;line-height:1.8;color:#999;letter-spacing:.04em;text-align:right;
+}
+
+/* 3カラム数字 */
+.analysis-nums{
+  display:grid;grid-template-columns:1fr 1fr 1fr;
+  gap:3rem;margin-bottom:5rem;
+}
+.an-item{}
+.an-label{
+  font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:1rem;
+}
+.an-bar-wrap{display:flex;flex-direction:column;gap:6px;margin-bottom:1rem;}
+.an-bar-track{
+  height:3px;background:#ece8e0;border-radius:2px;overflow:hidden;
+}
+.an-bar-fill{
+  height:100%;background:var(--gold);border-radius:2px;
+  transition:width .8s ease;
+}
+.an-bar-gray{background:#ece8e0;}
+.an-bar-fill-gray{height:100%;background:#bbb;border-radius:2px;}
+.an-compare{
+  display:flex;align-items:baseline;gap:.8rem;margin-bottom:.8rem;
+}
+.an-val{
+  font-family:var(--serif);font-size:2rem;font-weight:300;line-height:1;
+}
+.an-val.gold{color:var(--black);}
+.an-val.gray{font-size:1rem;color:#aaa;}
+.an-val small{font-size:.55rem;font-family:var(--sans);letter-spacing:.08em;margin-left:.3rem;color:#bbb;}
+.an-vs{font-size:.6rem;color:#ccc;letter-spacing:.1em;}
+.an-desc{font-size:.88rem;color:#6a6866;line-height:1.75;}
+
+/* レーダーチャート */
+.analysis-chart-wrap{
+  border-top:.5px solid #ddd;padding-top:4rem;
+}
+.chart-title{
+  font-size:.55rem;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--gray);margin-bottom:2.5rem;text-align:center;
+}
+.chart-container{
+  display:grid;grid-template-columns:420px 1fr;
+  gap:4rem;align-items:center;
+  max-width:800px;margin:0 auto;
+}
+.radar-svg{width:100%;max-width:420px;}
+.chart-note{}
+.chart-note-title{
+  font-size:.52rem;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:.8rem;
+}
+.chart-note-body{
+  font-family:var(--serif);font-size:1.2rem;font-weight:300;
+  line-height:1.8;letter-spacing:.03em;color:var(--black);
+  margin-bottom:1.5rem;
+}
+.chart-note-inst{
+  font-size:.6rem;letter-spacing:.12em;color:#aaa;
+}
+
+@media(max-width:768px){
+  .analysis{padding:5rem 2rem;}
+  .analysis-header{flex-direction:column;align-items:flex-start;gap:1rem;}
+  .analysis-source{text-align:left;}
+  .analysis-nums{grid-template-columns:1fr;gap:2rem;}
+  .chart-container{grid-template-columns:1fr;}
+}
+
+.chart-img-wrap{ position:relative; }
+.chart-img{
+  width:100%;max-width:420px;
+  border:0.5px solid #ece8e0;
+  border-radius:4px;
+  background:#fff;
+  padding:1rem;
+  box-shadow: 0 2px 20px rgba(0,0,0,.04);
+}
+.chart-img-caption{
+  font-size:.6rem;color:#bbb;letter-spacing:.05em;
+  margin-top:.8rem;line-height:1.6;
+}
+.chart-legend{
+  margin-top:2rem;
+  display:flex;flex-direction:column;gap:.8rem;
+}
+.legend-item{
+  display:flex;align-items:center;gap:.8rem;
+}
+.legend-line{
+  display:inline-block;width:24px;height:2.5px;border-radius:2px;flex-shrink:0;
+}
+.legend-line.gold{ background:#c9a84c; }
+.legend-line.gray{ background:#bbb;border-top:2px dashed #bbb;height:0; }
+.legend-label{
+  font-size:.75rem;color:#6a6866;letter-spacing:.06em;
+}
+
+/* ── VOICE ── */
+.voice-sec{
+  background:var(--white);color:var(--black);
+  padding:8rem 6rem;
+}
+.voice-inner{ max-width:1100px;margin:0 auto; }
+.voice-header{
+  margin-bottom:5rem;
+  border-bottom:.5px solid #ddd;
+  padding-bottom:2.5rem;
+}
+.voice-title{
+  font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.8rem);
+  font-weight:300;letter-spacing:.06em;color:var(--black);
+  margin:.5rem 0 .5rem;
+}
+.voice-en{
+  font-size:.7rem;letter-spacing:.14em;color:var(--gray);
+}
+
+/* メインVOICE */
+.voice-main{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:5rem;align-items:center;
+  margin-bottom:5rem;
+  padding-bottom:5rem;
+  border-bottom:.5px solid #ddd;
+}
+.voice-main-left{}
+.voice-shop{
+  font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:.4rem;
+}
+.voice-name{
+  font-family:var(--serif);font-size:1.4rem;font-weight:300;
+  letter-spacing:.06em;color:var(--black);margin-bottom:1.2rem;
+}
+.voice-quote-main{
+  font-family:var(--serif);font-size:clamp(1.4rem,2.5vw,2rem);
+  font-weight:300;line-height:1.6;letter-spacing:.04em;
+  color:var(--black);margin-bottom:2rem;
+}
+.voice-video-wrap{ margin-top:1rem; }
+.voice-video-placeholder{
+  width:100%;aspect-ratio:16/9;
+  background:var(--black);
+  border-radius:2px;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  gap:1rem;cursor:pointer;
+  position:relative;
+  overflow:hidden;
+}
+.voice-video-placeholder::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(201,168,76,.15),transparent);
+}
+.play-btn{
+  width:56px;height:56px;border-radius:50%;
+  border:1.5px solid rgba(255,255,255,.5);
+  display:flex;align-items:center;justify-content:center;
+  position:relative;
+}
+.video-note{
+  font-size:.6rem;letter-spacing:.12em;
+  color:rgba(255,255,255,.35);text-transform:uppercase;
+  position:relative;
+}
+.voice-main-right{
+  display:flex;flex-direction:column;justify-content:center;
+}
+.voice-body{
+  font-size:1rem;line-height:2.1;color:#4a4845;
+  margin-bottom:2rem;
+}
+.voice-divider{
+  width:32px;height:.5px;background:var(--gold);margin-bottom:1.5rem;
+}
+.voice-attr-main{
+  font-size:.7rem;letter-spacing:.12em;color:var(--gray);
+  line-height:1.8;text-transform:uppercase;
+}
+.voice-attr-main span{
+  display:block;font-family:var(--serif);font-size:1rem;
+  color:var(--black);letter-spacing:.06em;text-transform:none;margin-top:.3rem;
+}
+
+/* サブVOICE */
+.voice-sub-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:3rem;
+}
+.voice-sub-item{
+  padding-top:2rem;border-top:.5px solid #ddd;
+}
+.voice-sub-quote{
+  font-family:var(--serif);font-size:1.05rem;font-weight:300;
+  line-height:1.85;letter-spacing:.03em;color:var(--black);
+  margin-bottom:1.5rem;
+}
+.voice-sub-divider{
+  width:24px;height:.5px;background:var(--gold);margin-bottom:1rem;
+}
+.voice-sub-attr{
+  font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gray);
+}
+
+@media(max-width:768px){
+  .voice-sec{padding:5rem 2rem;}
+  .voice-main{grid-template-columns:1fr;gap:2.5rem;}
+  .voice-sub-grid{grid-template-columns:1fr;gap:2rem;}
+}
+
+/* voice-simple レイアウト */
+.voice-simple{
+  display:grid;
+  grid-template-columns:1fr 1.2fr;
+  gap:5rem;
+  align-items:center;
+  padding-bottom:5rem;
+  margin-bottom:5rem;
+  border-bottom:.5px solid #ddd;
+}
+.voice-simple-left{
+  display:flex;flex-direction:column;
+  justify-content:center;
+}
+.voice-simple-badges{
+  display:flex;gap:.6rem;flex-wrap:wrap;
+  margin-bottom:1.5rem;
+}
+.voice-badge{
+  font-size:.58rem;letter-spacing:.08em;
+  color:var(--gold);border:.5px solid var(--gold-dim);
+  padding:.3rem .8rem;border-radius:2px;line-height:1.6;
+}
+.video-label{
+  font-size:.72rem;letter-spacing:.14em;
+  color:rgba(255,255,255,.4);
+  position:relative;margin-top:.8rem;
+}
+.voice-simple-right{}
+.voice-video-placeholder{
+  width:100%;aspect-ratio:16/9;
+  background:#111;
+  border-radius:3px;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  gap:.8rem;
+  border:.5px solid rgba(255,255,255,.08);
+  position:relative;overflow:hidden;
+  cursor:pointer;
+  transition:border-color .3s;
+}
+.voice-video-placeholder:hover{
+  border-color:rgba(201,168,76,.4);
+}
+.voice-video-placeholder::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(201,168,76,.08),transparent 60%);
+}
+.play-btn{
+  width:60px;height:60px;border-radius:50%;
+  border:1.5px solid rgba(255,255,255,.4);
+  display:flex;align-items:center;justify-content:center;
+  position:relative;transition:border-color .3s;
+}
+.voice-video-placeholder:hover .play-btn{
+  border-color:rgba(201,168,76,.7);
+}
+
+@media(max-width:768px){
+  .voice-simple{grid-template-columns:1fr;gap:2.5rem;}
+}
+
+/* ── PRODUCT LINE ── */
+.pline{{
+  background:var(--white);color:var(--black);
+  padding:8rem 6rem;
+}}
+.pline-inner{{ max-width:1100px;margin:0 auto; }}
+.pline-header{{
+  display:flex;justify-content:space-between;align-items:flex-end;
+  border-bottom:.5px solid #ddd;padding-bottom:2rem;margin-bottom:5rem;
+}}
+.pline-title{{
+  font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.8rem);
+  font-weight:300;line-height:1.4;letter-spacing:.04em;margin-top:.5rem;
+}}
+.pline-sub{{
+  font-size:.72rem;letter-spacing:.1em;color:var(--gray);
+}}
+
+/* パターンA：カードグリッド */
+.pline-grid{{
+  display:grid;grid-template-columns:1fr 1fr 1fr;gap:2rem;
+  margin-bottom:6rem;padding-bottom:6rem;border-bottom:.5px solid #ddd;
+}}
+.pline-card{{
+  border:.5px solid #e8e4dc;border-radius:2px;overflow:hidden;
+  transition:box-shadow .3s;
+}}
+.pline-card:hover{{box-shadow:0 4px 24px rgba(0,0,0,.06);}}
+.pline-card--featured{{
+  border-color:var(--gold);
+  position:relative;
+}}
+.pline-card--featured::before{{
+  content:'おすすめ';
+  position:absolute;top:1rem;left:1rem;z-index:2;
+  font-size:.52rem;letter-spacing:.14em;
+  background:var(--gold);color:var(--black);
+  padding:.2rem .7rem;border-radius:1px;
+}}
+.pline-img-wrap{{
+  position:relative;background:#f8f6f2;
+  aspect-ratio:1;overflow:hidden;
+}}
+.pline-img{{
+  width:100%;height:100%;object-fit:contain;
+  padding:1rem;
+}}
+.pline-tag{{
+  position:absolute;bottom:.8rem;right:.8rem;
+  font-size:.52rem;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--white);background:rgba(10,10,8,.7);
+  padding:.2rem .7rem;border-radius:1px;
+}}
+.pline-card-body{{padding:1.5rem;}}
+.pline-card-en{{
+  font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:.3rem;
+}}
+.pline-card-name{{
+  font-family:var(--serif);font-size:1.3rem;font-weight:300;
+  letter-spacing:.06em;color:var(--black);margin-bottom:.3rem;
+}}
+.pline-card-size{{
+  font-size:.65rem;color:var(--gray);letter-spacing:.08em;margin-bottom:1rem;
+}}
+.pline-card-divider{{height:.5px;background:#e8e4dc;margin-bottom:1rem;}}
+.pline-card-desc{{
+  font-size:.78rem;line-height:1.8;color:#4a4845;margin-bottom:1rem;
+}}
+.pline-card-tags{{display:flex;flex-wrap:wrap;gap:.4rem;}}
+.pline-card-tags span{{
+  font-size:.55rem;letter-spacing:.08em;color:var(--gray);
+  border:.5px solid #ddd;padding:.15rem .6rem;border-radius:1px;
+}}
+
+/* パターンB：縦リスト */
+.pline-list{{display:flex;flex-direction:column;gap:0;}}
+.pline-list-item{{
+  display:grid;grid-template-columns:200px 1fr auto;
+  gap:3rem;align-items:center;
+  padding:3rem 0;border-top:.5px solid #ddd;
+}}
+.pline-list-item:last-child{{border-bottom:.5px solid #ddd;}}
+.pline-list-img{{
+  background:#f8f6f2;border-radius:2px;overflow:hidden;
+  aspect-ratio:1;
+}}
+.pline-list-img img{{
+  width:100%;height:100%;object-fit:contain;padding:.8rem;
+}}
+.pline-list-num{{
+  font-family:var(--serif);font-size:.75rem;color:var(--gold);
+  letter-spacing:.1em;margin-bottom:.3rem;
+}}
+.pline-list-en{{
+  font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--gray);margin-bottom:.3rem;
+}}
+.pline-list-name{{
+  font-family:var(--serif);font-size:1.6rem;font-weight:300;
+  letter-spacing:.06em;color:var(--black);margin-bottom:.4rem;
+}}
+.pline-list-size{{
+  font-size:.65rem;color:var(--gray);letter-spacing:.08em;margin-bottom:1rem;
+}}
+.pline-list-desc{{
+  font-size:.85rem;line-height:1.9;color:#4a4845;
+}}
+.pline-list-spec{{
+  display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;
+  border-left:.5px solid #ddd;padding-left:2.5rem;min-width:200px;
+}}
+.pls-item{{}}
+.pls-label{{
+  font-size:.52rem;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:.2rem;
+}}
+.pls-val{{
+  font-family:var(--serif);font-size:1rem;font-weight:300;color:var(--black);
+}}
+
+@media(max-width:768px){{
+  .pline{{padding:5rem 2rem;}}
+  .pline-header{{flex-direction:column;align-items:flex-start;gap:1rem;}}
+  .pline-grid{{grid-template-columns:1fr;}}
+  .pline-list-item{{grid-template-columns:1fr;gap:1.5rem;}}
+  .pline-list-spec{{border-left:none;padding-left:0;border-top:.5px solid #ddd;padding-top:1.5rem;}}
+}}
+
+/* ── PRODUCT LINE ── */
+.pline{background:var(--white);color:var(--black);padding:8rem 6rem;}
+.pline-inner{max-width:1100px;margin:0 auto;}
+.pline-header{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:.5px solid #ddd;padding-bottom:2rem;margin-bottom:5rem;}
+.pline-title{font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.8rem);font-weight:300;line-height:1.4;letter-spacing:.04em;margin-top:.5rem;}
+.pline-sub{font-size:.72rem;letter-spacing:.1em;color:var(--gray);}
+.pline-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2.5rem;margin-bottom:3rem;align-items:start;}
+.pline-card{display:flex;flex-direction:column;align-items:center;text-align:center;position:relative;padding-top:2rem;}
+.pline-badge-wrap{position:absolute;top:0;left:50%;transform:translateX(-50%);z-index:2;}
+.pline-badge{display:inline-block;font-size:.55rem;letter-spacing:.18em;text-transform:uppercase;color:var(--white);background:var(--gold);padding:.28rem 1rem;border-radius:1px;white-space:nowrap;}
+.pline-circle{width:220px;height:220px;border-radius:50%;background:#f5f3ef;border:.5px solid #e8e4dc;display:flex;align-items:center;justify-content:center;overflow:hidden;margin-bottom:1.8rem;flex-shrink:0;transition:box-shadow .3s;}
+.pline-card:hover .pline-circle{box-shadow:0 8px 32px rgba(0,0,0,.08);}
+.pline-card--main .pline-circle{border-color:rgba(201,168,76,.4);box-shadow:0 0 0 8px rgba(201,168,76,.05);}
+.pline-circle img{width:78%;height:78%;object-fit:contain;}
+.pline-card-body{width:100%;}
+.pline-card-en{font-size:.55rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:.3rem;}
+.pline-card-name{font-family:var(--serif);font-size:1.4rem;font-weight:300;letter-spacing:.06em;color:var(--black);margin-bottom:.3rem;}
+.pline-card-size{font-size:.65rem;color:var(--gray);letter-spacing:.08em;margin-bottom:1rem;}
+.pline-card-divider{width:24px;height:.5px;background:var(--gold);margin:0 auto 1rem;}
+.pline-card-desc{font-size:.82rem;line-height:1.85;color:#4a4845;margin-bottom:1rem;}
+.pline-card-uses{display:flex;justify-content:center;flex-wrap:wrap;gap:.4rem;}
+.pline-card-uses span{font-size:.58rem;letter-spacing:.08em;color:var(--gray);border:.5px solid #ddd;padding:.18rem .7rem;border-radius:1px;}
+.pline-footer{display:flex;justify-content:space-between;align-items:center;border-top:.5px solid #ddd;padding-top:2rem;}
+.pline-footer-note{font-size:.65rem;color:#aaa;letter-spacing:.06em;}
+.pline-footer-link{font-size:.65rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);text-decoration:none;border-bottom:.5px solid var(--gold-dim);padding-bottom:2px;}
+@media(max-width:768px){
+  .pline{padding:5rem 2rem;}
+  .pline-header{flex-direction:column;align-items:flex-start;gap:1rem;}
+  .pline-grid{grid-template-columns:1fr;gap:3rem;}
+  .pline-circle{width:180px;height:180px;}
+  .pline-footer{flex-direction:column;gap:1rem;align-items:flex-start;}
+}
+
+
+/* ── COMPARE ── */
+.compare{
+  background:#0e0e0c;color:var(--white);
+  padding:8rem 6rem;
+}
+.compare-inner{max-width:1100px;margin:0 auto;}
+.compare-header{
+  margin-bottom:5rem;
+  border-bottom:.5px solid rgba(255,255,255,.08);
+  padding-bottom:2rem;
+}
+.compare-title{
+  font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.8rem);
+  font-weight:300;line-height:1.4;letter-spacing:.04em;
+  margin:.5rem 0 .5rem;color:var(--white);
+}
+.compare-sub{
+  font-size:.72rem;letter-spacing:.12em;color:var(--gray);
+}
+
+/* タイム比較 */
+.compare-time{
+  display:grid;grid-template-columns:1fr auto 1fr;
+  gap:2rem;align-items:center;
+  margin-bottom:5rem;
+  padding:3rem;
+  border:.5px solid rgba(255,255,255,.07);
+  border-radius:2px;
+}
+.ctime-item{padding:1rem;}
+.ctime-label{
+  font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--gray);margin-bottom:1.2rem;
+}
+.ctime-steps{
+  display:flex;flex-direction:column;gap:.4rem;
+  margin-bottom:1.5rem;
+}
+.ctime-steps span{
+  font-size:.75rem;color:rgba(255,255,255,.45);
+  letter-spacing:.05em;
+  padding-left:.8rem;border-left:.5px solid rgba(255,255,255,.15);
+}
+.ctime-num{
+  font-family:var(--serif);font-size:3.5rem;font-weight:300;line-height:1;
+  margin-bottom:.5rem;
+}
+.ctime-num span{font-size:1.2rem;letter-spacing:.05em;margin:0 .2rem;}
+.ctime-num--old{color:rgba(255,255,255,.35);}
+.ctime-num--new{color:var(--gold);}
+.ctime-note{font-size:.72rem;color:rgba(255,255,255,.4);line-height:1.6;}
+.ctime-arrow{
+  font-size:2rem;color:var(--gold);
+  text-align:center;opacity:.6;
+}
+
+/* 比較グリッド */
+.compare-grid{
+  display:flex;flex-direction:column;gap:0;
+}
+.cg-header,.cg-row{
+  display:grid;grid-template-columns:1fr 1fr 1fr;
+  border-bottom:.5px solid rgba(255,255,255,.07);
+}
+.cg-header{border-bottom:.5px solid rgba(255,255,255,.15);padding-bottom:1rem;margin-bottom:.5rem;}
+.cg-col-blank{}
+.cg-col-label{
+  font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;
+  padding:.8rem 1rem;
+}
+.cg-col-old{color:var(--gray);}
+.cg-col-new{color:var(--gold);}
+.cg-row{padding:.2rem 0;}
+.cg-item-label{
+  font-size:.78rem;color:rgba(255,255,255,.5);
+  padding:1rem 0;letter-spacing:.06em;
+  display:flex;align-items:center;
+}
+.cg-item{
+  font-size:.78rem;line-height:1.7;
+  padding:1rem 1rem;
+  display:flex;flex-direction:column;justify-content:center;gap:.3rem;
+}
+.cg-item-old{color:rgba(255,255,255,.35);}
+.cg-item-new{color:rgba(255,255,255,.85);}
+.cg-badge{
+  display:inline-block;align-self:flex-start;
+  font-size:.52rem;letter-spacing:.12em;
+  color:var(--black);background:var(--gold);
+  padding:.15rem .6rem;border-radius:1px;margin-top:.2rem;
+}
+
+@media(max-width:768px){
+  .compare{padding:5rem 2rem;}
+  .compare-time{grid-template-columns:1fr;gap:1.5rem;}
+  .ctime-arrow{transform:rotate(90deg);}
+  .cg-header,.cg-row{grid-template-columns:1fr 1fr;}
+  .cg-col-blank,.cg-item-label{display:none;}
+}
+
+
+.page-hero{
+  min-height:38vh;background:#0a0a08;
+  display:flex;align-items:flex-end;
+  padding:100px 6rem 4rem;
+  border-bottom:.5px solid rgba(201,168,76,.15);
+}
+.page-hero-label{font-size:.58rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:.8rem;}
+.page-hero-title{font-family:var(--serif);font-size:clamp(2rem,4vw,3.5rem);font-weight:200;letter-spacing:.06em;color:var(--white);line-height:1.2;}
+@media(max-width:768px){.page-hero{padding:100px 2rem 3rem;}}
+
+/* ミッション */
+.about-mission{
+  background:var(--black);color:var(--white);
+  padding:8rem 6rem;text-align:center;
+}
+.about-mission-quote{
+  font-family:var(--serif);font-size:clamp(2rem,4vw,3.5rem);
+  font-weight:200;letter-spacing:.06em;line-height:1.5;margin-bottom:3rem;
+}
+.about-mission-body{
+  font-size:.95rem;color:rgba(250,248,244,.6);
+  line-height:2.3;max-width:60ch;margin:0 auto;
+  text-align:left;
+}
+
+/* 私たちについて */
+.about-story{
+  padding:8rem 6rem;
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:6rem;align-items:start;
+  background:var(--white);color:var(--black);
+  border-bottom:.5px solid #e8e4dc;
+}
+.about-story-img{
+  height:500px;overflow:hidden;border-radius:2px;
+  position:sticky;top:80px;
+}
+.about-story-img img{width:100%;height:100%;object-fit:cover;}
+.about-sec-label{font-size:.55rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:.8rem;}
+.about-sec-title{
+  font-family:var(--serif);font-size:clamp(1.5rem,2.5vw,2.2rem);
+  font-weight:300;line-height:1.5;letter-spacing:.04em;margin-bottom:1.8rem;
+}
+.about-sec-body{font-size:.92rem;line-height:2.3;color:#4a4845;}
+.about-sec-body p{margin-bottom:1.2rem;}
+.about-sec-body p:last-child{margin-bottom:0;}
+
+/* 食育 */
+.about-shokuiku{
+  padding:8rem 6rem;
+  background:#f8f6f2;color:var(--black);
+  border-bottom:.5px solid #e8e4dc;
+}
+.about-shokuiku-inner{max-width:900px;margin:0 auto;}
+.shokuiku-body{font-size:.92rem;line-height:2.3;color:#4a4845;margin-bottom:3rem;}
+.shokuiku-goals{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-bottom:2rem;}
+.sg-box{padding:2rem;background:var(--white);border-radius:2px;border-top:2px solid var(--gold);}
+.sg-label{font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
+.sg-list{list-style:none;display:flex;flex-direction:column;gap:.7rem;}
+.sg-list li{
+  font-size:.85rem;color:#4a4845;line-height:1.7;
+  padding-left:1rem;border-left:.5px solid var(--gold-dim);
+}
+.shokuiku-purpose{
+  padding:2rem;border:.5px solid var(--gold-dim);border-radius:2px;
+  background:rgba(201,168,76,.04);margin-bottom:1.5rem;
+}
+.shokuiku-purpose p{font-size:.88rem;line-height:1.9;color:#4a4845;}
+.shokuiku-maff{font-size:.72rem;color:#aaa;letter-spacing:.06em;}
+.shokuiku-maff a{color:var(--gold);text-decoration:none;}
+
+/* 活動 */
+.about-activities{
+  padding:8rem 6rem;
+  background:var(--white);color:var(--black);
+}
+.activities-grid{
+  display:grid;grid-template-columns:1fr 1fr 1fr;
+  gap:3rem;margin-top:3.5rem;
+}
+.act-card{border-top:2px solid var(--gold);padding-top:2rem;}
+.act-card-sub{font-size:.52rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem;}
+.act-card-title{
+  font-family:var(--serif);font-size:1.15rem;font-weight:300;
+  letter-spacing:.05em;color:var(--black);margin-bottom:1rem;line-height:1.4;
+}
+.act-card-img{
+  height:200px;overflow:hidden;border-radius:2px;
+  margin-bottom:1.2rem;background:#f5f3ef;
+}
+.act-card-img img{width:100%;height:100%;object-fit:cover;}
+.act-card-body{font-size:.82rem;line-height:1.9;color:#4a4845;}
+
+/* 会社概要 */
+.about-company{
+  padding:8rem 6rem;
+  background:var(--black);color:var(--white);
+}
+.company-table{
+  width:100%;max-width:800px;margin:3rem auto 0;
+  border-collapse:collapse;
+}
+.company-table tr{border-bottom:.5px solid rgba(255,255,255,.08);}
+.company-table th{
+  width:160px;font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--gold);font-weight:300;padding:1.2rem 0;
+  text-align:left;vertical-align:top;
+}
+.company-table td{
+  font-size:.88rem;color:rgba(250,248,244,.65);
+  padding:1.2rem 0 1.2rem 2rem;line-height:1.9;
+}
+.company-table td a{color:var(--gold);text-decoration:none;}
+
+@media(max-width:768px){
+  .about-mission{padding:6rem 2rem;}
+  .about-story{grid-template-columns:1fr;padding:5rem 2rem;gap:2.5rem;}
+  .about-story-img{height:260px;position:relative;top:0;}
+  .about-shokuiku{padding:5rem 2rem;}
+  .shokuiku-goals{grid-template-columns:1fr;}
+  .about-activities{padding:5rem 2rem;}
+  .activities-grid{grid-template-columns:1fr;gap:2rem;}
+  .about-company{padding:5rem 2rem;}
+  .company-table th{width:100px;}
+}
+
+</style>
+</head>
+<body>
+<!-- HEADER -->
+<header>
+  <a href="#" class="h-logo">
+    MIRACLE EGG
+    <span>日光金乃卵® The Purest Origin</span>
+  </a>
+  <nav>
+    <a href="index.html">日光金乃卵</a>
+    <a href="about.html">私たちについて</a>
+    <a href="news.html">お知らせ</a>
+    <a href="media.html">メディア</a>
+    <a href="contact.html" class="h-cta">お問い合わせ</a>
+  </nav>
+</header>
+
+<div>
+<div class="page-hero">
+  <div>
+    <p class="page-hero-label">About Us</p>
+    <h1 class="page-hero-title">私たちについて</h1>
+  </div>
+</div>
+
+<!-- ミッション -->
+<div class="about-mission">
+  <h2 class="about-mission-quote">「１つの卵が世界を変える」</h2>
+  <div class="about-mission-body">
+    <p>私たちミラクルエッグは、「命に責任を持つ卵づくり」を信念に、<br>
+    養鶏場への飼料提供から卵の買い取り、OEM製造、そして洋菓子専用卵としての供給まで、<br>
+    すべての工程に責任を持って取り組んでいます。</p>
+    <p>餌づくり、鶏の健康、そしてパートナーとの信頼関係。<br>
+    奇跡のような卵は、ただのプロダクトではなく、人と人との誠実なつながりから生まれています。</p>
+    <p>私たちがつくるのは、ただの"食材"ではありません。<br>
+    パティシエが想いを込めたお菓子を完成させる「最後の１ピース」であり、<br>
+    子どもたちに安心を届ける「未来の種」でもあります。</p>
+    <p>おかげさまで今、全国の洋菓子店から指名される存在となりました。<br>
+    けれど、ここがゴールではありません。</p>
+    <p>私たちが目指しているのは、養鶏・製菓・食育・福祉を結ぶ「循環型の価値創造」です。</p>
+    <p>命に向き合い、自然に学び、産業に誠実に向き合う。</p>
+    <p>一つひとつの卵に、"いのち"と"想い"が込められている。<br>
+    そう信じて、今日も私たちは、世界をより良くする一歩を選び続けます。</p>
+    <p>無理だと言われたことを、希望に変える。<br>
+    それが、ミラクルエッグの使命です。</p>
+  </div>
+</div>
+
+<!-- 私たちについて -->
+<div class="about-story">
+  <div class="about-story-img">
+    <img src="https://miracle-egg.com/wp-content/uploads/2025/03/aboutus-img-02-1024x683.jpg" alt="ミラクルエッグについて">
+  </div>
+  <div>
+    <p class="about-sec-label">Our Story</p>
+    <h2 class="about-sec-title">命に向き合い、<br>自然に学び、<br>産業に誠実に向き合う。</h2>
+    <div class="about-sec-body">
+      <p>私たちミラクルエッグは、「命に責任を持つ卵づくり」を信念に、養鶏場への飼料提供から卵の買い取り、OEM製造、そして洋菓子専用卵としての供給まで、すべての工程に責任を持って取り組んでいます。</p>
+      <p>卵は単なる食材ではなく、人と人との信頼から生まれる"最後の１ピース"であり、未来を育む「種」でもあります。選ばれる存在となった今も目指すのは養鶏・製菓・食育・福祉を結ぶ循環型の価値創造。</p>
+      <p>無理だといわれたことを希望に変える、その使命を胸に今日も一歩を重ねています。</p>
+    </div>
+  </div>
+</div>
+
+<!-- 食育 -->
+<div class="about-shokuiku">
+  <div class="about-shokuiku-inner">
+    <p class="about-sec-label">Food Education</p>
+    <h2 class="about-sec-title">ミラクルエッグの食育に対する<br>姿勢とVISION</h2>
+    <div class="shokuiku-body">
+      <p>株式会社ミラクルエッグは、「誰が、どんな想いでつくったのか」を知ることこそが、食の安全と豊かさを育む第一歩であると考えています。私たちは、ただ「安全」を求めるだけではなく、「知ること」そのものを価値と捉え、学びを通じて自立した食の選択ができる社会の実現を目指しています。</p>
+      <p>地域の生産者やパティシエと連携しながら、子どもたちが「食べる人」から「つくる人」へと意識を繋げられる体験を提供しています。たとえば、クッキーのデコレーションや、卵の殻を活用したチョークづくりなど、身近な素材や工程を通じて、「知ってる！」という実感を得られるプログラムを展開。これは、主体的な関心を引き出すことを目的としたアプローチです。</p>
+    </div>
+    <div class="shokuiku-goals">
+      <div class="sg-box">
+        <p class="sg-label">短期目標</p>
+        <ul class="sg-list">
+          <li>毎月開催するオフラインの食育イベントを地域に定着させること</li>
+          <li>地元の生産者や飲食店との協働による企画の実施</li>
+          <li>オンラインでの食育コンテンツの発信</li>
+        </ul>
+      </div>
+      <div class="sg-box">
+        <p class="sg-label">長期目標</p>
+        <ul class="sg-list">
+          <li>食の背景やストーリーが見える「食育視点のオンライン購入サイト」の構築</li>
+          <li>次世代の健康資産づくりにつながる持続可能な教育と選択の仕組みの提供</li>
+        </ul>
+      </div>
+    </div>
+    <div class="shokuiku-purpose">
+      <p class="sg-label">パーパス</p>
+      <p>食育は、価値ある未来の子どもの健康資産づくり<br>
+      ひとつひとつの"食"を知り、つなぎ、選べる社会へ。</p>
+      <p style="margin-top:.8rem;">無理だと言われたことを、希望に変える。<br>
+      それが、ミラクルエッグの使命です。</p>
+    </div>
+    <p class="shokuiku-maff">※ <a href="https://www.maff.go.jp/j/syokuiku/otona_syokuiku/platform/kaiin_syoukai.html" target="_blank">農林水産省のサイト</a>に弊社の食育パーパスが掲載されました。</p>
+  </div>
+</div>
+
+<!-- 活動3本柱 -->
+<div class="about-activities">
+  <p class="about-sec-label">Our Activities</p>
+  <h2 class="about-sec-title" style="margin-bottom:0;">ミラクルエッグの活動</h2>
+  <div class="activities-grid">
+
+    <div class="act-card">
+      <p class="act-card-sub">Feed & Farming</p>
+      <h3 class="act-card-title">日光金乃卵®専用飼料<br>卵買取価格No.1</h3>
+      <div class="act-card-img">
+        <img src="https://miracle-egg.com/wp-content/uploads/2025/03/卵を手で.jpg" alt="卵買取">
+      </div>
+      <div class="act-card-body">
+        <p>甘みとコクのある、色の落ちない洋菓子専用卵<br>プロに選ばれる生臭みのない日光金乃卵</p>
+        <p>専用飼料と独自基準の飼養管理<br>そして養鶏場さんの手間暇愛情によって<br>この希少な卵は生まれます。</p>
+        <p>私たちは卵の買取価格日本No.1を目指します！<br>抗生物質、排卵促進剤、合成着色料を使わない<br>３方よしの営農を目指す養鶏家さん</p>
+        <p>相場なしの安定高価格買取で事業の見通しも立ち資金繰りや融資にも有利な安定事業が営めます。私たちと一緒に最高の卵で日本を笑顔にしましょう。<br>志をともにする提携農場さま、大募集しています！</p>
+      </div>
+    </div>
+
+    <div class="act-card">
+      <p class="act-card-sub">Professional Egg</p>
+      <h3 class="act-card-title">洋菓子専用卵<br>日光金乃卵®</h3>
+      <div class="act-card-img">
+        <img src="https://miracle-egg.com/wp-content/uploads/2025/03/プリン.jpg" alt="洋菓子専用卵">
+      </div>
+      <div class="act-card-body">
+        <p>一流の洋菓子職人が選ぶ、安心と品質の新基準</p>
+        <p>日光金乃卵 洋菓子専用卵（冷凍）は、シフォンやマカロン、プリン、ロールケーキなど、繊細なお菓子に"素材で差をつけたい"お店のために生まれたプロ専用卵です。</p>
+        <p>合成着色料、排卵促進剤、次亜塩素酸、抗生物質など一切不使用。大切に育てた鶏の卵を、完全無添加のまま保存性、作業性の良い冷凍加工にしました。</p>
+        <p>濃厚なコクと自然な発色、焼成時の安定性に優れ、作業効率と仕上がりの美しさを両立します。</p>
+        <p>高級スイーツファンの期待を超える「素材の力」を、ぜひ一度ご体感ください。</p>
+      </div>
+    </div>
+
+    <div class="act-card">
+      <p class="act-card-sub">Comprehensive Support</p>
+      <h3 class="act-card-title">伴走型支援サービス<br>EGG＋</h3>
+      <div class="act-card-img">
+        <img src="https://miracle-egg.com/wp-content/uploads/2025/03/協働.jpg" alt="EGG+">
+      </div>
+      <div class="act-card-body">
+        <p>「ご縁のある洋菓子屋さん、養鶏場さんのために何ができるか」</p>
+        <p>弊社では毎日、この問いを中心として１日が始まります。</p>
+        <p>原料高騰に利益率の低下、人材不足に承継問題、資金繰りetc...<br>私たちを取り巻く課題にキリはありません。</p>
+        <p>私たちが出した答えは、私たちの尊敬する職人さんが職人で、養鶏家さんが養鶏家でいられるよう、そして経営者が経営に集中できるよう、チームで支援させて頂くということ。</p>
+        <p>私たちが、課題解決の一助となれるようどうぞ、社外チームとしてお役立て下さい。</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- 会社概要 -->
+<div class="about-company">
+  <p class="about-sec-label" style="text-align:center;">Company Info</p>
+  <h2 style="font-family:var(--serif);font-size:clamp(1.6rem,2.8vw,2.4rem);font-weight:300;text-align:center;letter-spacing:.06em;">会社概要</h2>
+  <table class="company-table">
+    <tr><th>会社名</th><td>株式会社ミラクルエッグ</td></tr>
+    <tr><th>代表取締役</th><td>近藤 順子</td></tr>
+    <tr><th>本社所在地</th><td>〒324-0236　栃木県大田原市大輪1807</td></tr>
+    <tr><th>事務所</th><td>栃木県大田原市美原２丁目3179-1　ミハラデュオA101</td></tr>
+    <tr><th>電話番号</th><td><a href="tel:0287590882">0287-59-0882</a></td></tr>
+    <tr><th>メール</th><td><a href="mailto:info@miracle-egg.com">info@miracle-egg.com</a></td></tr>
+    <tr><th>Instagram</th><td><a href="https://www.instagram.com/kinnoran.sweets/" target="_blank">@kinnoran.sweets</a></td></tr>
+    <tr><th>Facebook</th><td><a href="https://www.facebook.com/p/%E6%B4%8B%E8%8F%93%E5%AD%90%E5%B0%82%E7%94%A8%E5%8D%B5%E6%97%A5%E5%85%89%E9%87%91%E4%B9%83%E5%8D%B5--61571675252016/" target="_blank">洋菓子専用卵 日光金乃卵</a></td></tr>
+    <tr><th>事業内容</th><td>飼料販売・養鶏コンサルティング・洋菓子専用卵（冷凍）の製造販売・OEM製造・食育活動</td></tr>
+    <tr><th>備考</th><td>掲載商品はすべて業務用・冷凍品です。ロット・配送条件に応じて価格をご案内いたします。OEM製造・大量注文・サンプル希望のご相談もお気軽に！</td></tr>
+  </table>
+</div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <p class="f-logo">MIRACLE EGG</p>
+      <p class="f-tag">日光金乃卵®</p>
+      <p class="f-desc">「１つの卵が世界を変える」<br>命に責任を持つ卵づくりを信念に、<br>養鶏場への飼料提供から洋菓子専用卵の<br>供給まで全工程に責任を持って取り組む。</p>
+    </div>
+    <div>
+      <p class="f-col-lbl">Navigation</p>
+      <ul class="f-links">
+        <li><a href="index.html">日光金乃卵®</a></li>
+        <li><a href="about.html">私たちについて</a></li>
+        <li><a href="news.html">お知らせ</a></li>
+        <li><a href="media.html">メディア掲載履歴</a></li>
+        <li><a href="contact.html">お問い合わせ</a></li>
+      </ul>
+    </div>
+    <div class="f-contact">
+      <p class="f-col-lbl">Contact</p>
+      <p>0287-59-0882</p>
+      <p>info@miracle-egg.com</p>
+      <p style="margin-top:.8rem">Instagram: @kinnoran.sweets</p>
+      <p>© 2019–2026 株式会社Miracle Egg</p>
+    </div>
+  </div>
+  <div class="footer-btm">
+    <p class="f-copy">© 2019–2026 株式会社Miracle Egg. All rights reserved.</p>
+    <a href="https://miracle-egg.myshopify.com/" target="_blank" class="f-shop">自社農場の平飼いたまご オンラインショップ →</a>
+  </div>
+</footer>
+</body>
+</html>
