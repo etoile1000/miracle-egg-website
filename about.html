@@ -996,6 +996,45 @@ footer{
   .company-table th{width:100px;}
 }
 
+/* Readability tuning */
+:root{
+  --ink-muted:#625d55;
+  --ink-body:#403b34;
+  --ink-gold:#8f6918;
+  --dark-readable:rgba(250,248,244,.68);
+  --dark-muted:rgba(250,248,244,.58);
+}
+:is(.philosophy,.spec,.analysis,.voice,.pline,.media-wrap,.contact-wrap,.about-story,.about-shokuiku,.about-activities,.news-wrap){
+  --gray:var(--ink-muted);
+}
+:is(.philosophy,.spec,.analysis,.voice,.pline,.media-wrap,.contact-wrap,.about-story,.about-shokuiku,.about-activities,.news-wrap) :is(.sec-num,.philosophy-en,.analysis-source,.sc-label,.sc-unit,.an-val.gray,.an-val small,.an-vs,.legend-label,.voice-source,.voice-profile-role,.pline-sub,.pline-card-size,.pline-card-uses span,.pline-footer-note,.mc-program,.mc-date,.cf-label,.cf-note,.news-date,.shokuiku-maff){
+  color:var(--ink-muted)!important;
+}
+:is(.philosophy,.spec,.analysis,.voice,.pline,.media-wrap,.contact-wrap,.about-story,.about-shokuiku,.about-activities,.news-wrap) :is(.sec-label,.spec-en,.sc-sub,.an-title,.flow-num,.voice-en,.pline-card-en,.pline-footer-link,.mc-type,.cd-label,.about-sec-label,.sg-label,.act-card-sub,.news-cat,.shokuiku-maff a,.cf-note a){
+  color:var(--ink-gold)!important;
+}
+:is(.philosophy,.spec,.analysis,.voice,.pline,.media-wrap,.contact-wrap,.about-story,.about-shokuiku,.about-activities,.news-wrap) :is(.philosophy-body,.sc-desc,.an-desc,.voice-body,.voice-quote-main,.pline-card-desc,.pline-list-desc,.mc-desc,.contact-intro-body,.about-sec-body,.shokuiku-body,.sg-list li,.shokuiku-purpose p,.act-card-body){
+  color:var(--ink-body)!important;
+}
+.contact-wrap .cf-input,.contact-wrap .cf-textarea,.contact-wrap .cf-select{
+  color:#16130f;border-color:#d6cec2;background:#fff;font-weight:400;
+}
+.contact-wrap .cf-input::placeholder,.contact-wrap .cf-textarea::placeholder{
+  color:#706a61;opacity:1;
+}
+.contact-wrap .cf-label{font-weight:400;}
+.contact-wrap .cf-note{line-height:1.9;}
+.contact-wrap .cf-note a{text-decoration:underline;text-underline-offset:3px;}
+.contact-wrap .contact-direct{background:#fbfaf7;border:.5px solid #eee7dc;}
+.news-wrap .news-cat{border-color:rgba(143,105,24,.45);}
+.production-body,.ws-body,.about-mission-body,.company-table td,.ctime-desc,.ctime-note,.cg-caption,.cg-item-old{
+  color:var(--dark-readable)!important;
+}
+.f-desc,.f-links a,.f-contact p{color:rgba(250,248,244,.66)!important;}
+.f-copy,.f-shop,.ws-note{color:var(--dark-muted)!important;}
+.f-shop{border-bottom-color:rgba(250,248,244,.32)!important;}
+.f-shop:hover{color:rgba(250,248,244,.78)!important;}
+
 </style>
 </head>
 <body>
@@ -1009,7 +1048,7 @@ footer{
     <a href="index.html">日光金乃卵</a>
     <a href="about.html">私たちについて</a>
     <a href="news.html">お知らせ</a>
-    <a href="media.html">メディア</a>
+    <a href="media.html">メディア掲載</a>
     <a href="contact.html" class="h-cta">お問い合わせ</a>
   </nav>
 </header>
