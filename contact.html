@@ -6,7 +6,7 @@
 <title>お問い合わせ | Miracle Egg 日光金乃卵®</title>
 <style>
 
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&family=Noto+Serif+JP:wght@200;300;400&family=Noto+Sans+JP:wght@200;300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200;300;400&family=Noto+Sans+JP:wght@200;300;400&display=swap');
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --black:#080806;
@@ -31,24 +31,12 @@ header{
   backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
 }
 .h-logo{
-  display:inline-flex;align-items:center;gap:.72rem;
-  text-decoration:none;color:#b4b4b4;
+  display:inline-flex;align-items:center;
+  text-decoration:none;line-height:0;
 }
-.h-logo-mark{
-  display:flex;align-items:center;flex-shrink:0;
-  color:#aeaeae;
-}
-.h-logo-mark .me-icon{
-  width:clamp(22px,3.5vw,28px);height:auto;display:block;
-}
-.h-logo-mark .me-icon-arch{stroke:currentColor;stroke-width:1;}
-.h-logo-mark .me-icon-foot{stroke:currentColor;}
-.h-logo-mark .me-icon-egg{fill:var(--black);}
-.h-logo-text{
-  font-family:'Cinzel',var(--serif);font-size:clamp(.64rem,1.3vw,.74rem);
-  letter-spacing:.22em;font-weight:400;line-height:1;
-  background:linear-gradient(90deg,#8e8e8e 0%,#c6c6c6 38%,#a2a2a2 62%,#bcbcbc 100%);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+.h-logo-img{
+  height:clamp(22px,3.2vw,28px);width:auto;display:block;
+  opacity:.94;
 }
 nav{display:flex;align-items:center;gap:2.2rem}
 nav a{
@@ -292,24 +280,11 @@ footer{
   gap:3rem;margin-bottom:3rem;
 }
 .f-brand{
-  display:inline-flex;align-items:center;gap:clamp(.9rem,2vw,1.2rem);
-  margin-bottom:1rem;
+  margin-bottom:1rem;line-height:0;
 }
-.f-brand-mark{
-  display:flex;align-items:center;flex-shrink:0;
-  color:#b0b0b0;
-}
-.f-brand-mark .me-icon{
-  width:clamp(36px,6vw,50px);height:auto;display:block;
-}
-.f-brand-mark .me-icon-arch{stroke:currentColor;stroke-width:1;}
-.f-brand-mark .me-icon-foot{stroke:currentColor;}
-.f-brand-mark .me-icon-egg{fill:var(--black);}
-.f-brand-text{
-  font-family:'Cinzel',var(--serif);font-size:clamp(.9rem,2.1vw,1.12rem);
-  letter-spacing:.24em;font-weight:400;line-height:1;
-  background:linear-gradient(90deg,#8e8e8e 0%,#c8c8c8 38%,#a4a4a4 62%,#bebebe 100%);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+.f-logo-img{
+  height:clamp(36px,5.5vw,50px);width:auto;display:block;
+  opacity:.96;
 }
 .f-logo{
   font-family:var(--serif);font-size:.9rem;letter-spacing:.2em;margin-bottom:.3rem;
@@ -336,10 +311,8 @@ footer{
 /* ── MOBILE ── */
 @media(max-width:768px){
   header{padding:0 1.5rem}
-  .h-logo-mark .me-icon{width:20px}
-  .h-logo-text{font-size:.6rem;letter-spacing:.2em}
-  .f-brand-mark .me-icon{width:34px}
-  .f-brand-text{font-size:.8rem}
+  .h-logo-img{height:20px}
+  .f-logo-img{height:34px}
   nav{display:none}
   .philosophy,.production{grid-template-columns:1fr;min-height:auto}
   .philosophy-text,.production-text{padding:5rem 2rem}
@@ -1000,13 +973,7 @@ footer{
 <!-- HEADER -->
 <header>
   <a href="index.html" class="h-logo" aria-label="MIRACLE EGG">
-    <span class="h-logo-mark"><svg class="me-icon" viewBox="0 0 44 50" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-  <path class="me-icon-arch" d="M6.5 19.5C6.5 6.5 16 2.5 22 2.5C28 2.5 37.5 6.5 37.5 19.5" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
-  <path class="me-icon-hen" d="M8.8 43.2C5.8 39.8 4.8 30.5 8.2 23.8C9.6 21 12.8 18.6 16.2 18.1C14.6 15.8 13.8 13.2 14.1 10.8C15.4 9.6 16.8 10.2 17.6 12.1C18.1 13.4 19 14.8 20.4 15.8C25.2 16.2 29.4 18.4 31.6 22.6C33.4 26.2 32.8 33.2 27.8 38.2C24.4 41.4 17.8 42.6 13.2 41.8C11.4 41.5 10 42.4 8.8 43.2Z" fill="currentColor"/>
-  <path class="me-icon-foot" d="M10.2 42.6C11 44 12.6 44.6 13.8 43.8" stroke="currentColor" stroke-width=".85" stroke-linecap="round"/>
-  <ellipse class="me-icon-egg" cx="20.8" cy="28.2" rx="3.1" ry="5.1" fill="#080806"/>
-</svg></span>
-    <span class="h-logo-text">MIRACLE EGG</span>
+    <img src="images/logo.png" alt="MIRACLE EGG" class="h-logo-img" width="656" height="208">
   </a>
   <nav>
     <a href="index.html">日光金乃卵</a>
@@ -1102,13 +1069,7 @@ footer{
   <div class="footer-inner">
     <div>
       <div class="f-brand" aria-label="MIRACLE EGG">
-      <span class="f-brand-mark"><svg class="me-icon" viewBox="0 0 44 50" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-  <path class="me-icon-arch" d="M6.5 19.5C6.5 6.5 16 2.5 22 2.5C28 2.5 37.5 6.5 37.5 19.5" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
-  <path class="me-icon-hen" d="M8.8 43.2C5.8 39.8 4.8 30.5 8.2 23.8C9.6 21 12.8 18.6 16.2 18.1C14.6 15.8 13.8 13.2 14.1 10.8C15.4 9.6 16.8 10.2 17.6 12.1C18.1 13.4 19 14.8 20.4 15.8C25.2 16.2 29.4 18.4 31.6 22.6C33.4 26.2 32.8 33.2 27.8 38.2C24.4 41.4 17.8 42.6 13.2 41.8C11.4 41.5 10 42.4 8.8 43.2Z" fill="currentColor"/>
-  <path class="me-icon-foot" d="M10.2 42.6C11 44 12.6 44.6 13.8 43.8" stroke="currentColor" stroke-width=".85" stroke-linecap="round"/>
-  <ellipse class="me-icon-egg" cx="20.8" cy="28.2" rx="3.1" ry="5.1" fill="#080806"/>
-</svg></span>
-      <span class="f-brand-text">MIRACLE EGG</span>
+      <img src="images/logo.png" alt="MIRACLE EGG" class="f-logo-img" width="656" height="208">
     </div>
       <p class="f-tag">日光金乃卵®</p>
       <p class="f-desc">「１つの卵が世界を変える」<br>命に責任を持つ卵づくりを信念に、<br>養鶏場への飼料提供から洋菓子専用卵の<br>供給まで全工程に責任を持って取り組む。</p>
