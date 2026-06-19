@@ -133,15 +133,22 @@ nav{display:flex;align-items:center;gap:clamp(1rem,1.6vw,1.75rem)}
   margin-bottom:2.25rem;
 }
 .adoption-heading-row{
-  display:flex;align-items:center;gap:clamp(1.15rem,2.4vw,1.85rem);
+  display:flex;align-items:center;flex-wrap:nowrap;
+  gap:clamp(.75rem,1.5vw,1.15rem);
 }
 .adoption-brand-logo{
-  width:clamp(3.1rem,5.6vw,4.65rem);height:auto;flex-shrink:0;
+  height:clamp(3.125rem,4.8vw,3.75rem);width:auto;flex-shrink:0;
   display:block;
 }
+.adoption-brand-name{
+  font-family:var(--serif);font-size:clamp(1.1rem,2vw,1.45rem);
+  font-weight:200;line-height:1;letter-spacing:.14em;color:var(--gold);
+  white-space:nowrap;
+}
 .adoption-heading-divider{
-  width:.5px;height:clamp(1.7rem,3vw,2.45rem);flex-shrink:0;
-  background:rgba(201,168,76,.34);
+  width:.5px;height:clamp(1.55rem,2.8vw,2.2rem);flex-shrink:0;
+  background:rgba(201,168,76,.36);
+  margin:0 clamp(.1rem,.35vw,.25rem);
 }
 .adoption-title{
   font-family:var(--serif);font-size:clamp(1.9rem,3.4vw,3rem);
@@ -211,10 +218,20 @@ nav{display:flex;align-items:center;gap:clamp(1rem,1.6vw,1.75rem)}
 @media(max-width:768px){
   .adoption{padding:4.5rem 2rem 3rem;}
   .adoption-header{grid-template-columns:1fr;gap:1.1rem;margin-bottom:1.75rem;}
-  .adoption-heading-row{gap:clamp(.85rem,3.5vw,1.1rem);}
-  .adoption-brand-logo{width:clamp(2.65rem,20vw,3.5rem);}
-  .adoption-heading-divider{height:clamp(1.45rem,8vw,2rem);}
-  .adoption-more{font-size:.84rem;padding:.65rem 1.05rem;}
+  .adoption-heading-row{
+    flex-wrap:wrap;align-items:center;
+    row-gap:.5rem;column-gap:clamp(.6rem,3.2vw,.85rem);
+  }
+  .adoption-brand-logo{height:clamp(2.875rem,12vw,3.25rem);}
+  .adoption-brand-name{font-size:clamp(1rem,4.8vw,1.2rem);letter-spacing:.1em;}
+  .adoption-heading-divider{display:none;}
+  .adoption-title{flex:0 0 100%;font-size:clamp(1.7rem,7.2vw,2.1rem);}
+  .adoption-foot{justify-content:center;margin-top:1.35rem;}
+  .adoption-more{
+    font-size:clamp(.88rem,3.6vw,.94rem);
+    padding:.72rem 1.2rem;border-color:rgba(201,168,76,.42);
+    color:rgba(250,248,244,.86);
+  }
   .adoption-cinema{margin:0 -2rem;border-radius:0;}
   .adoption-cinema-fade{width:48px;}
   .adoption-marquee{
@@ -1054,7 +1071,8 @@ footer{
   <div class="adoption-inner">
     <div class="adoption-header">
       <div class="adoption-heading-row">
-        <img src="images/kinnoran-logo-color.png" alt="日光金乃卵" class="adoption-brand-logo" width="1417" height="1417">
+        <img src="images/kinnoran-logo-mark.png" alt="" class="adoption-brand-logo" width="734" height="894" aria-hidden="true">
+        <span class="adoption-brand-name">日光金乃卵</span>
         <span class="adoption-heading-divider" aria-hidden="true"></span>
         <h2 class="adoption-title" id="adoption-title">採用実績</h2>
       </div>
