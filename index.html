@@ -133,37 +133,30 @@ nav{display:flex;align-items:center;gap:clamp(1rem,1.6vw,1.75rem)}
   gap:clamp(2rem,3.5vw,2.75rem);align-items:end;justify-items:start;
   margin-bottom:clamp(1.25rem,2vw,1.5rem);
 }
-.adoption-header-left{
-  display:flex;flex-direction:column;align-items:flex-start;text-align:left;
-  width:100%;
+.adoption-heading-row{
+  display:flex;align-items:center;flex-wrap:nowrap;
+  gap:clamp(.55rem,1.1vw,.85rem);width:100%;
 }
-.adoption-brand-block{
-  display:flex;flex-direction:column;align-items:flex-start;
-  gap:clamp(.3rem,.65vw,.45rem);
-  margin-bottom:clamp(.45rem,.9vw,.65rem);
+.adoption-brand-group{
+  display:flex;align-items:center;gap:clamp(.4rem,.85vw,.6rem);flex-shrink:0;
 }
 .adoption-brand-logo{
-  height:clamp(2.35rem,3.7vw,2.95rem);width:auto;display:block;
+  height:clamp(1.3rem,2.3vw,1.85rem);width:auto;display:block;flex-shrink:0;
 }
 .adoption-brand-name{
-  font-family:var(--serif);font-size:clamp(1.1rem,2vw,1.45rem);
-  font-weight:200;line-height:1.2;letter-spacing:.14em;color:var(--white);
-  margin:0;
-}
-.adoption-brand-tagline{
-  font-size:clamp(.75rem,.9vw,.875rem);font-weight:300;line-height:1;
-  letter-spacing:.24em;text-transform:lowercase;
-  color:rgba(250,248,244,.48);margin:0;
+  font-family:var(--serif);font-size:clamp(1.2rem,2.16vw,1.8rem);
+  font-weight:200;line-height:1;letter-spacing:.12em;color:rgba(250,248,244,.82);
+  margin:0;white-space:nowrap;
 }
 .adoption-heading-divider{
-  display:block;width:.5px;height:clamp(1.45rem,2.5vw,1.9rem);
-  background:rgba(201,168,76,.32);border:0;
-  margin:0 0 clamp(.4rem,.75vw,.55rem);
+  display:block;width:.5px;height:clamp(1.2rem,2.15vw,1.8rem);
+  background:rgba(201,168,76,.32);border:0;flex-shrink:0;
+  margin:0 clamp(.25rem,.55vw,.45rem);
 }
 .adoption-title{
   font-family:var(--serif);font-size:clamp(2rem,3.6vw,3rem);
-  font-weight:300;line-height:1.15;letter-spacing:.06em;color:var(--white);
-  margin:0;
+  font-weight:300;line-height:1.1;letter-spacing:.06em;color:var(--white);
+  margin:0;flex-shrink:0;
 }
 .adoption-lead{
   font-size:.88rem;line-height:1.95;color:rgba(250,248,244,.6);letter-spacing:.04em;
@@ -233,17 +226,16 @@ nav{display:flex;align-items:center;gap:clamp(1rem,1.6vw,1.75rem)}
     display:flex;flex-direction:column;align-items:flex-start;text-align:left;
     gap:0;margin-bottom:1rem;
   }
-  .adoption-header-left{width:100%;}
-  .adoption-brand-block{
-    gap:clamp(.28rem,2vw,.4rem);
-    margin-bottom:clamp(.35rem,2vw,.5rem);
+  .adoption-heading-row{
+    flex-direction:column;align-items:flex-start;gap:0;
   }
-  .adoption-brand-logo{height:clamp(2.15rem,9vw,2.55rem);}
-  .adoption-brand-name{font-size:clamp(1rem,4.5vw,1.2rem);letter-spacing:.12em;}
-  .adoption-brand-tagline{font-size:clamp(.7rem,2.2vw,.8rem);letter-spacing:.2em;}
+  .adoption-brand-group{gap:clamp(.35rem,2.5vw,.5rem);}
+  .adoption-brand-logo{height:clamp(1.15rem,5vw,1.45rem);}
+  .adoption-brand-name{font-size:clamp(1.05rem,4.2vw,1.29rem);letter-spacing:.1em;}
   .adoption-heading-divider{display:none;}
   .adoption-title{
     font-size:clamp(1.75rem,7vw,2.15rem);
+    margin-top:clamp(.5rem,2.5vw,.7rem);
     margin-bottom:clamp(.45rem,2.2vw,.65rem);
   }
   .adoption-lead{max-width:none;text-align:left;line-height:1.9;margin:0;align-self:auto;}
@@ -1091,11 +1083,10 @@ footer{
 <section class="adoption" aria-labelledby="adoption-title">
   <div class="adoption-inner">
     <div class="adoption-header">
-      <div class="adoption-header-left">
-        <div class="adoption-brand-block">
+      <div class="adoption-heading-row">
+        <div class="adoption-brand-group">
           <img src="images/kinnoran-logo-mark.png" alt="" class="adoption-brand-logo" width="734" height="894" aria-hidden="true">
           <p class="adoption-brand-name">日光金乃卵</p>
-          <p class="adoption-brand-tagline">egg for sweets</p>
         </div>
         <span class="adoption-heading-divider" aria-hidden="true"></span>
         <h2 class="adoption-title" id="adoption-title">採用実績</h2>
