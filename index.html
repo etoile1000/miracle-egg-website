@@ -129,43 +129,44 @@ nav{display:flex;align-items:center;gap:clamp(1rem,1.6vw,1.75rem)}
 }
 .adoption-inner{max-width:1120px;margin:0 auto;}
 .adoption-header{
-  display:flex;flex-direction:column;align-items:center;text-align:center;
+  display:grid;grid-template-columns:1fr 1.15fr;
+  gap:clamp(2rem,4vw,3rem);align-items:end;
   margin-bottom:2.25rem;
 }
 .adoption-heading-stack{
-  display:flex;flex-direction:column;align-items:center;width:100%;
+  display:flex;flex-direction:column;align-items:center;text-align:center;
 }
 .adoption-brand-block{
   display:flex;flex-direction:column;align-items:center;
-  gap:clamp(.55rem,1.15vw,.8rem);
-  margin-bottom:clamp(1.15rem,2.2vw,1.55rem);
+  gap:clamp(.45rem,.9vw,.65rem);
+  margin-bottom:clamp(.85rem,1.6vw,1.2rem);
 }
 .adoption-brand-logo{
-  height:clamp(2.75rem,4.5vw,3.5rem);width:auto;display:block;
+  height:clamp(3rem,4.8vw,3.85rem);width:auto;display:block;
 }
 .adoption-brand-name{
-  font-family:var(--serif);font-size:clamp(1.35rem,2.5vw,1.85rem);
-  font-weight:200;line-height:1.35;letter-spacing:.2em;color:var(--white);
+  font-family:var(--serif);font-size:clamp(3.5rem,4vw,4rem);
+  font-weight:200;line-height:1.2;letter-spacing:.2em;color:var(--white);
   margin:0;
 }
 .adoption-brand-tagline{
-  font-size:clamp(.52rem,.9vw,.66rem);font-weight:300;line-height:1;
+  font-size:clamp(.875rem,1vw,1rem);font-weight:300;line-height:1;
   letter-spacing:.26em;text-transform:lowercase;
   color:rgba(250,248,244,.48);margin:0;
 }
 .adoption-heading-rule{
   display:block;width:min(11rem,42vw);height:.5px;
   background:rgba(201,168,76,.28);border:0;
-  margin:0 auto clamp(1rem,2vw,1.45rem);
+  margin:0 auto clamp(.75rem,1.5vw,1.1rem);
 }
 .adoption-title{
-  font-family:var(--serif);font-size:clamp(1.35rem,2.5vw,1.85rem);
-  font-weight:300;line-height:1.35;letter-spacing:.12em;color:var(--white);
-  margin:0 0 clamp(1.25rem,2.5vw,1.75rem);
+  font-family:var(--serif);font-size:clamp(4.5rem,5.5vw,5.5rem);
+  font-weight:300;line-height:1.15;letter-spacing:.1em;color:var(--white);
+  margin:0;
 }
 .adoption-lead{
   font-size:.88rem;line-height:2;color:rgba(250,248,244,.6);letter-spacing:.04em;
-  max-width:36ch;margin:0 auto;
+  margin:0;text-align:left;align-self:end;
 }
 .adoption-cinema{
   position:relative;margin:0 -6rem;background:#1c1810;overflow:hidden;
@@ -227,20 +228,24 @@ nav{display:flex;align-items:center;gap:clamp(1rem,1.6vw,1.75rem)}
 }
 @media(max-width:768px){
   .adoption{padding:4.5rem 2rem 3rem;}
-  .adoption-header{margin-bottom:1.9rem;}
+  .adoption-header{
+    display:flex;flex-direction:column;align-items:center;text-align:center;
+    gap:0;margin-bottom:1.5rem;
+  }
+  .adoption-heading-stack{width:100%;}
   .adoption-brand-block{
-    gap:clamp(.7rem,3.8vw,.95rem);
-    margin-bottom:clamp(1.35rem,5.5vw,1.75rem);
+    gap:clamp(.4rem,2.6vw,.55rem);
+    margin-bottom:clamp(.7rem,3.2vw,.95rem);
   }
-  .adoption-brand-logo{height:clamp(2.65rem,14vw,3.2rem);}
-  .adoption-brand-name{font-size:clamp(1.25rem,5.5vw,1.55rem);letter-spacing:.18em;}
-  .adoption-brand-tagline{font-size:clamp(.5rem,2.8vw,.58rem);letter-spacing:.22em;}
-  .adoption-heading-rule{width:min(9rem,52vw);margin-bottom:clamp(1.15rem,4.8vw,1.55rem);}
+  .adoption-brand-logo{height:clamp(2.75rem,12vw,3.25rem);}
+  .adoption-brand-name{font-size:clamp(3.25rem,9vw,3.75rem);letter-spacing:.16em;}
+  .adoption-brand-tagline{font-size:clamp(.8125rem,2.4vw,.9375rem);letter-spacing:.22em;}
+  .adoption-heading-rule{width:min(9rem,52vw);margin-bottom:clamp(.65rem,3vw,.9rem);}
   .adoption-title{
-    font-size:clamp(1.25rem,5.5vw,1.55rem);
-    margin-bottom:clamp(1.4rem,5.5vw,1.9rem);
+    font-size:clamp(4.25rem,11vw,5rem);
+    margin-bottom:clamp(.85rem,3.2vw,1.15rem);
   }
-  .adoption-lead{max-width:32ch;line-height:2.1;padding:0 .25rem;}
+  .adoption-lead{max-width:32ch;margin:0 auto;text-align:center;line-height:1.95;}
   .adoption-foot{justify-content:center;margin-top:1.35rem;}
   .adoption-more{
     font-size:clamp(.88rem,3.6vw,.94rem);
