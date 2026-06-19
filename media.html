@@ -126,13 +126,10 @@ nav{display:flex;align-items:center;gap:clamp(1rem,1.6vw,1.75rem)}
   padding:8rem 5rem 8rem 6rem;
   display:flex;flex-direction:column;justify-content:center;
 }
-.sec-num{
-  font-size:.7rem;letter-spacing:.16em;color:var(--gray);
-  margin-bottom:.4rem;font-family:var(--sans);
-}
 .sec-label{
-  font-size:.52rem;letter-spacing:.28em;text-transform:uppercase;
-  color:var(--gold);margin-bottom:2.5rem;
+  font-family:var(--serif);font-size:clamp(1.45rem,2.6vw,2.15rem);
+  font-weight:300;letter-spacing:.04em;line-height:1.45;
+  color:var(--black);margin-bottom:1.2rem;text-transform:none;
 }
 .philosophy-title{
   font-family:var(--serif);font-size:clamp(2rem,4vw,3.2rem);
@@ -197,15 +194,11 @@ nav{display:flex;align-items:center;gap:clamp(1rem,1.6vw,1.75rem)}
   padding:8rem 6rem;
 }
 .spec-header{
-  display:flex;justify-content:space-between;align-items:flex-end;
-  margin-bottom:5rem;
+  margin-bottom:4rem;
 }
 .spec-title{
   font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.8rem);
   font-weight:300;letter-spacing:.04em;color:var(--black);
-}
-.spec-en{
-  font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);
 }
 .spec-grid{
   display:grid;grid-template-columns:1fr 1fr 1fr;
@@ -216,17 +209,9 @@ nav{display:flex;align-items:center;gap:clamp(1rem,1.6vw,1.75rem)}
   padding:3rem 2.5rem;border-right:.5px solid #ddd;
 }
 .spec-card:last-child{border-right:none}
-.sc-label{
-  font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;
-  color:var(--gray);margin-bottom:.3rem;
-}
-.sc-sub{
-  font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--gold);margin-bottom:1.2rem;
-}
 .sc-num{
   font-family:var(--serif);font-size:3.5rem;font-weight:300;
-  color:var(--black);line-height:1;margin-bottom:.4rem;
+  color:var(--black);line-height:1;margin-bottom:.6rem;
 }
 .sc-unit{
   font-size:.65rem;font-family:var(--sans);color:var(--gray);
@@ -239,10 +224,6 @@ nav{display:flex;align-items:center;gap:clamp(1rem,1.6vw,1.75rem)}
   height:50vh;
   background:url('https://images.unsplash.com/photo-1607283838483-5e9b03df5a1d?w=1800&q=85') center 30%/cover no-repeat;
   position:relative;
-}
-.spec-photo-cap{
-  position:absolute;bottom:1.8rem;left:2.5rem;
-  font-size:.52rem;letter-spacing:.18em;color:rgba(250,248,244,.45);text-transform:uppercase;
 }
 .spec-photo-loc{
   position:absolute;bottom:1.8rem;right:2.5rem;
@@ -263,14 +244,10 @@ nav{display:flex;align-items:center;gap:clamp(1rem,1.6vw,1.75rem)}
   content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
   width:360px;height:360px;border-radius:50%;border:.5px solid rgba(201,168,76,.1);
 }
-.ws-lbl{
-  font-size:.5rem;letter-spacing:.32em;text-transform:uppercase;
-  color:var(--gold);margin-bottom:1.4rem;position:relative;
-}
 .ws-title{
   font-family:var(--serif);font-size:clamp(1.8rem,3.5vw,3rem);
   font-weight:300;line-height:1.55;letter-spacing:.04em;
-  margin-bottom:1rem;position:relative;color:var(--white);
+  margin:0 0 1rem;position:relative;color:var(--white);
 }
 .ws-body{
   font-size:.88rem;color:rgba(250,248,244,.38);
@@ -705,10 +682,6 @@ footer{
   padding:.2rem .7rem;border-radius:1px;
 }}
 .pline-card-body{{padding:1.5rem;}}
-.pline-card-en{{
-  font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;
-  color:var(--gold);margin-bottom:.3rem;
-}}
 .pline-card-name{{
   font-family:var(--serif);font-size:1.3rem;font-weight:300;
   letter-spacing:.06em;color:var(--black);margin-bottom:.3rem;
@@ -795,7 +768,6 @@ footer{
 .pline-card--main .pline-circle{border-color:rgba(201,168,76,.4);box-shadow:0 0 0 8px rgba(201,168,76,.05);}
 .pline-circle img{width:78%;height:78%;object-fit:contain;}
 .pline-card-body{width:100%;}
-.pline-card-en{font-size:.55rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:.3rem;}
 .pline-card-name{font-family:var(--serif);font-size:1.4rem;font-weight:300;letter-spacing:.06em;color:var(--black);margin-bottom:.3rem;}
 .pline-card-size{font-size:.65rem;color:var(--gray);letter-spacing:.08em;margin-bottom:1rem;}
 .pline-card-divider{width:24px;height:.5px;background:var(--gold);margin:0 auto 1rem;}
@@ -921,7 +893,6 @@ footer{
   padding:100px 6rem 4rem;
   border-bottom:.5px solid rgba(201,168,76,.15);
 }
-.page-hero-label{font-size:.58rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:.8rem;}
 .page-hero-title{font-family:var(--serif);font-size:clamp(2rem,4vw,3.5rem);font-weight:200;letter-spacing:.06em;color:var(--white);line-height:1.2;}
 @media(max-width:768px){.page-hero{padding:100px 2rem 3rem;}}
 
@@ -933,7 +904,6 @@ footer{
   transition:box-shadow .3s,border-color .3s;
 }
 .media-card:hover{box-shadow:0 4px 24px rgba(0,0,0,.07);border-color:rgba(201,168,76,.4);}
-.mc-type{font-size:.52rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.4rem;}
 .mc-outlet{font-family:var(--serif);font-size:1.2rem;font-weight:300;letter-spacing:.05em;color:var(--black);margin-bottom:.2rem;}
 .mc-program{font-size:.78rem;color:var(--gray);letter-spacing:.06em;margin-bottom:.8rem;}
 .mc-desc{font-size:.78rem;line-height:1.75;color:#6a6866;}
@@ -954,10 +924,13 @@ footer{
 :is(.philosophy,.spec,.analysis,.voice,.pline,.media-wrap,.contact-wrap,.about-story,.about-shokuiku,.about-activities,.news-wrap){
   --gray:var(--ink-muted);
 }
-:is(.philosophy,.spec,.analysis,.voice,.pline,.media-wrap,.contact-wrap,.about-story,.about-shokuiku,.about-activities,.news-wrap) :is(.sec-num,.philosophy-en,.analysis-source,.sc-label,.sc-unit,.an-val.gray,.an-val small,.an-vs,.legend-label,.voice-source,.voice-profile-role,.pline-sub,.pline-card-size,.pline-card-uses span,.pline-footer-note,.mc-program,.mc-date,.cf-label,.cf-note,.news-date,.shokuiku-maff){
+:is(.philosophy,.spec,.analysis,.voice,.pline,.media-wrap,.contact-wrap,.about-story,.about-shokuiku,.about-activities,.news-wrap) :is(.philosophy-en,.analysis-source,.sc-unit,.an-val.gray,.an-val small,.an-vs,.legend-label,.voice-source,.voice-profile-role,.pline-sub,.pline-card-size,.pline-card-uses span,.pline-footer-note,.mc-program,.mc-date,.cf-label,.cf-note,.news-date,.shokuiku-maff){
   color:var(--ink-muted)!important;
 }
-:is(.philosophy,.spec,.analysis,.voice,.pline,.media-wrap,.contact-wrap,.about-story,.about-shokuiku,.about-activities,.news-wrap) :is(.sec-label,.spec-en,.sc-sub,.an-title,.flow-num,.voice-en,.pline-card-en,.pline-footer-link,.mc-type,.cd-label,.about-sec-label,.sg-label,.act-card-sub,.news-cat,.shokuiku-maff a,.cf-note a){
+:is(.philosophy,.spec,.analysis,.voice,.pline,.media-wrap,.contact-wrap,.about-story,.about-shokuiku,.about-activities,.news-wrap) :is(.sec-label,.philosophy-title,.spec-title,.analysis-title,.compare-title,.pline-title,.about-sec-title,.page-hero-title){
+  color:var(--ink-heading)!important;
+}
+:is(.philosophy,.spec,.analysis,.voice,.pline,.media-wrap,.contact-wrap,.about-story,.about-shokuiku,.about-activities,.news-wrap) :is(.an-title,.flow-num,.voice-en,.pline-footer-link,.cd-label,.sg-label,.news-cat,.shokuiku-maff a,.cf-note a){
   color:var(--ink-gold)!important;
 }
 :is(.philosophy,.spec,.analysis,.voice,.pline,.media-wrap,.contact-wrap,.about-story,.about-shokuiku,.about-activities,.news-wrap) :is(.philosophy-body,.sc-desc,.an-desc,.voice-body,.voice-quote-main,.pline-card-desc,.pline-list-desc,.mc-desc,.contact-intro-body,.about-sec-body,.shokuiku-body,.sg-list li,.shokuiku-purpose p,.act-card-body){
@@ -1018,83 +991,71 @@ footer{
 <div>
 <div class="page-hero">
   <div>
-    <p class="page-hero-label">Media</p>
-    <h1 class="page-hero-title">メディア掲載履歴</h1>
+<h1 class="page-hero-title">メディア掲載履歴</h1>
   </div>
 </div>
 <div class="media-wrap">
   <div class="media-grid">
     <a href="https://miracle-egg.com/2025/03/27/%e6%97%a5%e6%9c%ac%e3%83%86%e3%83%ac%e3%83%93%e3%80%8e%e3%83%8b%e3%83%8e%e3%81%95%e3%82%93%e3%80%8f%ef%bc%882024%e5%b9%b43%e6%9c%8831%e6%97%a5%e6%94%be%e9%80%81%ef%bc%89/" target="_blank" class="media-card">
-      <p class="mc-type">TV</p>
-      <p class="mc-outlet">日本テレビ</p>
+<p class="mc-outlet">日本テレビ</p>
       <p class="mc-program">『ニノさん』</p>
       <p class="mc-desc">日光金乃卵®の品質と生産へのこだわりが紹介されました。</p>
       <p class="mc-date">2024年3月31日放送</p>
     </a>
     <a href="https://miracle-egg.com/2025/03/27/%e3%83%86%e3%83%ac%e3%83%93%e6%9c%9d%e6%97%a5%e3%80%8e%e3%82%b6%e3%83%af%e3%81%a4%e3%81%8f%ef%bc%81%e9%87%91%e6%9b%9c%e6%97%a5%e3%80%8f%ef%bc%882022%e5%b9%b42%e6%9c%8818%e6%97%a5%e6%94%be%e9%80%81/" target="_blank" class="media-card">
-      <p class="mc-type">TV</p>
-      <p class="mc-outlet">テレビ朝日</p>
+<p class="mc-outlet">テレビ朝日</p>
       <p class="mc-program">『ザワつく！金曜日』</p>
       <p class="mc-desc">洋菓子専用卵としての特徴と活用事例が取り上げられました。</p>
       <p class="mc-date">2022年2月18日放送</p>
     </a>
     <a href="https://miracle-egg.com/2025/03/27/tbs%e3%80%8e%e7%82%8e%e3%81%ae%e4%bd%93%e8%82%b2%e4%bc%9atv%e3%80%8f%e3%81%ab%e3%81%a6%e7%b4%b9%e4%bb%8b%ef%bc%882021%e5%b9%b47%e6%9c%8810%e6%97%a5%ef%bc%89/" target="_blank" class="media-card">
-      <p class="mc-type">TV</p>
-      <p class="mc-outlet">TBS</p>
+<p class="mc-outlet">TBS</p>
       <p class="mc-program">『炎の体育会TV』</p>
       <p class="mc-desc">ミラクルエッグの養鶏へのこだわりと日光金乃卵®が特集されました。</p>
       <p class="mc-date">2021年7月10日放送</p>
     </a>
     <a href="https://miracle-egg.com/2025/03/27/%e8%aa%ad%e5%a3%b2%e3%83%86%e3%83%ac%e3%83%93%e3%80%8e%e6%b5%9c%e3%81%a1%e3%82%83%e3%82%93%e3%81%8c%ef%bc%81%e3%80%8f%ef%bc%882020%e5%b9%b410%e6%9c%88%e6%94%be%e9%80%81%ef%bc%89/" target="_blank" class="media-card">
-      <p class="mc-type">TV</p>
-      <p class="mc-outlet">読売テレビ</p>
+<p class="mc-outlet">読売テレビ</p>
       <p class="mc-program">『浜ちゃんが！』</p>
       <p class="mc-desc">日光金乃卵®を使った洋菓子が紹介されました。</p>
       <p class="mc-date">2020年10月放送</p>
     </a>
     <a href="https://miracle-egg.com/2025/03/27/%e9%ad%94%e8%a3%9f%e6%96%97%e3%81%95%e3%82%93%e3%81%aeyoutube%e9%ad%94%e8%a3%9f%e6%96%97%e3%83%81%e3%83%a3%e3%83%b3%e3%83%8d%e3%83%ab%e3%81%a7%e7%b4%b9%e4%bb%8b/" target="_blank" class="media-card">
-      <p class="mc-type">YouTube</p>
-      <p class="mc-outlet">魔裟斗チャンネル</p>
+<p class="mc-outlet">魔裟斗チャンネル</p>
       <p class="mc-program">魔裟斗さんYouTube</p>
       <p class="mc-desc">魔裟斗さんのYouTubeチャンネルにて日光金乃卵®が紹介されました。</p>
     </a>
     <a href="https://miracle-egg.com/2025/03/27/%e6%a3%ae%e4%b8%89%e4%b8%ad%e3%81%95%e3%82%93%e3%81%aeyoutube%e6%a3%ae%e4%b8%89%e4%b8%adube%e3%81%a7%e7%b4%b9%e4%bb%8b/" target="_blank" class="media-card">
-      <p class="mc-type">YouTube</p>
-      <p class="mc-outlet">森三中ube</p>
+<p class="mc-outlet">森三中ube</p>
       <p class="mc-program">森三中さんYouTube</p>
       <p class="mc-desc">森三中さんのYouTubeチャンネルにて紹介されました。</p>
     </a>
     <a href="https://miracle-egg.com/2025/03/27/%e6%9f%b4%e7%94%b0%e6%9b%b8%e5%ba%97%e3%80%80cafesweets-%e3%81%ab%e6%8e%b2%e8%bc%89%ef%bc%882024%e5%b9%b4%ef%bc%92%e6%9c%88vol-222%e5%8f%b7%ef%bc%89/" target="_blank" class="media-card">
-      <p class="mc-type">業界誌</p>
-      <p class="mc-outlet">柴田書店 CAFE&amp;SWEETS</p>
+<p class="mc-outlet">柴田書店 CAFE&amp;SWEETS</p>
       <p class="mc-program">vol.222号</p>
       <p class="mc-desc">洋菓子業界専門誌にて日光金乃卵®の品質・特性が掲載されました。</p>
       <p class="mc-date">2024年2月号</p>
     </a>
     <a href="https://miracle-egg.com/2025/03/27/%e6%9f%b4%e7%94%b0%e6%9b%b8%e5%ba%97%e3%80%80cafesweets-%e3%81%ab%e6%8e%b2%e8%bc%89%ef%bc%882024%e5%b9%b46%e6%9c%88vol-224%e5%8f%b7%ef%bc%89/" target="_blank" class="media-card">
-      <p class="mc-type">業界誌</p>
-      <p class="mc-outlet">柴田書店 CAFE&amp;SWEETS</p>
+<p class="mc-outlet">柴田書店 CAFE&amp;SWEETS</p>
       <p class="mc-program">vol.224号</p>
       <p class="mc-desc">再度掲載。洋菓子専用卵としての活用実例が紹介されました。</p>
       <p class="mc-date">2024年6月号</p>
     </a>
     <a href="https://miracle-egg.com/2025/03/27/%e6%a0%97%e5%8e%9f%e3%81%af%e3%82%8b%e3%81%bf%e3%81%95%e3%82%93%e3%81%ae%e9%9b%91%e8%aa%8c%e3%81%ab%e6%8e%b2%e8%bc%89%e3%80%80%ef%bc%88%ef%bc%92%ef%bc%90%ef%bc%92%ef%bc%91%e5%b9%b4haru_mi%e5%a4%8f/" target="_blank" class="media-card">
-      <p class="mc-type">雑誌</p>
-      <p class="mc-outlet">栗原はるみ</p>
+<p class="mc-outlet">栗原はるみ</p>
       <p class="mc-program">haru_mi 夏号</p>
       <p class="mc-desc">料理家・栗原はるみ氏のメディアにて日光金乃卵®が取り上げられました。</p>
       <p class="mc-date">2021年夏号掲載</p>
     </a>
     <a href="https://miracle-egg.com/2025/03/27/%e9%b3%a5%e5%8f%96%e3%83%9e%e3%82%ac%e3%82%b8%e3%83%b3%ef%bc%88%e5%9c%b0%e5%9f%9f%e6%83%85%e5%a0%b1%e3%82%b5%e3%82%a4%e3%83%88%ef%bc%892025%e5%b9%b4%ef%bc%92%e6%9c%88%ef%bc%91%ef%bc%92%e6%97%a5/" target="_blank" class="media-card">
-      <p class="mc-type">Web</p>
-      <p class="mc-outlet">鳥取マガジン</p>
+<p class="mc-outlet">鳥取マガジン</p>
       <p class="mc-program">地域情報サイト</p>
       <p class="mc-desc">地域情報サイトにてミラクルエッグの取り組みが紹介されました。</p>
       <p class="mc-date">2025年2月12日掲載</p>
     </a>
     <a href="https://www.maff.go.jp/j/syokuiku/otona_syokuiku/platform/kaiin_syoukai.html" target="_blank" class="media-card">
-      <p class="mc-type">行政</p>
-      <p class="mc-outlet">農林水産省</p>
+<p class="mc-outlet">農林水産省</p>
       <p class="mc-program">食育パーパス掲載</p>
       <p class="mc-desc">食育・循環型農業の取り組みとして農林水産省の公式サイトに掲載されました。</p>
     </a>
