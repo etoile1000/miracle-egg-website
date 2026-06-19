@@ -116,43 +116,100 @@ nav{display:flex;align-items:center;gap:clamp(1rem,1.6vw,1.75rem)}
 }
 
 
-/* ── 01 ADOPTION ── */
+/* ── 01 ADOPTION (B1 シネマティック・ポートレート) ── */
+@keyframes adoptionMarquee{
+  from{transform:translateX(0)}
+  to{transform:translateX(-50%)}
+}
 .adoption{
   background:#11100e;color:var(--white);
-  padding:7rem 6rem 6rem;
+  padding:5.5rem 6rem 3.5rem;
   border-top:.5px solid rgba(201,168,76,.12);
   border-bottom:.5px solid rgba(201,168,76,.08);
 }
 .adoption-inner{max-width:1120px;margin:0 auto;}
 .adoption-header{
-  display:grid;grid-template-columns:1fr 1.1fr;gap:4rem;align-items:end;
-  margin-bottom:4rem;padding-bottom:2rem;border-bottom:.5px solid rgba(255,255,255,.08);
+  display:grid;grid-template-columns:1fr 1.15fr;gap:3rem;align-items:end;
+  margin-bottom:2.25rem;
 }
 .adoption-title{
   font-family:var(--serif);font-size:clamp(1.9rem,3.4vw,3rem);
   font-weight:300;line-height:1.42;letter-spacing:.04em;color:var(--white);margin-top:0;
 }
 .adoption-lead{
-  font-size:.92rem;line-height:2;color:rgba(250,248,244,.64);letter-spacing:.05em;
+  font-size:.88rem;line-height:1.95;color:rgba(250,248,244,.6);letter-spacing:.04em;
 }
-.adoption-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
-.adoption-card{
-  min-height:220px;padding:2rem 1.6rem;border:.5px solid rgba(255,255,255,.09);
-  background:rgba(255,255,255,.025);display:flex;flex-direction:column;justify-content:space-between;
+.adoption-cinema{
+  position:relative;margin:0 -6rem;background:#1c1810;overflow:hidden;
+  border-radius:2px;box-shadow:0 14px 36px rgba(0,0,0,.22);
 }
-.adoption-card-kicker{
-  font-size:.54rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem;
+.adoption-cinema-fade{
+  position:absolute;top:0;bottom:0;width:min(120px,14vw);z-index:2;pointer-events:none;
 }
-.adoption-card-title{
-  font-family:var(--serif);font-size:1.35rem;font-weight:300;line-height:1.55;letter-spacing:.04em;color:var(--white);
+.adoption-cinema-fade--l{left:0;background:linear-gradient(90deg,#1c1810,transparent);}
+.adoption-cinema-fade--r{right:0;background:linear-gradient(270deg,#1c1810,transparent);}
+.adoption-marquee{
+  display:flex;width:max-content;padding:12px 0;
+  animation:adoptionMarquee 46s linear infinite;
 }
-.adoption-card-body{font-size:.78rem;line-height:1.9;color:rgba(250,248,244,.58);letter-spacing:.04em;margin-top:1.5rem;}
-.adoption-note{margin-top:2rem;font-size:.62rem;letter-spacing:.12em;color:rgba(250,248,244,.38);}
+.adoption-marquee:hover{animation-play-state:paused;}
+.adoption-marquee-track{display:flex;gap:12px;padding:0 12px;}
+.adoption-slide{
+  position:relative;flex:none;width:300px;height:188px;overflow:hidden;
+  background:#2f2a1c;
+}
+.adoption-slide-visual{
+  position:absolute;inset:0;background:center/cover no-repeat;
+  transform:scale(1.02);transition:transform .6s ease;
+}
+.adoption-slide:hover .adoption-slide-visual{transform:scale(1.06);}
+.adoption-slide-visual--placeholder{
+  background:
+    repeating-linear-gradient(135deg,#3a3322 0 12px,#2f2a1c 12px 24px),
+    center/cover no-repeat;
+}
+.adoption-slide-shade{
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(20,17,10,.86) 0%,rgba(20,17,10,.12) 58%,transparent 100%);
+}
+.adoption-slide-copy{
+  position:absolute;left:18px;right:18px;bottom:16px;z-index:1;color:#f4eee2;
+}
+.adoption-slide-logo{
+  font-size:.58rem;letter-spacing:.2em;color:var(--gold);margin-bottom:.25rem;
+}
+.adoption-slide-name{
+  font-family:var(--serif);font-size:1.15rem;font-weight:300;letter-spacing:.04em;line-height:1.35;
+}
+.adoption-slide-meta{
+  font-size:.68rem;color:rgba(244,238,226,.62);margin-top:.35rem;letter-spacing:.04em;
+}
+.adoption-foot{
+  display:flex;justify-content:flex-end;margin-top:1.1rem;
+}
+.adoption-more{
+  font-size:.7rem;letter-spacing:.06em;color:rgba(250,248,244,.42);
+  text-decoration:none;transition:color .25s;
+}
+.adoption-more:hover{color:var(--gold);}
 @media(max-width:768px){
-  .adoption{padding:5rem 2rem;}
-  .adoption-header{grid-template-columns:1fr;gap:1.5rem;margin-bottom:3rem;}
-  .adoption-grid{grid-template-columns:1fr;}
-  .adoption-card{min-height:0;}
+  .adoption{padding:4.5rem 2rem 3rem;}
+  .adoption-header{grid-template-columns:1fr;gap:1.1rem;margin-bottom:1.75rem;}
+  .adoption-cinema{margin:0 -2rem;border-radius:0;}
+  .adoption-cinema-fade{width:48px;}
+  .adoption-marquee{
+    animation:none;overflow-x:auto;-webkit-overflow-scrolling:touch;
+    scroll-snap-type:x mandatory;scrollbar-width:none;width:100%;
+  }
+  .adoption-marquee::-webkit-scrollbar{display:none;}
+  .adoption-marquee-track[aria-hidden="true"]{display:none;}
+  .adoption-marquee-track{padding:0 16px;}
+  .adoption-slide{width:220px;height:168px;scroll-snap-align:start;}
+  .adoption-slide-name{font-size:1.02rem;}
+}
+@media(prefers-reduced-motion:reduce){
+  .adoption-marquee{animation:none;overflow-x:auto;width:100%;}
+  .adoption-marquee-track[aria-hidden="true"]{display:none;}
 }
 
 /* ── 01 PHILOSOPHY (白背景 左テキスト 右写真) ── */
@@ -977,31 +1034,133 @@ footer{
   <div class="adoption-inner">
     <div class="adoption-header">
       <div>
-<h2 class="adoption-title" id="adoption-title">採用実績</h2>
+        <h2 class="adoption-title" id="adoption-title">採用実績</h2>
       </div>
       <p class="adoption-lead">全国の洋菓子店から指名され、パティシエの厨房で素材の色・香り・仕込み効率を支えています。</p>
     </div>
-    <div class="adoption-grid">
-      <div class="adoption-card">
-        <div>
-<h3 class="adoption-card-title">SWEETS garden<br>YUJI AJIKI</h3>
-        </div>
-        <p class="adoption-card-body">安食雄二シェフをはじめ、繊細な火入れと香りを重視する職人の現場で選ばれています。</p>
+  </div>
+  <div class="adoption-cinema" aria-label="導入店舗">
+    <div class="adoption-cinema-fade adoption-cinema-fade--l"></div>
+    <div class="adoption-cinema-fade adoption-cinema-fade--r"></div>
+    <div class="adoption-marquee">
+      <div class="adoption-marquee-track">
+    <article class="adoption-slide" data-adoption-item>
+      <div class="adoption-slide-visual" style="background-image:url('https://images.unsplash.com/photo-1577210193414-f986aa9d472f?w=640&q=80')"></div>
+      <div class="adoption-slide-shade"></div>
+      <div class="adoption-slide-copy">
+        <p class="adoption-slide-logo">SWEETS garden</p>
+        <p class="adoption-slide-name">SWEETS garden YUJI AJIKI</p>
+        <p class="adoption-slide-meta">安食雄二シェフ ／ 東京</p>
       </div>
-      <div class="adoption-card">
-        <div>
-<h3 class="adoption-card-title">プリン・シフォン・<br>マカロンへ</h3>
-        </div>
-        <p class="adoption-card-body">色落ちしにくい卵黄色と、後味のすっきりしたコクで、定番商品の品質安定に貢献します。</p>
+    </article>
+    <article class="adoption-slide" data-adoption-item>
+      <div class="adoption-slide-visual" style="background-image:url('https://images.unsplash.com/photo-1555507036-ab794f4e5337?w=640&q=80')"></div>
+      <div class="adoption-slide-shade"></div>
+      <div class="adoption-slide-copy">
+        <p class="adoption-slide-logo">PÂTISSERIE</p>
+        <p class="adoption-slide-name">都内洋菓子店</p>
+        <p class="adoption-slide-meta">東京・銀座</p>
       </div>
-      <div class="adoption-card">
-        <div>
-<h3 class="adoption-card-title">TV・業界誌でも<br>紹介</h3>
-        </div>
-        <p class="adoption-card-body">洋菓子専用卵としての特長が、テレビ番組や CAFE&amp;SWEETS などの業界メディアで紹介されています。</p>
+    </article>
+    <article class="adoption-slide" data-adoption-item>
+      <div class="adoption-slide-visual" style="background-image:url('https://images.unsplash.com/photo-1464349095432-e9a21285ee5b?w=640&q=80')"></div>
+      <div class="adoption-slide-shade"></div>
+      <div class="adoption-slide-copy">
+        <p class="adoption-slide-logo">MAISON</p>
+        <p class="adoption-slide-name">表参道パティスリー</p>
+        <p class="adoption-slide-meta">東京・表参道</p>
+      </div>
+    </article>
+    <article class="adoption-slide" data-adoption-item>
+      <div class="adoption-slide-visual" style="background-image:url('https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=640&q=80')"></div>
+      <div class="adoption-slide-shade"></div>
+      <div class="adoption-slide-copy">
+        <p class="adoption-slide-logo">CHOCOLAT</p>
+        <p class="adoption-slide-name">ショコラトリー</p>
+        <p class="adoption-slide-meta">神奈川・横浜</p>
+      </div>
+    </article>
+    <article class="adoption-slide" data-adoption-item>
+      <div class="adoption-slide-visual" style="background-image:url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=640&q=80')"></div>
+      <div class="adoption-slide-shade"></div>
+      <div class="adoption-slide-copy">
+        <p class="adoption-slide-logo">HÔTEL</p>
+        <p class="adoption-slide-name">ホテル製菓部門</p>
+        <p class="adoption-slide-meta">東京・丸の内</p>
+      </div>
+    </article>
+    <article class="adoption-slide" data-adoption-item>
+      <div class="adoption-slide-visual adoption-slide-visual--placeholder"></div>
+      <div class="adoption-slide-shade"></div>
+      <div class="adoption-slide-copy">
+        <p class="adoption-slide-logo">ATELIER</p>
+        <p class="adoption-slide-name">神戸パティスリー</p>
+        <p class="adoption-slide-meta">兵庫・神戸</p>
+      </div>
+    </article>
+      </div>
+      <div class="adoption-marquee-track" aria-hidden="true">
+    <article class="adoption-slide" data-adoption-item>
+      <div class="adoption-slide-visual" style="background-image:url('https://images.unsplash.com/photo-1577210193414-f986aa9d472f?w=640&q=80')"></div>
+      <div class="adoption-slide-shade"></div>
+      <div class="adoption-slide-copy">
+        <p class="adoption-slide-logo">SWEETS garden</p>
+        <p class="adoption-slide-name">SWEETS garden YUJI AJIKI</p>
+        <p class="adoption-slide-meta">安食雄二シェフ ／ 東京</p>
+      </div>
+    </article>
+    <article class="adoption-slide" data-adoption-item>
+      <div class="adoption-slide-visual" style="background-image:url('https://images.unsplash.com/photo-1555507036-ab794f4e5337?w=640&q=80')"></div>
+      <div class="adoption-slide-shade"></div>
+      <div class="adoption-slide-copy">
+        <p class="adoption-slide-logo">PÂTISSERIE</p>
+        <p class="adoption-slide-name">都内洋菓子店</p>
+        <p class="adoption-slide-meta">東京・銀座</p>
+      </div>
+    </article>
+    <article class="adoption-slide" data-adoption-item>
+      <div class="adoption-slide-visual" style="background-image:url('https://images.unsplash.com/photo-1464349095432-e9a21285ee5b?w=640&q=80')"></div>
+      <div class="adoption-slide-shade"></div>
+      <div class="adoption-slide-copy">
+        <p class="adoption-slide-logo">MAISON</p>
+        <p class="adoption-slide-name">表参道パティスリー</p>
+        <p class="adoption-slide-meta">東京・表参道</p>
+      </div>
+    </article>
+    <article class="adoption-slide" data-adoption-item>
+      <div class="adoption-slide-visual" style="background-image:url('https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=640&q=80')"></div>
+      <div class="adoption-slide-shade"></div>
+      <div class="adoption-slide-copy">
+        <p class="adoption-slide-logo">CHOCOLAT</p>
+        <p class="adoption-slide-name">ショコラトリー</p>
+        <p class="adoption-slide-meta">神奈川・横浜</p>
+      </div>
+    </article>
+    <article class="adoption-slide" data-adoption-item>
+      <div class="adoption-slide-visual" style="background-image:url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=640&q=80')"></div>
+      <div class="adoption-slide-shade"></div>
+      <div class="adoption-slide-copy">
+        <p class="adoption-slide-logo">HÔTEL</p>
+        <p class="adoption-slide-name">ホテル製菓部門</p>
+        <p class="adoption-slide-meta">東京・丸の内</p>
+      </div>
+    </article>
+    <article class="adoption-slide" data-adoption-item>
+      <div class="adoption-slide-visual adoption-slide-visual--placeholder"></div>
+      <div class="adoption-slide-shade"></div>
+      <div class="adoption-slide-copy">
+        <p class="adoption-slide-logo">ATELIER</p>
+        <p class="adoption-slide-name">神戸パティスリー</p>
+        <p class="adoption-slide-meta">兵庫・神戸</p>
+      </div>
+    </article>
       </div>
     </div>
-    <p class="adoption-note">※ 掲載・紹介実績の詳細はメディア掲載履歴をご確認ください。</p>
+  </div>
+  <div class="adoption-inner">
+    <div class="adoption-foot">
+      <a href="about.html" class="adoption-more">導入店舗を見る →</a>
+    </div>
   </div>
 </section>
 
