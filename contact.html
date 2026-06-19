@@ -31,11 +31,15 @@ header{
   backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
 }
 .h-logo{
-  display:inline-flex;align-items:center;
+  display:inline-flex;align-items:center;gap:.48rem;
   text-decoration:none;line-height:0;
 }
-.h-logo-img{
+.h-logo-icon{
   height:clamp(22px,3.2vw,28px);width:auto;display:block;
+  opacity:.94;flex-shrink:0;
+}
+.h-logo-text-img{
+  height:clamp(17px,2.35vw,20px);width:auto;display:block;
   opacity:.94;
 }
 nav{display:flex;align-items:center;gap:2.2rem}
@@ -311,7 +315,8 @@ footer{
 /* ── MOBILE ── */
 @media(max-width:768px){
   header{padding:0 1.5rem}
-  .h-logo-img{height:20px}
+  .h-logo-icon{height:20px}
+  .h-logo-text-img{height:15px}
   .f-logo-img{height:34px}
   nav{display:none}
   .philosophy,.production{grid-template-columns:1fr;min-height:auto}
@@ -973,7 +978,8 @@ footer{
 <!-- HEADER -->
 <header>
   <a href="index.html" class="h-logo" aria-label="MIRACLE EGG">
-    <img src="images/logo.png" alt="MIRACLE EGG" class="h-logo-img" width="656" height="208">
+    <img src="images/logo-icon.png" alt="" class="h-logo-icon" width="169" height="208" aria-hidden="true">
+    <img src="images/logo-text.png" alt="MIRACLE EGG" class="h-logo-text-img" width="451" height="41">
   </a>
   <nav>
     <a href="index.html">日光金乃卵</a>
