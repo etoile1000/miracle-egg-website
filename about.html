@@ -25,14 +25,14 @@ body{background:var(--black);color:var(--white);font-family:var(--sans);font-wei
 header{
   position:fixed;top:0;left:0;right:0;z-index:200;
   display:flex;align-items:center;justify-content:space-between;
-  padding:0 3rem;height:60px;
+  padding:.72rem 3rem;min-height:68px;
   border-bottom:0.5px solid rgba(201,168,76,.15);
   background:rgba(8,8,6,.82);
   backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
 }
 .h-logo{
   display:inline-flex;align-items:center;gap:.48rem;
-  text-decoration:none;line-height:0;
+  text-decoration:none;line-height:0;flex-shrink:0;
 }
 .h-logo-icon{
   height:clamp(22px,3.2vw,28px);width:auto;display:block;
@@ -42,19 +42,34 @@ header{
   height:clamp(17px,2.35vw,20px);width:auto;display:block;
   opacity:.94;
 }
-nav{display:flex;align-items:center;gap:2.2rem}
-nav a{
-  font-size:.82rem;letter-spacing:.12em;color:rgba(250,248,244,.72);
-  text-decoration:none;text-transform:uppercase;transition:color .25s;
+nav{display:flex;align-items:center;gap:clamp(1rem,1.6vw,1.75rem)}
+.nav-link{
+  display:flex;flex-direction:column;align-items:center;
+  text-decoration:none;transition:color .25s,background .25s;
+  line-height:1.3;flex-shrink:0;
 }
-nav a:hover{color:var(--white)}
+.nav-link-ja{
+  font-size:clamp(.78rem,.74rem + .1vw,.86rem);
+  letter-spacing:.1em;color:rgba(250,248,244,.84);
+  font-weight:400;white-space:nowrap;
+}
+.nav-link-en{
+  font-size:clamp(.44rem,.4rem + .05vw,.5rem);
+  letter-spacing:.2em;text-transform:uppercase;
+  color:rgba(250,248,244,.44);font-weight:300;
+  margin-top:.14rem;white-space:nowrap;
+}
+.nav-link:hover .nav-link-ja{color:var(--white)}
+.nav-link:hover .nav-link-en{color:rgba(250,248,244,.62)}
 .h-cta{
-  font-size:.72rem!important;letter-spacing:.14em!important;
-  color:var(--gold)!important;
-  border:0.5px solid var(--gold-dim);padding:.42rem 1.1rem;
+  border:0.5px solid var(--gold-dim);padding:.36rem .82rem;
   transition:all .25s!important;
 }
-.h-cta:hover{background:var(--gold)!important;color:var(--black)!important}
+.h-cta .nav-link-ja{color:var(--gold)!important;letter-spacing:.1em}
+.h-cta .nav-link-en{color:rgba(201,168,76,.55)!important;margin-top:.1rem}
+.h-cta:hover{background:var(--gold)!important;border-color:var(--gold)!important}
+.h-cta:hover .nav-link-ja,
+.h-cta:hover .nav-link-en{color:var(--black)!important}
 
 /* ── HERO ── */
 .hero{
@@ -314,11 +329,24 @@ footer{
 
 /* ── MOBILE ── */
 @media(max-width:768px){
-  header{padding:0 1.5rem}
+  header{
+    flex-direction:column;align-items:stretch;gap:.5rem;
+    padding:.65rem 1rem .72rem;min-height:0;
+  }
+  .h-logo{align-self:flex-start}
   .h-logo-icon{height:20px}
   .h-logo-text-img{height:15px}
   .f-logo-img{height:34px}
-  nav{display:none}
+  nav{
+    display:flex;gap:.72rem;overflow-x:auto;
+    -webkit-overflow-scrolling:touch;scrollbar-width:none;
+    padding:.08rem 0 .12rem;
+    mask-image:linear-gradient(90deg,#000 90%,transparent);
+  }
+  nav::-webkit-scrollbar{display:none}
+  .nav-link-ja{font-size:.76rem;letter-spacing:.08em}
+  .nav-link-en{font-size:.44rem;letter-spacing:.16em;margin-top:.1rem}
+  .h-cta{padding:.28rem .62rem}
   .philosophy,.production{grid-template-columns:1fr;min-height:auto}
   .philosophy-text,.production-text{padding:5rem 2rem}
   .philosophy-photo,.production-photo{height:50vw}
@@ -1062,11 +1090,26 @@ footer{
     <img src="images/logo-text.png" alt="MIRACLE EGG" class="h-logo-text-img" width="451" height="41">
   </a>
   <nav>
-    <a href="index.html">日光金乃卵</a>
-    <a href="about.html">私たちについて</a>
-    <a href="news.html">お知らせ</a>
-    <a href="media.html">メディア掲載</a>
-    <a href="contact.html" class="h-cta">お問い合わせ</a>
+    <a href="index.html" class="nav-link">
+      <span class="nav-link-ja">日光金乃卵</span>
+      <span class="nav-link-en">NIKKO KINNORAN</span>
+    </a>
+    <a href="about.html" class="nav-link">
+      <span class="nav-link-ja">私たちについて</span>
+      <span class="nav-link-en">ABOUT</span>
+    </a>
+    <a href="news.html" class="nav-link">
+      <span class="nav-link-ja">お知らせ</span>
+      <span class="nav-link-en">NEWS</span>
+    </a>
+    <a href="media.html" class="nav-link">
+      <span class="nav-link-ja">メディア掲載</span>
+      <span class="nav-link-en">MEDIA</span>
+    </a>
+    <a href="contact.html" class="nav-link h-cta">
+      <span class="nav-link-ja">お問い合わせ</span>
+      <span class="nav-link-en">CONTACT</span>
+    </a>
   </nav>
 </header>
 
