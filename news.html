@@ -31,13 +31,23 @@ header{
   backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
 }
 .h-logo{
-  display:inline-flex;align-items:center;
-  text-decoration:none;line-height:0;
+  display:inline-flex;align-items:center;gap:.62rem;
+  text-decoration:none;color:rgba(250,248,244,.88);
 }
-.h-logo img{
-  height:clamp(22px,3.8vw,30px);width:auto;display:block;
+.h-logo-mark{
+  display:flex;align-items:center;flex-shrink:0;
+  color:rgba(250,248,244,.76);
 }
-.h-logo span{display:none}
+.h-logo-mark .me-icon{
+  width:clamp(21px,3.4vw,27px);height:auto;display:block;
+}
+.h-logo-mark .me-icon-arch{stroke:rgba(201,168,76,.58);}
+.h-logo-mark .me-icon-egg{fill:#080806;}
+.h-logo-text{
+  font-family:var(--serif);font-size:clamp(.66rem,1.35vw,.76rem);
+  letter-spacing:.24em;font-weight:300;line-height:1;
+  color:rgba(250,248,244,.9);
+}
 nav{display:flex;align-items:center;gap:2.2rem}
 nav a{
   font-size:.82rem;letter-spacing:.12em;color:rgba(250,248,244,.72);
@@ -279,9 +289,23 @@ footer{
   display:grid;grid-template-columns:1.4fr 1fr 1fr;
   gap:3rem;margin-bottom:3rem;
 }
-.f-logo-img{
-  height:clamp(52px,8.5vw,72px);width:auto;display:block;
-  margin-bottom:.9rem;opacity:.9;
+.f-brand{
+  display:inline-flex;align-items:center;gap:clamp(.85rem,2vw,1.15rem);
+  margin-bottom:1rem;
+}
+.f-brand-mark{
+  display:flex;align-items:center;flex-shrink:0;
+  color:rgba(250,248,244,.8);
+}
+.f-brand-mark .me-icon{
+  width:clamp(34px,5.8vw,46px);height:auto;display:block;
+}
+.f-brand-mark .me-icon-arch{stroke:rgba(201,168,76,.68);}
+.f-brand-mark .me-icon-egg{fill:#080806;}
+.f-brand-text{
+  font-family:var(--serif);font-size:clamp(.88rem,2vw,1.08rem);
+  letter-spacing:.26em;font-weight:300;line-height:1;
+  color:rgba(250,248,244,.9);
 }
 .f-logo{
   font-family:var(--serif);font-size:.9rem;letter-spacing:.2em;margin-bottom:.3rem;
@@ -308,8 +332,10 @@ footer{
 /* ── MOBILE ── */
 @media(max-width:768px){
   header{padding:0 1.5rem}
-  .h-logo img{height:20px}
-  .f-logo-img{height:48px}
+  .h-logo-mark .me-icon{width:19px}
+  .h-logo-text{font-size:.62rem;letter-spacing:.22em}
+  .f-brand-mark .me-icon{width:32px}
+  .f-brand-text{font-size:.78rem}
   nav{display:none}
   .philosophy,.production{grid-template-columns:1fr;min-height:auto}
   .philosophy-text,.production-text{padding:5rem 2rem}
@@ -956,9 +982,13 @@ footer{
 <body>
 <!-- HEADER -->
 <header>
-  <a href="index.html" class="h-logo">
-    <img src="images/logo.png" alt="MIRACLE EGG" width="180" height="32" decoding="async" />
-    <span>日光金乃卵® The Purest Origin</span>
+  <a href="index.html" class="h-logo" aria-label="MIRACLE EGG">
+    <span class="h-logo-mark"><svg class="me-icon" viewBox="0 0 40 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <path class="me-icon-arch" d="M7.5 15.5C11 5.5 18 3.5 20 3.5C22 3.5 29 5.5 32.5 15.5" stroke="currentColor" stroke-width="1.15" stroke-linecap="round"/>
+  <path class="me-icon-hen" d="M11.2 39.8C8.4 36.8 7.6 29.2 11.4 23.1C12.8 20.6 16.2 18.8 20 18.8C24.4 18.8 28.2 21.2 30.1 25.8C31.4 29.6 30.2 35.2 24.8 39.1C22.1 40.8 16.8 41.2 13.4 40.5C12.5 40.3 11.8 40.1 11.2 39.8Z" fill="currentColor"/>
+  <ellipse class="me-icon-egg" cx="20.2" cy="28.4" rx="4.3" ry="6.4" fill="#080806"/>
+</svg></span>
+    <span class="h-logo-text">MIRACLE EGG</span>
   </a>
   <nav>
     <a href="index.html">日光金乃卵</a>
@@ -1077,7 +1107,14 @@ footer{
 <footer>
   <div class="footer-inner">
     <div>
-      <img src="images/logo.png" alt="MIRACLE EGG" class="f-logo-img" width="220" height="72" decoding="async" />
+      <div class="f-brand" aria-label="MIRACLE EGG">
+      <span class="f-brand-mark"><svg class="me-icon" viewBox="0 0 40 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <path class="me-icon-arch" d="M7.5 15.5C11 5.5 18 3.5 20 3.5C22 3.5 29 5.5 32.5 15.5" stroke="currentColor" stroke-width="1.15" stroke-linecap="round"/>
+  <path class="me-icon-hen" d="M11.2 39.8C8.4 36.8 7.6 29.2 11.4 23.1C12.8 20.6 16.2 18.8 20 18.8C24.4 18.8 28.2 21.2 30.1 25.8C31.4 29.6 30.2 35.2 24.8 39.1C22.1 40.8 16.8 41.2 13.4 40.5C12.5 40.3 11.8 40.1 11.2 39.8Z" fill="currentColor"/>
+  <ellipse class="me-icon-egg" cx="20.2" cy="28.4" rx="4.3" ry="6.4" fill="#080806"/>
+</svg></span>
+      <span class="f-brand-text">MIRACLE EGG</span>
+    </div>
       <p class="f-tag">日光金乃卵®</p>
       <p class="f-desc">「１つの卵が世界を変える」<br>命に責任を持つ卵づくりを信念に、<br>養鶏場への飼料提供から洋菓子専用卵の<br>供給まで全工程に責任を持って取り組む。</p>
     </div>
