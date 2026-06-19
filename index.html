@@ -129,24 +129,25 @@ nav{display:flex;align-items:center;gap:clamp(1rem,1.6vw,1.75rem)}
 }
 .adoption-inner{max-width:1120px;margin:0 auto;}
 .adoption-header{
-  display:grid;grid-template-columns:1fr 1.15fr;
-  gap:clamp(1.75rem,3.5vw,2.75rem);align-items:end;
-  margin-bottom:clamp(1.35rem,2.2vw,1.65rem);
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);
+  gap:clamp(2rem,3.5vw,2.75rem);align-items:end;justify-items:start;
+  margin-bottom:clamp(1.25rem,2vw,1.5rem);
 }
-.adoption-heading-stack{
+.adoption-header-left{
   display:flex;flex-direction:column;align-items:flex-start;text-align:left;
+  width:100%;
 }
 .adoption-brand-block{
   display:flex;flex-direction:column;align-items:flex-start;
-  gap:clamp(.35rem,.7vw,.5rem);
-  margin-bottom:clamp(.5rem,1vw,.7rem);
+  gap:clamp(.3rem,.65vw,.45rem);
+  margin-bottom:clamp(.45rem,.9vw,.65rem);
 }
 .adoption-brand-logo{
-  height:clamp(2.5rem,3.8vw,3.1rem);width:auto;display:block;
+  height:clamp(2.35rem,3.7vw,2.95rem);width:auto;display:block;
 }
 .adoption-brand-name{
-  font-family:var(--serif);font-size:clamp(3.5rem,4vw,4rem);
-  font-weight:200;line-height:1.15;letter-spacing:.18em;color:var(--white);
+  font-family:var(--serif);font-size:clamp(1.1rem,2vw,1.45rem);
+  font-weight:200;line-height:1.2;letter-spacing:.14em;color:var(--white);
   margin:0;
 }
 .adoption-brand-tagline{
@@ -155,18 +156,18 @@ nav{display:flex;align-items:center;gap:clamp(1rem,1.6vw,1.75rem)}
   color:rgba(250,248,244,.48);margin:0;
 }
 .adoption-heading-divider{
-  display:block;width:.5px;height:clamp(1.75rem,3vw,2.35rem);
+  display:block;width:.5px;height:clamp(1.45rem,2.5vw,1.9rem);
   background:rgba(201,168,76,.32);border:0;
-  margin:0 0 clamp(.45rem,.85vw,.65rem);
+  margin:0 0 clamp(.4rem,.75vw,.55rem);
 }
 .adoption-title{
-  font-family:var(--serif);font-size:clamp(4.75rem,5.8vw,5.75rem);
-  font-weight:300;line-height:1.1;letter-spacing:.08em;color:var(--white);
+  font-family:var(--serif);font-size:clamp(2rem,3.6vw,3rem);
+  font-weight:300;line-height:1.15;letter-spacing:.06em;color:var(--white);
   margin:0;
 }
 .adoption-lead{
   font-size:.88rem;line-height:1.95;color:rgba(250,248,244,.6);letter-spacing:.04em;
-  margin:0;text-align:left;align-self:end;max-width:38ch;
+  margin:0;text-align:left;align-self:end;max-width:38ch;justify-self:stretch;
 }
 .adoption-cinema{
   position:relative;margin:0 -6rem;background:#1c1810;overflow:hidden;
@@ -230,22 +231,22 @@ nav{display:flex;align-items:center;gap:clamp(1rem,1.6vw,1.75rem)}
   .adoption{padding:3.5rem 2rem 2.5rem;}
   .adoption-header{
     display:flex;flex-direction:column;align-items:flex-start;text-align:left;
-    gap:0;margin-bottom:1.1rem;
+    gap:0;margin-bottom:1rem;
   }
-  .adoption-heading-stack{width:100%;}
+  .adoption-header-left{width:100%;}
   .adoption-brand-block{
-    gap:clamp(.3rem,2.2vw,.45rem);
-    margin-bottom:clamp(.45rem,2.5vw,.6rem);
+    gap:clamp(.28rem,2vw,.4rem);
+    margin-bottom:clamp(.35rem,2vw,.5rem);
   }
-  .adoption-brand-logo{height:clamp(2.35rem,10vw,2.75rem);}
-  .adoption-brand-name{font-size:clamp(1.5rem,6.5vw,1.85rem);letter-spacing:.14em;}
+  .adoption-brand-logo{height:clamp(2.15rem,9vw,2.55rem);}
+  .adoption-brand-name{font-size:clamp(1rem,4.5vw,1.2rem);letter-spacing:.12em;}
   .adoption-brand-tagline{font-size:clamp(.7rem,2.2vw,.8rem);letter-spacing:.2em;}
   .adoption-heading-divider{display:none;}
   .adoption-title{
-    font-size:clamp(2rem,8vw,2.6rem);
-    margin-bottom:clamp(.55rem,2.5vw,.75rem);
+    font-size:clamp(1.75rem,7vw,2.15rem);
+    margin-bottom:clamp(.45rem,2.2vw,.65rem);
   }
-  .adoption-lead{max-width:none;text-align:left;line-height:1.9;margin:0;}
+  .adoption-lead{max-width:none;text-align:left;line-height:1.9;margin:0;align-self:auto;}
   .adoption-foot{justify-content:center;margin-top:1.35rem;}
   .adoption-more{
     font-size:clamp(.88rem,3.6vw,.94rem);
@@ -1090,7 +1091,7 @@ footer{
 <section class="adoption" aria-labelledby="adoption-title">
   <div class="adoption-inner">
     <div class="adoption-header">
-      <div class="adoption-heading-stack">
+      <div class="adoption-header-left">
         <div class="adoption-brand-block">
           <img src="images/kinnoran-logo-mark.png" alt="" class="adoption-brand-logo" width="734" height="894" aria-hidden="true">
           <p class="adoption-brand-name">日光金乃卵</p>
