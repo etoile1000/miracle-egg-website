@@ -72,19 +72,25 @@ nav{display:flex;align-items:center;gap:clamp(1rem,1.6vw,1.75rem)}
 
 /* ── HERO ── */
 .hero{
-  height:100vh;position:relative;
+  min-height:calc(100svh + 2.5rem);height:auto;
+  position:relative;
   display:flex;align-items:center;justify-content:center;
   overflow:hidden;background:#080806;
+}
+.hero::after{
+  content:'';position:absolute;left:0;right:0;bottom:0;height:min(22vh,180px);
+  background:linear-gradient(to bottom,transparent,rgba(8,8,6,.72) 58%,rgba(8,8,6,.92));
+  pointer-events:none;z-index:1;
 }
 .hero-img{
   position:absolute;inset:0;
   width:100%;height:100%;
-  object-fit:cover;object-position:center 40%;
+  object-fit:cover;object-position:center 38%;
 }
 .hero-center{
   position:absolute;
   top:50%;left:50%;transform:translate(-50%,-50%);
-  text-align:center;
+  text-align:center;z-index:2;
 }
 .hero-sub{
   font-size:clamp(1.75rem,1.65rem + 0.55vw,2.15rem);letter-spacing:.38em;color:rgba(255,255,255,.75);
@@ -100,6 +106,7 @@ nav{display:flex;align-items:center;gap:clamp(1rem,1.6vw,1.75rem)}
 .hero-bottom{
   position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);
   display:flex;flex-direction:column;align-items:center;gap:.6rem;
+  z-index:2;
 }
 .hero-scroll{
   font-size:.48rem;letter-spacing:.32em;color:rgba(255,255,255,.3);
@@ -126,6 +133,7 @@ nav{display:flex;align-items:center;gap:clamp(1rem,1.6vw,1.75rem)}
   padding:5.5rem 6rem 3.5rem;
   border-top:.5px solid rgba(201,168,76,.12);
   border-bottom:.5px solid rgba(201,168,76,.08);
+  position:relative;z-index:2;
 }
 .adoption-inner{max-width:1120px;margin:0 auto;}
 .adoption-header{text-align:left;margin-bottom:clamp(1.25rem,2vw,1.5rem);}
@@ -155,6 +163,7 @@ nav{display:flex;align-items:center;gap:clamp(1rem,1.6vw,1.75rem)}
 @media(min-width:768px){
   .adoption{
     padding:calc(5.5rem - 2.75rem) 6rem 3.75rem;
+    margin-top:calc(-1 * clamp(3.5rem,8.25vh,5.5rem));
   }
   .adoption-header{
     display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);
@@ -245,7 +254,8 @@ nav{display:flex;align-items:center;gap:clamp(1rem,1.6vw,1.75rem)}
   background:rgba(201,168,76,.06);
 }
 @media(max-width:767px){
-  .adoption{padding:3.5rem 2rem 2.5rem;}
+  .hero{min-height:calc(100svh + 1.25rem);}
+  .adoption{padding:3.5rem 2rem 2.5rem;margin-top:calc(-1 * clamp(4rem,10vh,5.5rem));}
   .adoption-foot{justify-content:center;margin-top:1.35rem;}
   .adoption-more{
     font-size:clamp(.88rem,3.6vw,.94rem);
