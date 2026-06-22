@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>導入店舗 | Miracle Egg 日光金乃卵®</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200;300;400&family=Noto+Sans+JP:wght@200;300;400&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --black:#080806;
+  --white:#faf8f4;
+  --gold:#c9a84c;
+  --gold-dim:rgba(201,168,76,.28);
+  --gray:#8a8880;
+  --serif:'Noto Serif JP',serif;
+  --sans:'Noto Sans JP',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--white);font-family:var(--sans);font-weight:300;-webkit-font-smoothing:antialiased}
+
+/* ── HEADER ── */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:.72rem 3rem;min-height:68px;
+  border-bottom:.5px solid rgba(201,168,76,.15);
+  background:rgba(8,8,6,.82);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+}
+.h-logo{
+  display:inline-flex;align-items:center;gap:.48rem;
+  text-decoration:none;line-height:0;flex-shrink:0;
+}
+.h-logo-icon{height:clamp(22px,3.2vw,28px);width:auto;display:block;opacity:.94;flex-shrink:0;}
+.h-logo-text-img{height:clamp(17px,2.35vw,20px);width:auto;display:block;opacity:.94;}
+nav{display:flex;align-items:center;gap:clamp(1rem,1.6vw,1.75rem)}
+.nav-link{
+  display:flex;flex-direction:column;align-items:center;
+  text-decoration:none;transition:color .25s,background .25s;
+  line-height:1.3;flex-shrink:0;
+}
+.nav-link-ja{
+  font-size:clamp(.78rem,.74rem + .1vw,.86rem);
+  letter-spacing:.1em;color:rgba(250,248,244,.84);
+  font-weight:400;white-space:nowrap;
+}
+.nav-link-en{
+  font-size:clamp(.44rem,.4rem + .05vw,.5rem);
+  letter-spacing:.2em;text-transform:uppercase;
+  color:rgba(250,248,244,.44);font-weight:300;
+  margin-top:.14rem;white-space:nowrap;
+}
+.nav-link:hover .nav-link-ja{color:var(--white)}
+.nav-link:hover .nav-link-en{color:rgba(250,248,244,.62)}
+.h-cta{border:.5px solid var(--gold-dim);padding:.36rem .82rem;transition:all .25s!important}
+.h-cta .nav-link-ja{color:var(--gold)!important;letter-spacing:.1em}
+.h-cta .nav-link-en{color:rgba(201,168,76,.55)!important;margin-top:.1rem}
+.h-cta:hover{background:var(--gold)!important;border-color:var(--gold)!important}
+.h-cta:hover .nav-link-ja,
+.h-cta:hover .nav-link-en{color:var(--black)!important}
+
+/* ── HERO ── */
+.stores-hero{
+  min-height:44vh;background:#0a0a08;
+  display:flex;align-items:flex-end;
+  padding:calc(68px + 4.75rem) 6rem 5.25rem;
+  border-bottom:.5px solid rgba(201,168,76,.12);
+}
+.stores-hero-inner{max-width:720px}
+.stores-hero-title{
+  font-family:var(--serif);font-size:clamp(2.2rem,4.2vw,3.6rem);
+  font-weight:200;letter-spacing:.06em;line-height:1.2;
+  color:var(--white);margin-bottom:1.75rem;
+}
+.stores-hero-lead{
+  font-size:clamp(.92rem,1.15vw,1rem);line-height:2.1;letter-spacing:.06em;
+  color:rgba(250,248,244,.58);max-width:34em;
+}
+
+/* ── STORES GRID ── */
+.stores-wrap{
+  background:#11100e;
+  padding:clamp(5rem,8vw,7rem) 6rem clamp(4.5rem,6vw,6rem);
+}
+.stores-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:clamp(2.25rem,3vw,3.25rem) clamp(1.75rem,2.5vw,2.25rem);
+  max-width:1200px;margin:0 auto;
+}
+.store-card{
+  position:relative;overflow:hidden;background:#1c1810;
+  border:.5px solid rgba(201,168,76,.08);
+}
+.store-card-media{
+  position:relative;aspect-ratio:4/3;overflow:hidden;
+}
+.store-card-visual{
+  position:absolute;inset:0;background:center/cover no-repeat;
+  transform:scale(1.02);transition:transform .7s ease;
+}
+.store-card:hover .store-card-visual{transform:scale(1.06)}
+.store-card-visual--placeholder{
+  background:
+    repeating-linear-gradient(135deg,#3a3322 0 12px,#2f2a1c 12px 24px),
+    center/cover no-repeat;
+}
+.store-card-shade{
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(20,17,10,.94) 0%,rgba(20,17,10,.35) 48%,rgba(20,17,10,.08) 100%);
+  pointer-events:none;
+}
+.store-card-body{
+  position:absolute;left:0;right:0;bottom:0;z-index:1;
+  padding:1.85rem 1.65rem 1.9rem;
+}
+.store-card-cat{
+  font-size:.58rem;letter-spacing:.2em;color:var(--gold);margin-bottom:.65rem;
+}
+.store-card-name{
+  font-family:var(--serif);font-size:clamp(1.05rem,1.35vw,1.22rem);
+  font-weight:300;letter-spacing:.04em;line-height:1.45;margin-bottom:.45rem;
+}
+.store-card-area{
+  font-size:.68rem;letter-spacing:.06em;
+  color:rgba(244,238,226,.58);margin-bottom:.85rem;
+}
+.store-card-desc{
+  font-size:.78rem;line-height:1.95;letter-spacing:.03em;
+  color:rgba(244,238,226,.7);
+}
+
+/* ── BOTTOM CTA ── */
+.stores-contact{
+  background:var(--black);padding:clamp(7rem,10vw,10rem) 3rem;
+  text-align:center;position:relative;overflow:hidden;
+  border-top:.5px solid rgba(201,168,76,.08);
+}
+.stores-contact::before{
+  content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:560px;height:560px;border-radius:50%;border:.5px solid rgba(201,168,76,.07);
+}
+.stores-contact::after{
+  content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:360px;height:360px;border-radius:50%;border:.5px solid rgba(201,168,76,.1);
+}
+.stores-contact-title{
+  font-family:var(--serif);font-size:clamp(1.75rem,3.2vw,2.75rem);
+  font-weight:300;line-height:1.55;letter-spacing:.04em;
+  margin:0 0 1.25rem;position:relative;color:var(--white);
+}
+.stores-contact-body{
+  font-size:.88rem;color:rgba(250,248,244,.42);
+  line-height:2.05;letter-spacing:.06em;
+  margin-bottom:2.75rem;position:relative;
+}
+.stores-contact-btn{
+  display:inline-block;font-size:.82rem;letter-spacing:.12em;
+  color:rgba(250,248,244,.82);text-decoration:none;
+  padding:.85rem 2.4rem;border:.5px solid rgba(201,168,76,.38);
+  position:relative;transition:color .25s,border-color .25s,background .25s;
+}
+.stores-contact-btn:hover{
+  color:var(--gold);border-color:rgba(201,168,76,.58);
+  background:rgba(201,168,76,.06);
+}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--black);border-top:.5px solid rgba(250,248,244,.06);
+  padding:3.5rem 6rem 2rem;
+}
+.footer-inner{
+  display:grid;grid-template-columns:1.4fr 1fr 1fr;
+  gap:3rem;margin-bottom:3rem;
+}
+.f-brand{margin-bottom:1rem;line-height:0}
+.f-logo-img{height:clamp(36px,5.5vw,50px);width:auto;display:block;opacity:.96}
+.f-tag{font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+.f-desc{font-size:.8rem;color:rgba(250,248,244,.66);line-height:1.9;margin-top:1rem}
+.f-col-lbl{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gray);margin-bottom:1rem}
+.f-links{list-style:none;display:flex;flex-direction:column;gap:.52rem}
+.f-links a{font-size:.82rem;color:rgba(250,248,244,.66);text-decoration:none;letter-spacing:.05em;transition:color .2s}
+.f-links a:hover{color:var(--white)}
+.f-contact p{font-size:.82rem;color:rgba(250,248,244,.66);margin-bottom:.42rem;letter-spacing:.05em}
+.footer-btm{
+  border-top:.5px solid rgba(250,248,244,.05);padding-top:1.4rem;
+  display:flex;justify-content:space-between;align-items:center;
+}
+.f-copy{font-size:.68rem;letter-spacing:.08em;color:rgba(250,248,244,.38)}
+.f-shop{
+  font-size:.68rem;letter-spacing:.1em;color:rgba(250,248,244,.38);
+  text-decoration:none;border-bottom:.5px solid rgba(250,248,244,.32);
+  padding-bottom:1px;transition:color .2s;
+}
+.f-shop:hover{color:rgba(250,248,244,.78)}
+
+@media(max-width:768px){
+  header{
+    flex-direction:column;align-items:stretch;gap:.5rem;
+    padding:.65rem 1rem .72rem;min-height:0;
+  }
+  .h-logo{align-self:flex-start}
+  .h-logo-icon{height:20px}
+  .h-logo-text-img{height:15px}
+  .f-logo-img{height:34px}
+  nav{
+    display:flex;gap:.72rem;overflow-x:auto;
+    -webkit-overflow-scrolling:touch;scrollbar-width:none;
+    padding:.08rem 0 .12rem;
+    mask-image:linear-gradient(90deg,#000 90%,transparent);
+  }
+  nav::-webkit-scrollbar{display:none}
+  .nav-link-ja{font-size:.76rem;letter-spacing:.08em}
+  .nav-link-en{font-size:.44rem;letter-spacing:.16em;margin-top:.1rem}
+  .h-cta{padding:.28rem .62rem}
+  .stores-hero{padding:calc(68px + 3rem) 2rem 3.5rem;min-height:auto}
+  .stores-wrap{padding:4rem 2rem 4.5rem}
+  .stores-grid{grid-template-columns:1fr;gap:2.5rem}
+  .store-card-media{aspect-ratio:16/11}
+  .stores-contact{padding:6rem 2rem}
+  footer{padding:3.5rem 2rem 2rem}
+  .footer-inner{grid-template-columns:1fr;gap:2rem}
+  .footer-btm{flex-direction:column;align-items:flex-start;gap:1rem}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="h-logo" aria-label="MIRACLE EGG">
+    <img src="images/logo-icon.png" alt="" class="h-logo-icon" width="169" height="208" aria-hidden="true">
+    <img src="images/logo-text.png" alt="MIRACLE EGG" class="h-logo-text-img" width="451" height="41">
+  </a>
+  <nav>
+    <a href="index.html" class="nav-link">
+      <span class="nav-link-ja">日光金乃卵</span>
+      <span class="nav-link-en">NIKKO KINNORAN</span>
+    </a>
+    <a href="about.html" class="nav-link">
+      <span class="nav-link-ja">私たちについて</span>
+      <span class="nav-link-en">ABOUT</span>
+    </a>
+    <a href="news.html" class="nav-link">
+      <span class="nav-link-ja">お知らせ</span>
+      <span class="nav-link-en">NEWS</span>
+    </a>
+    <a href="media.html" class="nav-link">
+      <span class="nav-link-ja">メディア掲載</span>
+      <span class="nav-link-en">MEDIA</span>
+    </a>
+    <a href="contact.html" class="nav-link h-cta">
+      <span class="nav-link-ja">お問い合わせ</span>
+      <span class="nav-link-en">CONTACT</span>
+    </a>
+  </nav>
+</header>
+
+<main>
+  <div class="stores-hero">
+    <div class="stores-hero-inner">
+      <h1 class="stores-hero-title">導入店舗</h1>
+      <p class="stores-hero-lead">全国の洋菓子店やホテルで、<br>理想の味わいを追求する職人たちに選ばれ続けています。</p>
+    </div>
+  </div>
+
+  <section class="stores-wrap" aria-label="導入店舗一覧">
+    <div class="stores-grid">
+      <article class="store-card">
+        <div class="store-card-media">
+          <div class="store-card-visual" style="background-image:url('https://images.unsplash.com/photo-1464349095432-e9a21285ee5b?w=800&q=80')"></div>
+          <div class="store-card-shade" aria-hidden="true"></div>
+          <div class="store-card-body">
+            <p class="store-card-cat">MAISON</p>
+            <h2 class="store-card-name">表参道パティスリー</h2>
+            <p class="store-card-area">東京・表参道</p>
+            <p class="store-card-desc">素材の美しさを活かした菓子づくりに、日光金乃卵をご活用いただいています。</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="store-card">
+        <div class="store-card-media">
+          <div class="store-card-visual" style="background-image:url('https://images.unsplash.com/photo-1577210193414-f986aa9d472f?w=800&q=80')"></div>
+          <div class="store-card-shade" aria-hidden="true"></div>
+          <div class="store-card-body">
+            <p class="store-card-cat">SWEETS garden</p>
+            <h2 class="store-card-name">SWEETS garden YUJI AJIKI</h2>
+            <p class="store-card-area">安食雄二シェフ / 東京</p>
+            <p class="store-card-desc">理想の味わいを追求する現場で、素材のひとつとして選ばれています。</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="store-card">
+        <div class="store-card-media">
+          <div class="store-card-visual" style="background-image:url('https://images.unsplash.com/photo-1555507036-ab794f4e5337?w=800&q=80')"></div>
+          <div class="store-card-shade" aria-hidden="true"></div>
+          <div class="store-card-body">
+            <p class="store-card-cat">PÂTISSERIE</p>
+            <h2 class="store-card-name">都内洋菓子店</h2>
+            <p class="store-card-area">東京・銀座</p>
+            <p class="store-card-desc">焼き菓子や生菓子の仕込みに、安定した品質を評価いただいています。</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="store-card">
+        <div class="store-card-media">
+          <div class="store-card-visual" style="background-image:url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80')"></div>
+          <div class="store-card-shade" aria-hidden="true"></div>
+          <div class="store-card-body">
+            <p class="store-card-cat">HÔTEL</p>
+            <h2 class="store-card-name">ホテル製菓部門</h2>
+            <p class="store-card-area">東京・丸の内</p>
+            <p class="store-card-desc">ホテルメイドの菓子づくりを支える素材としてご採用いただいています。</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="store-card">
+        <div class="store-card-media">
+          <div class="store-card-visual store-card-visual--placeholder"></div>
+          <div class="store-card-shade" aria-hidden="true"></div>
+          <div class="store-card-body">
+            <p class="store-card-cat">ATELIER</p>
+            <h2 class="store-card-name">神戸パティスリー</h2>
+            <p class="store-card-area">兵庫・神戸</p>
+            <p class="store-card-desc">職人の感性を引き立てる素材として、日々の厨房で使われています。</p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="stores-contact" aria-labelledby="stores-contact-title">
+    <h2 class="stores-contact-title" id="stores-contact-title">洋菓子づくりに、日光金乃卵を。</h2>
+    <p class="stores-contact-body">
+      サンプルのご相談やお取引について、<br>
+      お気軽にお問い合わせください。
+    </p>
+    <a href="contact.html" class="stores-contact-btn">お問い合わせ →</a>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="f-brand" aria-label="MIRACLE EGG">
+        <img src="images/logo.png" alt="MIRACLE EGG" class="f-logo-img" width="656" height="208">
+      </div>
+      <p class="f-tag">日光金乃卵®</p>
+      <p class="f-desc">「１つの卵が世界を変える」<br>命に責任を持つ卵づくりを信念に、<br>養鶏場への飼料提供から洋菓子専用卵の<br>供給まで全工程に責任を持って取り組む。</p>
+    </div>
+    <div>
+      <p class="f-col-lbl">Navigation</p>
+      <ul class="f-links">
+        <li><a href="index.html">日光金乃卵®</a></li>
+        <li><a href="about.html">私たちについて</a></li>
+        <li><a href="stores.html">導入店舗</a></li>
+        <li><a href="news.html">お知らせ</a></li>
+        <li><a href="media.html">メディア掲載履歴</a></li>
+        <li><a href="contact.html">お問い合わせ</a></li>
+      </ul>
+    </div>
+    <div class="f-contact">
+      <p class="f-col-lbl">Contact</p>
+      <p>0287-59-0882</p>
+      <p>info@miracle-egg.com</p>
+      <p style="margin-top:.8rem">Instagram: @kinnoran.sweets</p>
+      <p>© 2019–2026 株式会社Miracle Egg</p>
+    </div>
+  </div>
+  <div class="footer-btm">
+    <p class="f-copy">© 2019–2026 株式会社Miracle Egg. All rights reserved.</p>
+    <a href="https://miracle-egg.myshopify.com/" target="_blank" class="f-shop">自社農場の平飼いたまご オンラインショップ →</a>
+  </div>
+</footer>
+
+</body>
+</html>
