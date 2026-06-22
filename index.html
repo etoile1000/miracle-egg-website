@@ -279,15 +279,16 @@ nav{display:flex;align-items:center;gap:clamp(1rem,1.6vw,1.75rem)}
   .adoption-marquee-track[aria-hidden="true"]{display:none;}
 }
 
-/* ── 01 PHILOSOPHY (白背景 左テキスト 右写真) ── */
+/* ── 01 PHILOSOPHY (白背景 左見出し 右2×2特徴) ── */
 .philosophy{
   background:var(--white);color:var(--black);
-  display:grid;grid-template-columns:1fr 1fr;
-  min-height:100vh;
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);
+  align-items:center;gap:clamp(2.5rem,5vw,5rem);
+  min-height:100vh;padding:8rem 6rem;box-sizing:border-box;
 }
-.philosophy-text{
-  padding:8rem 5rem 8rem 6rem;
+.philosophy-intro{
   display:flex;flex-direction:column;justify-content:center;
+  padding-right:clamp(.5rem,2vw,1.5rem);
 }
 .sec-label{
   font-family:var(--serif);font-size:clamp(1.45rem,2.6vw,2.15rem);
@@ -297,18 +298,21 @@ nav{display:flex;align-items:center;gap:clamp(1rem,1.6vw,1.75rem)}
 .philosophy-title{
   font-family:var(--serif);font-size:clamp(1.2rem,2vw,1.55rem);
   font-weight:300;line-height:1.75;letter-spacing:.03em;
-  margin-bottom:1.8rem;color:#4a4845;
+  margin:0;color:#4a4845;
 }
-.philosophy-en{
-  font-size:.78rem;letter-spacing:.1em;color:var(--gray);
-  margin-bottom:2.5rem;line-height:1.8;
+.philosophy-features{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:clamp(2.25rem,3.5vw,3.5rem) clamp(2rem,4vw,4rem);
+  align-content:center;
 }
-.philosophy-body{
-  font-size:1rem;line-height:2.1;color:#4a4845;
-  max-width:38ch;
+.philosophy-feature-label{
+  font-family:var(--serif);font-size:clamp(1.05rem,1.6vw,1.3rem);
+  font-weight:300;letter-spacing:.14em;line-height:1;
+  color:var(--black);margin:0 0 .95rem;padding-bottom:.75rem;
+  border-bottom:.5px solid rgba(201,168,76,.28);
 }
-.philosophy-photo{
-  background:url('https://images.unsplash.com/photo-1612869538156-0e2491f89fec?w=900&q=85') center/cover no-repeat;
+.philosophy-feature-body{
+  font-size:.92rem;line-height:2;color:#4a4845;margin:0;
 }
 
 /* ── 03 SPEC (白背景 数字3カラム + 写真) ── */
@@ -447,9 +451,14 @@ footer{
   .nav-link-ja{font-size:.76rem;letter-spacing:.08em}
   .nav-link-en{font-size:.44rem;letter-spacing:.16em;margin-top:.1rem}
   .h-cta{padding:.28rem .62rem}
-  .philosophy{grid-template-columns:1fr;min-height:auto}
-  .philosophy-text{padding:5rem 2rem}
-  .philosophy-photo{height:50vw}
+  .philosophy{
+    grid-template-columns:1fr;min-height:auto;
+    padding:5rem 2rem;gap:0;
+  }
+  .philosophy-intro{padding-right:0}
+  .philosophy-features{
+    grid-template-columns:1fr;gap:2rem;margin-top:2.75rem;
+  }
   .spec{padding:5rem 2rem}
   .spec-grid{grid-template-columns:1fr}
   .spec-card{border-right:none;border-bottom:.5px solid #ddd}
@@ -1028,7 +1037,7 @@ footer{
 :is(.philosophy,.spec,.analysis,.voice,.pline,.media-wrap,.contact-wrap,.about-story,.about-shokuiku,.about-activities,.news-wrap) :is(.an-title,.flow-num,.voice-en,.pline-footer-link,.cd-label,.sg-label,.news-cat,.shokuiku-maff a,.cf-note a){
   color:var(--ink-gold)!important;
 }
-:is(.philosophy,.spec,.analysis,.voice,.pline,.media-wrap,.contact-wrap,.about-story,.about-shokuiku,.about-activities,.news-wrap) :is(.philosophy-body,.sc-desc,.an-desc,.voice-body,.voice-quote-main,.pline-card-desc,.pline-list-desc,.mc-desc,.contact-intro-body,.about-sec-body,.shokuiku-body,.sg-list li,.shokuiku-purpose p,.act-card-body){
+:is(.philosophy,.spec,.analysis,.voice,.pline,.media-wrap,.contact-wrap,.about-story,.about-shokuiku,.about-activities,.news-wrap) :is(.philosophy-feature-body,.sc-desc,.an-desc,.voice-body,.voice-quote-main,.pline-card-desc,.pline-list-desc,.mc-desc,.contact-intro-body,.about-sec-body,.shokuiku-body,.sg-list li,.shokuiku-purpose p,.act-card-body){
   color:var(--ink-body)!important;
 }
 .contact-wrap .cf-input,.contact-wrap .cf-textarea,.contact-wrap .cf-select{
@@ -1238,22 +1247,32 @@ footer{
 
 <!-- 02 ABOUT -->
 <section class="philosophy" id="about">
-  <div class="philosophy-text">
-<h2 class="sec-label">日光金乃卵とは</h2>
+  <div class="philosophy-intro">
+    <h2 class="sec-label">日光金乃卵とは</h2>
     <p class="philosophy-title">
       日光金乃卵®は、<br>
       洋菓子のためだけに<br>
       三十余年、磨かれた卵です。
     </p>
-    <p class="philosophy-en">Not a general-purpose egg. Every variable — feed, pigment, protein structure — has been optimised exclusively for the pâtissier's kitchen.</p>
-    <p class="philosophy-body">
-      色は、自然着色料の深いオレンジ色。加熱後も落ちず、プリンもカスタードもスポンジも、ショーケースで一段と輝きます。<br><br>
-      味は、一般卵を圧倒するコクと旨味。しかし後味はすっきりと、主役素材の風味を殺しません。<br><br>
-      品質は、季節ごとに飼料配合を見直すことで年間を通じて安定。メレンゲの失敗が減り、仕込みのストレスが消えます。<br><br>
-      合成着色料・排卵促進剤・抗生物質・次亜塩素酸——一切不使用。
-    </p>
   </div>
-  <div class="philosophy-photo"></div>
+  <div class="philosophy-features">
+    <article class="philosophy-feature">
+      <h3 class="philosophy-feature-label">色</h3>
+      <p class="philosophy-feature-body">自然着色料の深いオレンジ色。加熱後も落ちず、プリンもカスタードもスポンジも、ショーケースで一段と輝きます。</p>
+    </article>
+    <article class="philosophy-feature">
+      <h3 class="philosophy-feature-label">味</h3>
+      <p class="philosophy-feature-body">一般卵を圧倒するコクと旨味。しかし後味はすっきりと、主役素材の風味を殺しません。</p>
+    </article>
+    <article class="philosophy-feature">
+      <h3 class="philosophy-feature-label">品質</h3>
+      <p class="philosophy-feature-body">季節ごとに飼料配合を見直すことで年間を通じて安定。メレンゲの失敗が減り、仕込みのストレスが消えます。</p>
+    </article>
+    <article class="philosophy-feature">
+      <h3 class="philosophy-feature-label">安心</h3>
+      <p class="philosophy-feature-body">合成着色料・排卵促進剤・抗生物質・次亜塩素酸——一切不使用。</p>
+    </article>
+  </div>
 </section>
 
 <!-- 03 PASTRY ONLY -->
