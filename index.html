@@ -279,67 +279,59 @@ nav{display:flex;align-items:center;gap:clamp(1rem,1.6vw,1.75rem)}
   .adoption-marquee-track[aria-hidden="true"]{display:none;}
 }
 
-/* ── 01 PHILOSOPHY (大判ビジュアル + ダークパネル) ── */
+/* ── 01 PHILOSOPHY (左余白 + 縦書き / 右テキスト) ── */
 .philosophy{
-  display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);
-  min-height:clamp(520px,88vh,760px);
+  display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);
+  min-height:clamp(520px,78vh,700px);
   background:var(--black);color:var(--white);
+  border-top:.5px solid rgba(201,168,76,.08);
 }
-.philosophy-visual{
-  position:relative;min-height:100%;overflow:hidden;
+.philosophy-aside{
+  display:flex;align-items:center;justify-content:center;
+  padding:clamp(5rem,10vw,8rem) clamp(2rem,4vw,3rem);
+  background:var(--black);
+  border-right:.5px solid rgba(201,168,76,.1);
 }
-.philosophy-photo{
-  position:absolute;inset:0;
-  background:url('https://images.unsplash.com/photo-1612869538156-0e2491f89fec?w=1400&q=85') center/cover no-repeat;
-}
-.philosophy-photo::after{
-  content:'';position:absolute;inset:0;
-  background:linear-gradient(90deg,rgba(8,8,6,.08) 0%,rgba(8,8,6,.18) 58%,rgba(17,16,14,.92) 100%);
-}
-.philosophy-photo-label{
-  position:absolute;top:clamp(2rem,5vw,3.5rem);left:clamp(1.5rem,3vw,2.75rem);
+.philosophy-aside-label{
   writing-mode:vertical-rl;text-orientation:mixed;
-  font-family:var(--serif);font-size:clamp(.72rem,1.1vw,.82rem);
-  letter-spacing:.42em;color:rgba(201,168,76,.82);
-  border-top:.5px solid rgba(201,168,76,.35);padding-top:.65rem;
-  z-index:1;
+  font-family:var(--serif);font-size:clamp(.78rem,1.15vw,.88rem);
+  font-weight:300;letter-spacing:.42em;line-height:1;
+  color:rgba(201,168,76,.78);
+  border-top:.5px solid rgba(201,168,76,.32);padding-top:.75rem;
+  margin:0;
 }
 .philosophy-panel{
   display:flex;align-items:center;
-  padding:clamp(3.5rem,6vw,5.5rem) clamp(2.5rem,4.5vw,4.5rem);
+  padding:clamp(4.5rem,8vw,6rem) clamp(3rem,5.5vw,4.75rem);
   background:#11100e;
-  border-left:.5px solid rgba(201,168,76,.12);
 }
-.philosophy-panel-inner{max-width:34rem;width:100%}
+.philosophy-panel-inner{max-width:26rem;width:100%}
 .philosophy-kicker{
-  font-family:var(--serif);font-size:clamp(.72rem,.95vw,.82rem);
-  letter-spacing:.32em;color:var(--gold);
-  border-left:2px solid var(--gold);padding-left:.95rem;
-  margin:0;
+  font-family:var(--serif);font-size:clamp(.74rem,1vw,.84rem);
+  letter-spacing:.34em;color:#e3c98a;
+  border-left:2px solid var(--gold);padding-left:.9rem;margin:0;
 }
 .philosophy-lead{
-  font-family:var(--serif);font-size:clamp(1.55rem,2.8vw,2.15rem);
-  font-weight:300;line-height:1.55;letter-spacing:.04em;
-  color:var(--white);margin:clamp(1.4rem,2.5vw,1.85rem) 0 0;
+  font-family:var(--serif);font-size:clamp(1.65rem,2.9vw,2.35rem);
+  font-weight:300;line-height:1.58;letter-spacing:.04em;
+  color:var(--white);margin:clamp(1.5rem,2.5vw,1.85rem) 0 0;
 }
 .philosophy-sub{
-  font-family:var(--serif);font-size:clamp(1rem,1.55vw,1.2rem);
+  font-family:var(--serif);font-size:clamp(1rem,1.5vw,1.15rem);
   font-weight:300;line-height:1.85;letter-spacing:.03em;
-  color:rgba(250,248,244,.72);margin:clamp(.85rem,1.5vw,1.1rem) 0 0;
+  color:rgba(250,248,244,.7);margin:clamp(.9rem,1.5vw,1.15rem) 0 0;
 }
 .philosophy-narrative{
-  display:flex;flex-direction:column;gap:clamp(1rem,1.8vw,1.35rem);
-  margin-top:clamp(1.6rem,2.8vw,2.1rem);
-  padding-top:clamp(1.4rem,2.4vw,1.85rem);
-  border-top:.5px solid rgba(201,168,76,.18);
+  display:flex;flex-direction:column;gap:clamp(1rem,1.6vw,1.25rem);
+  margin-top:clamp(1.75rem,3vw,2.25rem);
 }
 .philosophy-body{
-  font-size:clamp(.84rem,1vw,.92rem);line-height:2.05;
-  color:rgba(250,248,244,.62);margin:0;
+  font-size:clamp(.875rem,1.05vw,.94rem);line-height:2.1;
+  color:rgba(250,248,244,.68);font-weight:300;margin:0;
 }
 .philosophy-rule{
-  width:clamp(42px,4vw,54px);height:1px;
-  background:rgba(201,168,76,.55);margin-top:clamp(1.8rem,3vw,2.4rem);
+  width:54px;height:1px;background:#e3c98a;
+  opacity:.85;margin-top:clamp(2rem,3.5vw,2.5rem);
 }
 .sec-label{
   font-family:var(--serif);font-size:clamp(1.45rem,2.6vw,2.15rem);
@@ -486,21 +478,20 @@ footer{
   .philosophy{
     grid-template-columns:1fr;min-height:auto;
   }
-  .philosophy-visual{min-height:clamp(240px,58vw,340px)}
-  .philosophy-photo::after{
-    background:linear-gradient(to bottom,rgba(8,8,6,.08) 0%,rgba(17,16,14,.88) 100%);
+  .philosophy-aside{
+    min-height:clamp(140px,32vw,200px);
+    padding:2.5rem 1.75rem 1.5rem;
+    border-right:none;
+    border-bottom:.5px solid rgba(201,168,76,.1);
+    justify-content:flex-start;
   }
-  .philosophy-photo-label{
-    top:1.35rem;left:1.25rem;font-size:.68rem;letter-spacing:.34em;
+  .philosophy-aside-label{
+    font-size:.68rem;letter-spacing:.34em;
   }
   .philosophy-panel{
-    margin-top:-2.75rem;position:relative;z-index:1;
-    padding:0 1.75rem 2.75rem;border-left:none;
+    padding:2.25rem 1.75rem 3rem;
   }
   .philosophy-panel-inner{max-width:none}
-  .philosophy-narrative{
-    margin-top:1.45rem;padding-top:1.35rem;
-  }
   .spec{padding:5rem 2rem}
   .spec-grid{grid-template-columns:1fr}
   .spec-card{border-right:none;border-bottom:.5px solid #ddd}
@@ -1289,9 +1280,8 @@ footer{
 
 <!-- 02 ABOUT -->
 <section class="philosophy" id="about">
-  <div class="philosophy-visual">
-    <div class="philosophy-photo" role="img" aria-label="洋菓子の厨房で使われる黄身"></div>
-    <p class="philosophy-photo-label" aria-hidden="true">洋菓子専用卵</p>
+  <div class="philosophy-aside">
+    <p class="philosophy-aside-label">洋菓子専用卵</p>
   </div>
   <div class="philosophy-panel">
     <div class="philosophy-panel-inner">
