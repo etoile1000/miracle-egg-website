@@ -282,13 +282,13 @@ nav{display:flex;align-items:center;gap:clamp(1rem,1.6vw,1.75rem)}
 /* ── 01 PHILOSOPHY (素材ブランド再設計) ── */
 .philosophy{
   background:#f3efe6;color:#2a2823;
-  padding:clamp(3.25rem,5.5vw,4.75rem) clamp(2rem,5vw,5rem) clamp(2.25rem,3.5vw,3rem);
+  padding:clamp(3rem,5vw,4.5rem) clamp(2rem,5vw,4rem) clamp(2rem,3.5vw,2.75rem);
   border-top:.5px solid rgba(201,168,76,.14);
 }
 .philosophy-inner{
   max-width:1200px;margin:0 auto;
   display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);
-  gap:clamp(1.75rem,3vw,2.75rem);align-items:center;
+  gap:clamp(2rem,3.5vw,3.25rem);align-items:start;
 }
 .philosophy-eyebrow{
   display:flex;align-items:center;gap:.8rem;
@@ -313,10 +313,10 @@ nav{display:flex;align-items:center;gap:clamp(1rem,1.6vw,1.75rem)}
 }
 .philosophy-story-block{
   font-size:clamp(.9rem,1.05vw,.95rem);line-height:2.1;
-  color:#5f5849;font-weight:300;margin:0 0 clamp(.95rem,1.5vw,1.15rem);
+  color:#5f5849;font-weight:300;margin:0;
 }
 .philosophy-story-em{
-  font-family:var(--serif);font-size:clamp(.98rem,1.12vw,1.02rem);
+  font-family:var(--serif);font-size:clamp(1.05rem,1.35vw,1.15rem);
   color:#3a3527;letter-spacing:.02em;
 }
 .philosophy-story .philosophy-intro-body{
@@ -329,12 +329,13 @@ nav{display:flex;align-items:center;gap:clamp(1rem,1.6vw,1.75rem)}
   color:#5f5849;font-weight:300;max-width:26rem;
 }
 .philosophy-photo{
-  margin-top:clamp(1.75rem,3vw,2.25rem);
+  margin-top:clamp(1.25rem,2vw,1.75rem);
   position:relative;overflow:hidden;
-  width:min(100%,24rem);max-width:92%;
-  height:clamp(220px,18vw,280px);max-height:300px;
+  width:100%;aspect-ratio:16/9;
+  min-height:clamp(220px,22vw,280px);
 }
 .philosophy-photo img{
+  position:absolute;inset:0;
   display:block;width:100%;height:100%;
   object-fit:cover;object-position:center 42%;
 }
@@ -511,13 +512,12 @@ footer{
   .nav-link-ja{font-size:.76rem;letter-spacing:.08em}
   .nav-link-en{font-size:.44rem;letter-spacing:.16em;margin-top:.1rem}
   .h-cta{padding:.28rem .62rem}
-  .philosophy{padding:2.5rem 1.5rem 2.5rem}
-  .philosophy-inner{grid-template-columns:1fr;gap:1.75rem;align-items:start}
-  .philosophy-intro-body{max-width:none}
+  .philosophy{padding:2.25rem 1.5rem 2.25rem}
+  .philosophy-inner{grid-template-columns:1fr;gap:1.5rem}
   .philosophy-photo{
-    margin-top:clamp(1.5rem,3vw,2rem);
-    width:100%;max-width:none;
-    height:clamp(180px,48vw,200px);max-height:220px;
+    margin-top:clamp(1.25rem,2.5vw,1.5rem);
+    width:100%;aspect-ratio:16/9;
+    min-height:0;height:auto;max-height:none;
   }
   .philosophy-pillar{
     grid-template-columns:minmax(62px,72px) 1fr;
@@ -1329,8 +1329,6 @@ footer{
           <span class="philosophy-story-em">三十余年、洋菓子のためだけに作り上げてきた卵。</span><br>
           それが、日光金乃卵です。
         </p>
-        <p class="philosophy-intro-body">焼き上がりの色。<br>口に入れたときの香り。<br>毎日の仕込みのしやすさ。</p>
-        <p class="philosophy-intro-body">だからこそ今も、多くの職人に選ばれています。</p>
       </div>
       <div class="philosophy-photo">
         <img
