@@ -330,14 +330,16 @@ nav{display:flex;align-items:center;gap:clamp(1rem,1.6vw,1.75rem)}
 }
 .philosophy-photo{
   margin-top:clamp(2.75rem,5vw,4.25rem);
-  height:clamp(156px,17vw,196px);
-  background:repeating-linear-gradient(135deg,#e8e1d2 0 16px,#e1d8c6 16px 32px);
-  display:flex;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;
+  aspect-ratio:16/10;width:100%;
 }
-.philosophy-photo-placeholder{
-  font-family:ui-monospace,'Courier New',monospace;
-  font-size:clamp(.62rem,.75vw,.7rem);letter-spacing:.14em;
-  color:#9b917b;text-align:center;
+.philosophy-photo img{
+  display:block;width:100%;height:100%;
+  object-fit:cover;object-position:center 42%;
+}
+.philosophy-photo::after{
+  content:'';position:absolute;inset:0;
+  background:rgba(42,40,35,.1);pointer-events:none;
 }
 .philosophy-pillars{display:flex;flex-direction:column}
 .philosophy-pillar{
@@ -511,7 +513,10 @@ footer{
   .philosophy{padding:2.5rem 1.5rem 2.5rem}
   .philosophy-inner{grid-template-columns:1fr;gap:1.75rem;align-items:start}
   .philosophy-intro-body{max-width:none}
-  .philosophy-photo{height:168px}
+  .philosophy-photo{
+    margin-top:clamp(2rem,4.5vw,2.75rem);
+    aspect-ratio:16/9;max-height:200px;
+  }
   .philosophy-pillar{
     grid-template-columns:minmax(62px,72px) 1fr;
     gap:.75rem;padding:.85rem 0;
@@ -1323,8 +1328,15 @@ footer{
           それが、日光金乃卵です。
         </p>
       </div>
-      <div class="philosophy-photo" aria-hidden="true">
-        <span class="philosophy-photo-placeholder">［ 仕込みの現場 ／ 黄身 ］</span>
+      <div class="philosophy-photo">
+        <img
+          src="images/philosophy-kitchen.jpg"
+          alt="洋菓子の厨房で仕込む職人と黄身"
+          width="1024"
+          height="682"
+          loading="lazy"
+          decoding="async"
+        >
       </div>
     </div>
     <div class="philosophy-pillars">
