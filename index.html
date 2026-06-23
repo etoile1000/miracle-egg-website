@@ -305,6 +305,21 @@ nav{display:flex;align-items:center;gap:clamp(1rem,1.6vw,1.75rem)}
   font-weight:500;line-height:1.48;letter-spacing:.04em;
   color:#2a2823;margin:clamp(.85rem,1.4vw,1.05rem) 0 0;
 }
+.philosophy-story{
+  margin-top:clamp(.85rem,1.4vw,1.05rem);max-width:26rem;
+}
+.philosophy-story-block{
+  font-size:clamp(.9rem,1.05vw,.95rem);line-height:2.1;
+  color:#5f5849;font-weight:300;margin:0 0 clamp(1.1rem,1.8vw,1.35rem);
+}
+.philosophy-story-em{
+  font-family:var(--serif);font-size:clamp(.98rem,1.12vw,1.02rem);
+  color:#3a3527;letter-spacing:.02em;
+}
+.philosophy-story .philosophy-intro-body{
+  margin-top:0;margin-bottom:clamp(1.1rem,1.8vw,1.35rem);line-height:2.1;
+}
+.philosophy-story .philosophy-intro-body:last-child{margin-bottom:0}
 .philosophy-intro-body{
   margin-top:clamp(.85rem,1.3vw,1rem);
   font-size:clamp(.9rem,1.05vw,.95rem);line-height:1.95;
@@ -1088,6 +1103,7 @@ footer{
   color:var(--ink-body)!important;
 }
 .philosophy .philosophy-intro-body{color:#5f5849!important}
+.philosophy .philosophy-story-em{color:#3a3527!important}
 .philosophy .philosophy-pillar-desc{color:#857c68!important}
 .philosophy .philosophy-eyebrow-text,.philosophy .philosophy-pillar-num{color:#9c7b43!important}
 .contact-wrap .cf-input,.contact-wrap .cf-textarea,.contact-wrap .cf-select{
@@ -1301,10 +1317,16 @@ footer{
     <div class="philosophy-framing">
       <div class="philosophy-eyebrow">
         <span class="philosophy-eyebrow-line" aria-hidden="true"></span>
-        <p class="philosophy-eyebrow-text">素材としての、日光金乃卵</p>
+        <p class="philosophy-eyebrow-text">日光金乃卵とは</p>
       </div>
-      <h2 class="philosophy-headline">卵を変えるだけで、<br>菓子は変わる。</h2>
-      <p class="philosophy-intro-body">日光金乃卵は、食べるための卵ではありません。洋菓子の現場のためだけに設計した、製菓用の冷凍加工卵です。色・味・安定性、そして扱いやすさを、職人の仕事に最適化しました。</p>
+      <div class="philosophy-story">
+        <p class="philosophy-story-block">
+          <span class="philosophy-story-em">三十余年、洋菓子のためだけに作り上げてきた卵。</span><br>
+          それが、日光金乃卵です。
+        </p>
+        <p class="philosophy-intro-body">見た目の美しさだけではなく、味や香り、そして仕込みのしやすさまで。<br>職人が求める品質を追求し続けてきました。</p>
+        <p class="philosophy-intro-body">毎日の仕事に自然と馴染み、理想の菓子づくりを支える。<br>それが私たちの考える卵の役割です。</p>
+      </div>
       <p class="philosophy-tag">製菓用 ／ 冷凍加工卵</p>
       <div class="philosophy-photo" aria-hidden="true">
         <span class="philosophy-photo-placeholder">［ 仕込みの現場 ／ 黄身 ］</span>
