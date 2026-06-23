@@ -307,17 +307,21 @@ nav{display:flex;align-items:center;gap:clamp(1rem,1.6vw,1.75rem)}
 }
 .philosophy-story{
   margin-top:clamp(.85rem,1.4vw,1.05rem);max-width:26rem;
+  flex:1;
+}
+.philosophy-framing{
+  display:flex;flex-direction:column;height:100%;
 }
 .philosophy-story-block{
   font-size:clamp(.9rem,1.05vw,.95rem);line-height:2.1;
-  color:#5f5849;font-weight:300;margin:0 0 clamp(1.1rem,1.8vw,1.35rem);
+  color:#5f5849;font-weight:300;margin:0 0 clamp(.95rem,1.5vw,1.15rem);
 }
 .philosophy-story-em{
   font-family:var(--serif);font-size:clamp(.98rem,1.12vw,1.02rem);
   color:#3a3527;letter-spacing:.02em;
 }
 .philosophy-story .philosophy-intro-body{
-  margin-top:0;margin-bottom:clamp(1.1rem,1.8vw,1.35rem);line-height:2.1;
+  margin-top:0;margin-bottom:clamp(.95rem,1.5vw,1.15rem);line-height:2.1;
 }
 .philosophy-story .philosophy-intro-body:last-child{margin-bottom:0}
 .philosophy-intro-body{
@@ -325,13 +329,8 @@ nav{display:flex;align-items:center;gap:clamp(1rem,1.6vw,1.75rem)}
   font-size:clamp(.9rem,1.05vw,.95rem);line-height:1.95;
   color:#5f5849;font-weight:300;max-width:26rem;
 }
-.philosophy-tag{
-  display:inline-block;margin-top:clamp(.9rem,1.4vw,1.1rem);
-  border:.5px solid #cdc4af;padding:.5rem .95rem;
-  font-size:clamp(.72rem,.9vw,.78rem);letter-spacing:.12em;color:#6f6856;
-}
 .philosophy-photo{
-  margin-top:clamp(1.1rem,1.8vw,1.35rem);
+  margin-top:clamp(1.35rem,2.2vw,1.75rem);
   height:clamp(156px,17vw,196px);
   background:repeating-linear-gradient(135deg,#e8e1d2 0 16px,#e1d8c6 16px 32px);
   display:flex;align-items:center;justify-content:center;
@@ -1324,10 +1323,10 @@ footer{
           <span class="philosophy-story-em">三十余年、洋菓子のためだけに作り上げてきた卵。</span><br>
           それが、日光金乃卵です。
         </p>
-        <p class="philosophy-intro-body">見た目の美しさだけではなく、味や香り、そして仕込みのしやすさまで。<br>職人が求める品質を追求し続けてきました。</p>
-        <p class="philosophy-intro-body">毎日の仕事に自然と馴染み、理想の菓子づくりを支える。<br>それが私たちの考える卵の役割です。</p>
+        <p class="philosophy-intro-body">焼き上がりの色。<br>口に入れたときの香り。<br>毎日の仕込みのしやすさ。</p>
+        <p class="philosophy-intro-body">派手な特徴を競うのではなく、<br>洋菓子店の仕事にとって本当に必要なことを磨き続けてきました。</p>
+        <p class="philosophy-intro-body">だからこそ今も、多くの職人に選ばれています。</p>
       </div>
-      <p class="philosophy-tag">製菓用 ／ 冷凍加工卵</p>
       <div class="philosophy-photo" aria-hidden="true">
         <span class="philosophy-photo-placeholder">［ 仕込みの現場 ／ 黄身 ］</span>
       </div>
