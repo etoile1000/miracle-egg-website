@@ -279,39 +279,72 @@ nav{display:flex;align-items:center;gap:clamp(1rem,1.6vw,1.75rem)}
   .adoption-marquee-track[aria-hidden="true"]{display:none;}
 }
 
-/* ── 01 PHILOSOPHY (白背景 左見出し 右ナラティブ) ── */
+/* ── 01 PHILOSOPHY (大判ビジュアル + ダークパネル) ── */
 .philosophy{
-  background:var(--white);color:var(--black);
-  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);
-  align-items:center;gap:clamp(3rem,6vw,6.5rem);
-  min-height:100vh;padding:8rem 6rem;box-sizing:border-box;
+  display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);
+  min-height:clamp(520px,88vh,760px);
+  background:var(--black);color:var(--white);
 }
-.philosophy-intro{
-  display:flex;flex-direction:column;justify-content:center;
-  padding-right:clamp(.5rem,2vw,1.5rem);
+.philosophy-visual{
+  position:relative;min-height:100%;overflow:hidden;
+}
+.philosophy-photo{
+  position:absolute;inset:0;
+  background:url('https://images.unsplash.com/photo-1612869538156-0e2491f89fec?w=1400&q=85') center/cover no-repeat;
+}
+.philosophy-photo::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(90deg,rgba(8,8,6,.08) 0%,rgba(8,8,6,.18) 58%,rgba(17,16,14,.92) 100%);
+}
+.philosophy-photo-label{
+  position:absolute;top:clamp(2rem,5vw,3.5rem);left:clamp(1.5rem,3vw,2.75rem);
+  writing-mode:vertical-rl;text-orientation:mixed;
+  font-family:var(--serif);font-size:clamp(.72rem,1.1vw,.82rem);
+  letter-spacing:.42em;color:rgba(201,168,76,.82);
+  border-top:.5px solid rgba(201,168,76,.35);padding-top:.65rem;
+  z-index:1;
+}
+.philosophy-panel{
+  display:flex;align-items:center;
+  padding:clamp(3.5rem,6vw,5.5rem) clamp(2.5rem,4.5vw,4.5rem);
+  background:#11100e;
+  border-left:.5px solid rgba(201,168,76,.12);
+}
+.philosophy-panel-inner{max-width:34rem;width:100%}
+.philosophy-kicker{
+  font-family:var(--serif);font-size:clamp(.72rem,.95vw,.82rem);
+  letter-spacing:.32em;color:var(--gold);
+  border-left:2px solid var(--gold);padding-left:.95rem;
+  margin:0;
+}
+.philosophy-lead{
+  font-family:var(--serif);font-size:clamp(1.55rem,2.8vw,2.15rem);
+  font-weight:300;line-height:1.55;letter-spacing:.04em;
+  color:var(--white);margin:clamp(1.4rem,2.5vw,1.85rem) 0 0;
+}
+.philosophy-sub{
+  font-family:var(--serif);font-size:clamp(1rem,1.55vw,1.2rem);
+  font-weight:300;line-height:1.85;letter-spacing:.03em;
+  color:rgba(250,248,244,.72);margin:clamp(.85rem,1.5vw,1.1rem) 0 0;
+}
+.philosophy-narrative{
+  display:flex;flex-direction:column;gap:clamp(1rem,1.8vw,1.35rem);
+  margin-top:clamp(1.6rem,2.8vw,2.1rem);
+  padding-top:clamp(1.4rem,2.4vw,1.85rem);
+  border-top:.5px solid rgba(201,168,76,.18);
+}
+.philosophy-body{
+  font-size:clamp(.84rem,1vw,.92rem);line-height:2.05;
+  color:rgba(250,248,244,.62);margin:0;
+}
+.philosophy-rule{
+  width:clamp(42px,4vw,54px);height:1px;
+  background:rgba(201,168,76,.55);margin-top:clamp(1.8rem,3vw,2.4rem);
 }
 .sec-label{
   font-family:var(--serif);font-size:clamp(1.45rem,2.6vw,2.15rem);
   font-weight:300;letter-spacing:.04em;line-height:1.45;
-  color:var(--black);margin-bottom:2rem;text-transform:none;
-}
-.philosophy-lead{
-  font-family:var(--serif);font-size:clamp(1.65rem,3vw,2.4rem);
-  font-weight:300;line-height:1.55;letter-spacing:.04em;
-  color:var(--black);margin:0 0 1.75rem;
-}
-.philosophy-title{
-  font-family:var(--serif);font-size:clamp(1.15rem,1.85vw,1.45rem);
-  font-weight:300;line-height:1.8;letter-spacing:.03em;
-  margin:0;color:#4a4845;
-}
-.philosophy-narrative{
-  display:flex;flex-direction:column;gap:clamp(1.6rem,2.5vw,2.1rem);
-  padding-top:.25rem;
-}
-.philosophy-body{
-  font-size:.92rem;line-height:2.15;color:#4a4845;margin:0;
-  max-width:42ch;
+  color:var(--black);margin-bottom:1.2rem;text-transform:none;
 }
 
 /* ── 03 SPEC (白背景 数字3カラム + 写真) ── */
@@ -452,13 +485,22 @@ footer{
   .h-cta{padding:.28rem .62rem}
   .philosophy{
     grid-template-columns:1fr;min-height:auto;
-    padding:5rem 2rem;gap:0;
   }
-  .philosophy-intro{padding-right:0}
+  .philosophy-visual{min-height:clamp(240px,58vw,340px)}
+  .philosophy-photo::after{
+    background:linear-gradient(to bottom,rgba(8,8,6,.08) 0%,rgba(17,16,14,.88) 100%);
+  }
+  .philosophy-photo-label{
+    top:1.35rem;left:1.25rem;font-size:.68rem;letter-spacing:.34em;
+  }
+  .philosophy-panel{
+    margin-top:-2.75rem;position:relative;z-index:1;
+    padding:0 1.75rem 2.75rem;border-left:none;
+  }
+  .philosophy-panel-inner{max-width:none}
   .philosophy-narrative{
-    margin-top:2.75rem;
+    margin-top:1.45rem;padding-top:1.35rem;
   }
-  .philosophy-body{max-width:none}
   .spec{padding:5rem 2rem}
   .spec-grid{grid-template-columns:1fr}
   .spec-card{border-right:none;border-bottom:.5px solid #ddd}
@@ -1025,19 +1067,19 @@ footer{
   --dark-readable:rgba(250,248,244,.68);
   --dark-muted:rgba(250,248,244,.58);
 }
-:is(.philosophy,.spec,.analysis,.voice,.pline,.media-wrap,.contact-wrap,.about-story,.about-shokuiku,.about-activities,.news-wrap){
+:is(.spec,.analysis,.voice,.pline,.media-wrap,.contact-wrap,.about-story,.about-shokuiku,.about-activities,.news-wrap){
   --gray:var(--ink-muted);
 }
-:is(.philosophy,.spec,.analysis,.voice,.pline,.media-wrap,.contact-wrap,.about-story,.about-shokuiku,.about-activities,.news-wrap) :is(.philosophy-en,.analysis-source,.sc-unit,.an-val.gray,.an-val small,.an-vs,.legend-label,.voice-source,.voice-profile-role,.pline-sub,.pline-card-size,.pline-card-uses span,.pline-footer-note,.mc-program,.mc-date,.cf-label,.cf-note,.news-date,.shokuiku-maff){
+:is(.spec,.analysis,.voice,.pline,.media-wrap,.contact-wrap,.about-story,.about-shokuiku,.about-activities,.news-wrap) :is(.philosophy-en,.analysis-source,.sc-unit,.an-val.gray,.an-val small,.an-vs,.legend-label,.voice-source,.voice-profile-role,.pline-sub,.pline-card-size,.pline-card-uses span,.pline-footer-note,.mc-program,.mc-date,.cf-label,.cf-note,.news-date,.shokuiku-maff){
   color:var(--ink-muted)!important;
 }
-:is(.philosophy,.spec,.analysis,.voice,.pline,.media-wrap,.contact-wrap,.about-story,.about-shokuiku,.about-activities,.news-wrap) :is(.sec-label,.philosophy-title,.spec-title,.analysis-title,.compare-title,.pline-title,.about-sec-title,.page-hero-title){
+:is(.spec,.analysis,.voice,.pline,.media-wrap,.contact-wrap,.about-story,.about-shokuiku,.about-activities,.news-wrap) :is(.sec-label,.philosophy-title,.spec-title,.analysis-title,.compare-title,.pline-title,.about-sec-title,.page-hero-title){
   color:var(--ink-heading)!important;
 }
-:is(.philosophy,.spec,.analysis,.voice,.pline,.media-wrap,.contact-wrap,.about-story,.about-shokuiku,.about-activities,.news-wrap) :is(.an-title,.flow-num,.voice-en,.pline-footer-link,.cd-label,.sg-label,.news-cat,.shokuiku-maff a,.cf-note a){
+:is(.spec,.analysis,.voice,.pline,.media-wrap,.contact-wrap,.about-story,.about-shokuiku,.about-activities,.news-wrap) :is(.an-title,.flow-num,.voice-en,.pline-footer-link,.cd-label,.sg-label,.news-cat,.shokuiku-maff a,.cf-note a){
   color:var(--ink-gold)!important;
 }
-:is(.philosophy,.spec,.analysis,.voice,.pline,.media-wrap,.contact-wrap,.about-story,.about-shokuiku,.about-activities,.news-wrap) :is(.philosophy-body,.sc-desc,.an-desc,.voice-body,.voice-quote-main,.pline-card-desc,.pline-list-desc,.mc-desc,.contact-intro-body,.about-sec-body,.shokuiku-body,.sg-list li,.shokuiku-purpose p,.act-card-body){
+:is(.spec,.analysis,.voice,.pline,.media-wrap,.contact-wrap,.about-story,.about-shokuiku,.about-activities,.news-wrap) :is(.sc-desc,.an-desc,.voice-body,.voice-quote-main,.pline-card-desc,.pline-list-desc,.mc-desc,.contact-intro-body,.about-sec-body,.shokuiku-body,.sg-list li,.shokuiku-purpose p,.act-card-body){
   color:var(--ink-body)!important;
 }
 .contact-wrap .cf-input,.contact-wrap .cf-textarea,.contact-wrap .cf-select{
@@ -1247,18 +1289,21 @@ footer{
 
 <!-- 02 ABOUT -->
 <section class="philosophy" id="about">
-  <div class="philosophy-intro">
-    <h2 class="sec-label">日光金乃卵とは</h2>
-    <p class="philosophy-lead">ただの卵ではありません。</p>
-    <p class="philosophy-title">
-      三十余年、洋菓子のためだけに<br>
-      作られてきた卵。
-    </p>
+  <div class="philosophy-visual">
+    <div class="philosophy-photo" role="img" aria-label="洋菓子の厨房で使われる黄身"></div>
+    <p class="philosophy-photo-label" aria-hidden="true">洋菓子専用卵</p>
   </div>
-  <div class="philosophy-narrative">
-    <p class="philosophy-body">日光金乃卵は、洋菓子のためだけに生まれた卵です。食べるためではなく、菓子を仕上げるために使われる——それが、この卵の在り方です。</p>
-    <p class="philosophy-body">見た目の色だけを追うのではなく、味わいや香り、年間を通じた安定性まで。職人が厨房で掲げる基準に合わせて、三十余年かけて整えてきました。</p>
-    <p class="philosophy-body">指名される理由は、特別だからではありません。仕込みの現場で、毎日の手仕事に馴染んできたからです。</p>
+  <div class="philosophy-panel">
+    <div class="philosophy-panel-inner">
+      <p class="philosophy-kicker">日光金乃卵とは</p>
+      <p class="philosophy-lead">ただの卵ではありません。</p>
+      <p class="philosophy-sub">三十余年、洋菓子のためだけに<br>作られてきた卵。</p>
+      <div class="philosophy-narrative">
+        <p class="philosophy-body">日光金乃卵は、洋菓子のためだけに生まれた卵です。食べるためではなく、菓子を仕上げるために使われる——それが、この卵の在り方です。</p>
+        <p class="philosophy-body">見た目の色だけを追うのではなく、味わいや香り、年間を通じた安定性まで。仕込みの現場で、毎日の手仕事に馴染んできたからこそ、選ばれています。</p>
+      </div>
+      <div class="philosophy-rule" aria-hidden="true"></div>
+    </div>
   </div>
 </section>
 
