@@ -279,59 +279,73 @@ nav{display:flex;align-items:center;gap:clamp(1rem,1.6vw,1.75rem)}
   .adoption-marquee-track[aria-hidden="true"]{display:none;}
 }
 
-/* ── 01 PHILOSOPHY (左余白 + 縦書き / 右テキスト) ── */
+/* ── 01 PHILOSOPHY (素材ブランド再設計) ── */
 .philosophy{
-  display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);
-  min-height:clamp(520px,78vh,700px);
-  background:var(--black);color:var(--white);
-  border-top:.5px solid rgba(201,168,76,.08);
+  background:#f3efe6;color:#2a2823;
+  padding:clamp(5rem,10vw,8rem) clamp(2rem,6vw,6rem);
+  border-top:.5px solid rgba(201,168,76,.14);
 }
-.philosophy-aside{
-  display:flex;align-items:center;justify-content:center;
-  padding:clamp(5rem,10vw,8rem) clamp(2rem,4vw,3rem);
-  background:var(--black);
-  border-right:.5px solid rgba(201,168,76,.1);
+.philosophy-inner{
+  max-width:1200px;margin:0 auto;
+  display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);
+  gap:clamp(2.5rem,5vw,4rem);align-items:start;
 }
-.philosophy-aside-label{
-  writing-mode:vertical-rl;text-orientation:mixed;
-  font-family:var(--serif);font-size:clamp(.78rem,1.15vw,.88rem);
-  font-weight:300;letter-spacing:.42em;line-height:1;
-  color:rgba(201,168,76,.78);
-  border-top:.5px solid rgba(201,168,76,.32);padding-top:.75rem;
-  margin:0;
+.philosophy-eyebrow{
+  display:flex;align-items:center;gap:.8rem;
 }
-.philosophy-panel{
-  display:flex;align-items:center;
-  padding:clamp(4.5rem,8vw,6rem) clamp(3rem,5.5vw,4.75rem);
-  background:#11100e;
+.philosophy-eyebrow-line{
+  flex:none;width:26px;height:1px;background:#9c7b43;
 }
-.philosophy-panel-inner{max-width:26rem;width:100%}
-.philosophy-kicker{
-  font-family:var(--serif);font-size:clamp(.74rem,1vw,.84rem);
-  letter-spacing:.34em;color:#e3c98a;
-  border-left:2px solid var(--gold);padding-left:.9rem;margin:0;
+.philosophy-eyebrow-text{
+  font-size:clamp(.72rem,.95vw,.78rem);letter-spacing:.22em;
+  color:#9c7b43;font-weight:500;margin:0;
 }
-.philosophy-lead{
-  font-family:var(--serif);font-size:clamp(1.65rem,2.9vw,2.35rem);
-  font-weight:300;line-height:1.58;letter-spacing:.04em;
-  color:var(--white);margin:clamp(1.5rem,2.5vw,1.85rem) 0 0;
+.philosophy-headline{
+  font-family:var(--serif);font-size:clamp(1.65rem,3.2vw,2.4rem);
+  font-weight:500;line-height:1.5;letter-spacing:.04em;
+  color:#2a2823;margin:clamp(1.2rem,2vw,1.5rem) 0 0;
 }
-.philosophy-sub{
-  font-family:var(--serif);font-size:clamp(1rem,1.5vw,1.15rem);
-  font-weight:300;line-height:1.85;letter-spacing:.03em;
-  color:rgba(250,248,244,.7);margin:clamp(.9rem,1.5vw,1.15rem) 0 0;
+.philosophy-intro-body{
+  margin-top:clamp(1.2rem,2vw,1.5rem);
+  font-size:clamp(.9rem,1.05vw,.95rem);line-height:2.05;
+  color:#5f5849;font-weight:300;max-width:26rem;
 }
-.philosophy-narrative{
-  display:flex;flex-direction:column;gap:clamp(1rem,1.6vw,1.25rem);
-  margin-top:clamp(1.75rem,3vw,2.25rem);
+.philosophy-tag{
+  display:inline-block;margin-top:clamp(1.35rem,2vw,1.65rem);
+  border:.5px solid #cdc4af;padding:.55rem 1rem;
+  font-size:clamp(.72rem,.9vw,.78rem);letter-spacing:.12em;color:#6f6856;
 }
-.philosophy-body{
-  font-size:clamp(.875rem,1.05vw,.94rem);line-height:2.1;
-  color:rgba(250,248,244,.68);font-weight:300;margin:0;
+.philosophy-photo{
+  margin-top:clamp(1.5rem,2.5vw,1.85rem);
+  aspect-ratio:16/10;min-height:180px;
+  background:url('https://images.unsplash.com/photo-1612869538156-0e2491f89fec?w=1200&q=85') center/cover no-repeat;
 }
-.philosophy-rule{
-  width:54px;height:1px;background:#e3c98a;
-  opacity:.85;margin-top:clamp(2rem,3.5vw,2.5rem);
+.philosophy-pillars{display:flex;flex-direction:column}
+.philosophy-pillar{
+  display:grid;grid-template-columns:minmax(88px,150px) 1fr;
+  gap:clamp(1rem,2vw,1.4rem);align-items:start;
+  padding:clamp(1.25rem,2vw,1.65rem) 0;
+  border-bottom:.5px solid #e2dbcb;
+}
+.philosophy-pillar:first-child{padding-top:0}
+.philosophy-pillar:last-child{border-bottom:none;padding-bottom:0}
+.philosophy-pillar-num{
+  display:block;font-size:clamp(.68rem,.85vw,.72rem);
+  letter-spacing:.2em;color:#9c7b43;font-weight:500;
+}
+.philosophy-pillar-name{
+  font-family:var(--serif);font-size:clamp(1.15rem,1.8vw,1.45rem);
+  font-weight:400;letter-spacing:.06em;line-height:1.2;
+  color:#2a2823;margin:.45rem 0 0;
+}
+.philosophy-pillar-copy{padding-top:.12rem}
+.philosophy-pillar-title{
+  font-size:clamp(.92rem,1.05vw,1rem);line-height:1.75;
+  font-weight:400;color:#2a2823;margin:0;
+}
+.philosophy-pillar-desc{
+  margin-top:.55rem;font-size:clamp(.82rem,.95vw,.86rem);
+  line-height:1.95;color:#857c68;font-weight:300;
 }
 .sec-label{
   font-family:var(--serif);font-size:clamp(1.45rem,2.6vw,2.15rem);
@@ -475,23 +489,17 @@ footer{
   .nav-link-ja{font-size:.76rem;letter-spacing:.08em}
   .nav-link-en{font-size:.44rem;letter-spacing:.16em;margin-top:.1rem}
   .h-cta{padding:.28rem .62rem}
-  .philosophy{
-    grid-template-columns:1fr;min-height:auto;
+  .philosophy{padding:3.5rem 1.75rem 4rem}
+  .philosophy-inner{grid-template-columns:1fr;gap:2.5rem}
+  .philosophy-intro-body{max-width:none}
+  .philosophy-photo{min-height:200px}
+  .philosophy-pillar{
+    grid-template-columns:minmax(62px,72px) 1fr;
+    gap:.85rem;padding:1rem 0;
   }
-  .philosophy-aside{
-    min-height:clamp(140px,32vw,200px);
-    padding:2.5rem 1.75rem 1.5rem;
-    border-right:none;
-    border-bottom:.5px solid rgba(201,168,76,.1);
-    justify-content:flex-start;
-  }
-  .philosophy-aside-label{
-    font-size:.68rem;letter-spacing:.34em;
-  }
-  .philosophy-panel{
-    padding:2.25rem 1.75rem 3rem;
-  }
-  .philosophy-panel-inner{max-width:none}
+  .philosophy-pillar-name{font-size:1rem}
+  .philosophy-pillar-title{font-size:.9rem;line-height:1.65}
+  .philosophy-pillar-desc{font-size:.84rem}
   .spec{padding:5rem 2rem}
   .spec-grid{grid-template-columns:1fr}
   .spec-card{border-right:none;border-bottom:.5px solid #ddd}
@@ -1058,21 +1066,24 @@ footer{
   --dark-readable:rgba(250,248,244,.68);
   --dark-muted:rgba(250,248,244,.58);
 }
-:is(.spec,.analysis,.voice,.pline,.media-wrap,.contact-wrap,.about-story,.about-shokuiku,.about-activities,.news-wrap){
+:is(.philosophy,.spec,.analysis,.voice,.pline,.media-wrap,.contact-wrap,.about-story,.about-shokuiku,.about-activities,.news-wrap){
   --gray:var(--ink-muted);
 }
-:is(.spec,.analysis,.voice,.pline,.media-wrap,.contact-wrap,.about-story,.about-shokuiku,.about-activities,.news-wrap) :is(.philosophy-en,.analysis-source,.sc-unit,.an-val.gray,.an-val small,.an-vs,.legend-label,.voice-source,.voice-profile-role,.pline-sub,.pline-card-size,.pline-card-uses span,.pline-footer-note,.mc-program,.mc-date,.cf-label,.cf-note,.news-date,.shokuiku-maff){
+:is(.philosophy,.spec,.analysis,.voice,.pline,.media-wrap,.contact-wrap,.about-story,.about-shokuiku,.about-activities,.news-wrap) :is(.philosophy-en,.analysis-source,.sc-unit,.an-val.gray,.an-val small,.an-vs,.legend-label,.voice-source,.voice-profile-role,.pline-sub,.pline-card-size,.pline-card-uses span,.pline-footer-note,.mc-program,.mc-date,.cf-label,.cf-note,.news-date,.shokuiku-maff){
   color:var(--ink-muted)!important;
 }
-:is(.spec,.analysis,.voice,.pline,.media-wrap,.contact-wrap,.about-story,.about-shokuiku,.about-activities,.news-wrap) :is(.sec-label,.philosophy-title,.spec-title,.analysis-title,.compare-title,.pline-title,.about-sec-title,.page-hero-title){
+:is(.philosophy,.spec,.analysis,.voice,.pline,.media-wrap,.contact-wrap,.about-story,.about-shokuiku,.about-activities,.news-wrap) :is(.sec-label,.philosophy-title,.philosophy-headline,.philosophy-pillar-name,.spec-title,.analysis-title,.compare-title,.pline-title,.about-sec-title,.page-hero-title){
   color:var(--ink-heading)!important;
 }
-:is(.spec,.analysis,.voice,.pline,.media-wrap,.contact-wrap,.about-story,.about-shokuiku,.about-activities,.news-wrap) :is(.an-title,.flow-num,.voice-en,.pline-footer-link,.cd-label,.sg-label,.news-cat,.shokuiku-maff a,.cf-note a){
+:is(.philosophy,.spec,.analysis,.voice,.pline,.media-wrap,.contact-wrap,.about-story,.about-shokuiku,.about-activities,.news-wrap) :is(.philosophy-eyebrow-text,.philosophy-pillar-num,.an-title,.flow-num,.voice-en,.pline-footer-link,.cd-label,.sg-label,.news-cat,.shokuiku-maff a,.cf-note a){
   color:var(--ink-gold)!important;
 }
-:is(.spec,.analysis,.voice,.pline,.media-wrap,.contact-wrap,.about-story,.about-shokuiku,.about-activities,.news-wrap) :is(.sc-desc,.an-desc,.voice-body,.voice-quote-main,.pline-card-desc,.pline-list-desc,.mc-desc,.contact-intro-body,.about-sec-body,.shokuiku-body,.sg-list li,.shokuiku-purpose p,.act-card-body){
+:is(.philosophy,.spec,.analysis,.voice,.pline,.media-wrap,.contact-wrap,.about-story,.about-shokuiku,.about-activities,.news-wrap) :is(.philosophy-intro-body,.philosophy-pillar-title,.philosophy-pillar-desc,.sc-desc,.an-desc,.voice-body,.voice-quote-main,.pline-card-desc,.pline-list-desc,.mc-desc,.contact-intro-body,.about-sec-body,.shokuiku-body,.sg-list li,.shokuiku-purpose p,.act-card-body){
   color:var(--ink-body)!important;
 }
+.philosophy .philosophy-intro-body{color:#5f5849!important}
+.philosophy .philosophy-pillar-desc{color:#857c68!important}
+.philosophy .philosophy-eyebrow-text,.philosophy .philosophy-pillar-num{color:#9c7b43!important}
 .contact-wrap .cf-input,.contact-wrap .cf-textarea,.contact-wrap .cf-select{
   color:#16130f;border-color:#d6cec2;background:#fff;font-weight:400;
 }
@@ -1280,19 +1291,58 @@ footer{
 
 <!-- 02 ABOUT -->
 <section class="philosophy" id="about">
-  <div class="philosophy-aside">
-    <p class="philosophy-aside-label">洋菓子専用卵</p>
-  </div>
-  <div class="philosophy-panel">
-    <div class="philosophy-panel-inner">
-      <p class="philosophy-kicker">日光金乃卵とは</p>
-      <p class="philosophy-lead">ただの卵ではありません。</p>
-      <p class="philosophy-sub">三十余年、洋菓子のためだけに<br>作られてきた卵。</p>
-      <div class="philosophy-narrative">
-        <p class="philosophy-body">日光金乃卵は、洋菓子のためだけに生まれた卵です。食べるためではなく、菓子を仕上げるために使われる——それが、この卵の在り方です。</p>
-        <p class="philosophy-body">見た目の色だけを追うのではなく、味わいや香り、年間を通じた安定性まで。仕込みの現場で、毎日の手仕事に馴染んできたからこそ、選ばれています。</p>
+  <div class="philosophy-inner">
+    <div class="philosophy-framing">
+      <div class="philosophy-eyebrow">
+        <span class="philosophy-eyebrow-line" aria-hidden="true"></span>
+        <p class="philosophy-eyebrow-text">素材としての、日光金乃卵</p>
       </div>
-      <div class="philosophy-rule" aria-hidden="true"></div>
+      <h2 class="philosophy-headline">卵を変えるだけで、<br>菓子は変わる。</h2>
+      <p class="philosophy-intro-body">日光金乃卵は、食べるための卵ではありません。洋菓子の現場のためだけに設計した、製菓用の冷凍加工卵です。色・味・安定性、そして扱いやすさを、職人の仕事に最適化しました。</p>
+      <p class="philosophy-tag">製菓用 ／ 冷凍加工卵</p>
+      <div class="philosophy-photo" role="img" aria-label="仕込みの現場"></div>
+    </div>
+    <div class="philosophy-pillars">
+      <article class="philosophy-pillar">
+        <div class="philosophy-pillar-label">
+          <span class="philosophy-pillar-num">01</span>
+          <h3 class="philosophy-pillar-name">色</h3>
+        </div>
+        <div class="philosophy-pillar-copy">
+          <p class="philosophy-pillar-title">焼き上がりに映える、深い黄色。</p>
+          <p class="philosophy-pillar-desc">クリームもスポンジも、ひと目で違う仕上がりの色に。</p>
+        </div>
+      </article>
+      <article class="philosophy-pillar">
+        <div class="philosophy-pillar-label">
+          <span class="philosophy-pillar-num">02</span>
+          <h3 class="philosophy-pillar-name">味</h3>
+        </div>
+        <div class="philosophy-pillar-copy">
+          <p class="philosophy-pillar-title">雑味のない、澄んだ卵のコク。</p>
+          <p class="philosophy-pillar-desc">卵特有の臭みを抑え、素材本来の香りを邪魔しない。</p>
+        </div>
+      </article>
+      <article class="philosophy-pillar">
+        <div class="philosophy-pillar-label">
+          <span class="philosophy-pillar-num">03</span>
+          <h3 class="philosophy-pillar-name">安定性</h3>
+        </div>
+        <div class="philosophy-pillar-copy">
+          <p class="philosophy-pillar-title">季節や個体差に左右されない、一定の規格。</p>
+          <p class="philosophy-pillar-desc">いつ仕込んでも同じ仕上がり。高い再現性が信頼になる。</p>
+        </div>
+      </article>
+      <article class="philosophy-pillar">
+        <div class="philosophy-pillar-label">
+          <span class="philosophy-pillar-num">04</span>
+          <h3 class="philosophy-pillar-name">現場メリット</h3>
+        </div>
+        <div class="philosophy-pillar-copy">
+          <p class="philosophy-pillar-title">割卵いらずで、衛生も歩留まりも向上。</p>
+          <p class="philosophy-pillar-desc">仕込み時間とロスを削減し、厨房の手を空ける。</p>
+        </div>
+      </article>
     </div>
   </div>
 </section>
