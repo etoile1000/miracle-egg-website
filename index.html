@@ -383,8 +383,7 @@ nav{display:flex;align-items:center;gap:clamp(1rem,1.6vw,1.75rem)}
 }
 .pastry-why-inner{max-width:1200px;margin:0 auto}
 .pastry-why-top{
-  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.92fr);
-  gap:clamp(2.5rem,5vw,4.5rem);align-items:center;
+  max-width:38rem;
 }
 .pastry-why-label{
   font-size:clamp(.68rem,.85vw,.74rem);letter-spacing:.34em;
@@ -403,25 +402,12 @@ nav{display:flex;align-items:center;gap:clamp(1rem,1.6vw,1.75rem)}
 .pastry-why-lead{
   font-size:clamp(.88rem,1.05vw,.94rem);line-height:2.05;
   color:#6b6354;font-weight:300;margin:clamp(1.1rem,1.8vw,1.35rem) 0 0;
-  max-width:28rem;
-}
-.pastry-why-visual{
-  position:relative;overflow:hidden;
-  aspect-ratio:4/5;max-height:clamp(280px,38vw,420px);
-  width:100%;
-}
-.pastry-why-visual img{
-  display:block;width:100%;height:100%;
-  object-fit:cover;object-position:center 40%;
-}
-.pastry-why-visual::after{
-  content:'';position:absolute;inset:0;
-  background:rgba(42,40,35,.08);pointer-events:none;
+  max-width:34rem;
 }
 .pastry-why-cards{
   display:grid;grid-template-columns:repeat(3,1fr);
   gap:2px;background:#ddd2bd;border:.5px solid #ddd2bd;
-  margin-top:clamp(3rem,5vw,4.5rem);
+  margin-top:clamp(3.5rem,6vw,5rem);
 }
 .pastry-why-card{
   background:#f7f1e6;
@@ -551,12 +537,9 @@ footer{
   .philosophy-pillar-title{font-size:.9rem;line-height:1.65}
   .philosophy-pillar-desc{font-size:.84rem}
   .pastry-why{padding:3rem 1.5rem}
-  .pastry-why-top{grid-template-columns:1fr;gap:1.75rem}
+  .pastry-why-top{max-width:none}
   .pastry-why-lead{max-width:none}
-  .pastry-why-visual{
-    aspect-ratio:16/10;max-height:220px;
-  }
-  .pastry-why-cards{grid-template-columns:1fr;margin-top:2rem}
+  .pastry-why-cards{grid-template-columns:1fr;margin-top:2.5rem}
   .pastry-why-card{min-height:0;padding:1.75rem 1.5rem}
   .media-bar{flex-direction:column;align-items:flex-start;padding:2.5rem 2rem;gap:1.5rem}
   .media-bar-lbl{border-right:none;border-bottom:.5px solid #ddd;padding-right:0;padding-bottom:1rem}
@@ -1429,16 +1412,6 @@ footer{
         <h2 class="pastry-why-title">なぜ、洋菓子専用なのか。</h2>
         <p class="pastry-why-copy">お菓子のために、<br>すべてを最適化した卵。</p>
         <p class="pastry-why-lead">食用卵ではなく、製菓素材として設計された卵。発色、コク、安定性——菓子づくりに必要な特性を、一つひとつ最適化しています。</p>
-      </div>
-      <div class="pastry-why-visual">
-        <img
-          src="images/philosophy-kitchen.jpg"
-          alt="洋菓子の厨房で仕込む職人"
-          width="1024"
-          height="682"
-          loading="lazy"
-          decoding="async"
-        >
       </div>
     </div>
     <div class="pastry-why-cards">
