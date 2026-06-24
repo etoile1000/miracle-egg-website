@@ -21,7 +21,7 @@ html{scroll-behavior:smooth}
 body{background:var(--black);color:var(--white);font-family:var(--sans);font-weight:300;-webkit-font-smoothing:antialiased}
 
 /* ── HEADER ── */
-header{
+.site-header{
   position:fixed;top:0;left:0;right:0;z-index:200;
   display:flex;align-items:center;justify-content:space-between;
   padding:.72rem 3rem;min-height:68px;
@@ -377,9 +377,11 @@ nav{display:flex;align-items:center;gap:clamp(1rem,1.6vw,1.75rem)}
 
 /* ── 03 PASTRY WHY (洋菓子専用) ── */
 .pastry-why{
+  position:relative;z-index:1;isolation:isolate;
   background:#f4eee2;color:#2a2823;
   padding:clamp(5rem,10vw,9rem) clamp(2rem,5vw,4rem);
   border-top:.5px solid rgba(201,168,76,.1);
+  scroll-margin-top:5rem;
 }
 .pastry-why-inner{max-width:1200px;margin:0 auto}
 .pastry-why-intro{
@@ -414,6 +416,7 @@ nav{display:flex;align-items:center;gap:clamp(1rem,1.6vw,1.75rem)}
   font-size:clamp(140px,20vw,320px);font-weight:300;line-height:1;
   color:rgba(190,150,70,.08);pointer-events:none;z-index:0;
   user-select:none;
+  max-width:100%;overflow:hidden;
 }
 .pastry-why-story--left .pastry-why-story-bgnum{left:-.04em;top:-.12em}
 .pastry-why-story--reverse .pastry-why-story-bgnum{right:-.04em;top:-.12em}
@@ -424,6 +427,9 @@ nav{display:flex;align-items:center;gap:clamp(1rem,1.6vw,1.75rem)}
 .pastry-why-story-photo img{
   display:block;width:100%;height:100%;object-fit:cover;
 }
+.pastry-why-story-photo img.pw-crop-01{object-position:center 32%}
+.pastry-why-story-photo img.pw-crop-02{object-position:center 55%}
+.pastry-why-story-photo img.pw-crop-03{object-position:center 68%}
 .pastry-why-story-copy{
   flex:1;display:flex;flex-direction:column;justify-content:center;
   position:relative;z-index:1;max-width:500px;
@@ -524,7 +530,7 @@ footer{
 
 /* ── MOBILE ── */
 @media(max-width:768px){
-  header{
+  .site-header{
     flex-direction:column;align-items:stretch;gap:.5rem;
     padding:.65rem 1rem .72rem;min-height:0;
   }
@@ -1128,6 +1134,7 @@ footer{
 :root{
   --ink-muted:#625d55;
   --ink-body:#403b34;
+  --ink-heading:#2a2823;
   --ink-gold:#8f6918;
   --dark-readable:rgba(250,248,244,.68);
   --dark-muted:rgba(250,248,244,.58);
@@ -1178,7 +1185,7 @@ footer{
 <body>
 
 <!-- HEADER -->
-<header>
+<header class="site-header">
   <a href="index.html" class="h-logo" aria-label="MIRACLE EGG">
     <img src="images/logo-icon.png" alt="" class="h-logo-icon" width="169" height="208" aria-hidden="true">
     <img src="images/logo-text.png" alt="MIRACLE EGG" class="h-logo-text-img" width="451" height="41">
@@ -1434,7 +1441,7 @@ footer{
 <!-- 03 PASTRY WHY -->
 <section class="pastry-why" id="pastry-why">
   <div class="pastry-why-inner">
-    <header class="pastry-why-intro">
+    <div class="pastry-why-intro">
       <p class="pastry-why-label">Why Patisserie Only</p>
       <h2 class="pastry-why-title">なぜ、洋菓子専用なのか。</h2>
       <div class="pastry-why-intro-body">
@@ -1442,18 +1449,19 @@ footer{
         <p>三十余年、<br>洋菓子と向き合う中で、</p>
         <p>私たちが辿り着いた答えは、<br>とてもシンプルでした。</p>
       </div>
-    </header>
+    </div>
 
     <article class="pastry-why-story pastry-why-story--left">
       <span class="pastry-why-story-bgnum" aria-hidden="true">01</span>
       <div class="pastry-why-story-photo">
         <img
-          src="https://images.unsplash.com/photo-1578985545062-cf5634b17475?w=1200&q=85"
+          src="images/philosophy-kitchen.jpg"
           alt="焼き上がったスポンジの断面"
-          width="1200"
-          height="800"
+          width="1024"
+          height="682"
           loading="lazy"
           decoding="async"
+          class="pw-crop-01"
         >
       </div>
       <div class="pastry-why-story-copy">
@@ -1469,12 +1477,13 @@ footer{
       <span class="pastry-why-story-bgnum" aria-hidden="true">02</span>
       <div class="pastry-why-story-photo">
         <img
-          src="https://images.unsplash.com/photo-1563805042-7684c019e125?w=1200&q=85"
+          src="images/philosophy-kitchen.jpg"
           alt="プリンとカスタード系の洋菓子"
-          width="1200"
-          height="800"
+          width="1024"
+          height="682"
           loading="lazy"
           decoding="async"
+          class="pw-crop-02"
         >
       </div>
       <div class="pastry-why-story-copy">
@@ -1497,6 +1506,7 @@ footer{
           height="682"
           loading="lazy"
           decoding="async"
+          class="pw-crop-03"
         >
       </div>
       <div class="pastry-why-story-copy">
@@ -1509,9 +1519,9 @@ footer{
       </div>
     </article>
 
-    <footer class="pastry-why-closing">
+    <div class="pastry-why-closing">
       <p>洋菓子の理想を叶えるために。<br>日光金乃卵は、<br>すべてを最適化しています。</p>
-    </footer>
+    </div>
   </div>
 </section>
 

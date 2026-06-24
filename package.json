@@ -1,0 +1,7 @@
+{
+  "name": "miracle-egg-website",
+  "private": true,
+  "scripts": {
+    "build": "node -e \"require('fs').accessSync('index.html'); console.log('Build OK');\""
+  }
+}
