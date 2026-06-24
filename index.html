@@ -375,81 +375,87 @@ nav{display:flex;align-items:center;gap:clamp(1rem,1.6vw,1.75rem)}
   color:var(--black);margin-bottom:1.2rem;text-transform:none;
 }
 
-/* ── 03 PASTRY WHY (洋菓子専用) ── */
+/* ── 03 PASTRY WHY (洋菓子専用・雑誌特集) ── */
 .pastry-why{
   position:relative;z-index:1;isolation:isolate;
-  background:#fffdf8;color:#2a2823;
-  padding:clamp(4.5rem,8vw,7rem) clamp(2rem,5vw,4rem);
-  border-top:.5px solid rgba(200,169,106,.12);
+  background:linear-gradient(180deg,#f7f0e4 0%,#fbf5ea 100%);
+  color:#2f2b25;
+  padding:clamp(4.5rem,8vw,6.5rem) clamp(1.25rem,4vw,3.5rem);
+  border-top:.5px solid rgba(179,140,47,.1);
   scroll-margin-top:5rem;
 }
-.pastry-why-inner{max-width:1120px;margin:0 auto}
-.pastry-why-hero{
-  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.88fr);
-  gap:clamp(2.5rem,5vw,4.5rem);align-items:center;
+.pastry-why-inner{max-width:1180px;margin:0 auto}
+.pastry-why-intro{
+  text-align:center;max-width:40rem;
+  margin:0 auto 5rem;padding:0 clamp(.5rem,2vw,1rem);
 }
-.pastry-why-copy{max-width:34rem}
-.pastry-why-eyebrow{
-  font-family:var(--serif);font-size:clamp(.95rem,1.15vw,1.05rem);
-  line-height:1.85;letter-spacing:.04em;color:#8a7350;font-weight:400;margin:0;
+.pastry-why-label{
+  font-size:clamp(.68rem,.85vw,.74rem);letter-spacing:.38em;
+  color:#b38c2f;text-transform:uppercase;margin:0;
 }
 .pastry-why-title{
-  font-family:var(--serif);font-size:clamp(1.85rem,3.2vw,2.55rem);
-  font-weight:400;line-height:1.45;letter-spacing:.04em;
-  color:#2a2823;margin:clamp(1.25rem,2vw,1.6rem) 0 0;
+  font-family:var(--serif);font-size:clamp(1.75rem,3.2vw,2.45rem);
+  font-weight:400;line-height:1.5;letter-spacing:.04em;
+  color:#2f2b25;margin:clamp(1rem,1.6vw,1.25rem) 0 0;
 }
-.pastry-why-body{
-  margin-top:clamp(1.75rem,2.8vw,2.25rem);
-  font-size:clamp(.88rem,1vw,.94rem);line-height:2.1;
-  color:#5f5849;font-weight:300;
+.pastry-why-intro-body{
+  margin-top:clamp(1.75rem,3vw,2.25rem);
+  font-family:var(--serif);font-size:clamp(.92rem,1.1vw,1rem);
+  line-height:2.15;color:#4f4a42;font-weight:300;
 }
-.pastry-why-body p+p{margin-top:1.35em}
-.pastry-why-body em{
-  font-style:normal;color:#3a3527;
+.pastry-why-intro-body p+p{margin-top:1.5em}
+.pastry-why-story{
+  position:relative;display:flex;align-items:stretch;
+  gap:clamp(0px,3vw,4rem);
+  margin-top:clamp(0px,2vw,2.5rem);
 }
-.pastry-why-visual{
-  width:100%;max-width:420px;justify-self:end;
-  aspect-ratio:4/5;border-radius:20px;overflow:hidden;
-  background:#f3efe6;
+.pastry-why-story:first-of-type{margin-top:0}
+.pastry-why-story--reverse{flex-direction:row-reverse}
+.pastry-why-story-photo{
+  flex:0 0 50%;width:50%;position:relative;z-index:1;
+  min-height:clamp(240px,28vw,360px);
 }
-.pastry-why-visual img{
-  display:block;width:100%;height:100%;object-fit:cover;
-  object-position:center 40%;
+.pastry-why-story-photo img{
+  display:block;width:100%;height:100%;min-height:inherit;
+  object-fit:cover;object-position:center;
 }
-.pastry-why-features{
-  display:grid;grid-template-columns:repeat(3,1fr);
-  gap:clamp(1rem,2vw,1.25rem);
-  margin-top:clamp(3.5rem,6vw,5rem);
+.pastry-why-story-photo img.pw-op-01{object-position:center 28%}
+.pastry-why-story-photo img.pw-op-03{object-position:center 62%}
+.pastry-why-story-copy{
+  flex:0 0 50%;width:50%;position:relative;z-index:1;
+  display:flex;flex-direction:column;justify-content:center;
+  padding:clamp(1.25rem,2.5vw,2rem) clamp(.5rem,2vw,1.5rem);
+  max-width:none;
 }
-.pastry-why-feature{
-  position:relative;background:#fff;
-  border:1px solid #e8e1d5;border-radius:16px;
-  padding:clamp(1.75rem,2.5vw,2.25rem) clamp(1.5rem,2vw,1.75rem);
-  overflow:hidden;
+.pastry-why-story-bgnum{
+  position:absolute;font-family:var(--serif);
+  font-size:clamp(120px,18vw,260px);font-weight:300;line-height:1;
+  color:rgba(179,140,47,.1);pointer-events:none;z-index:0;
+  user-select:none;top:-.08em;left:-.02em;
 }
-.pastry-why-feature::before{
-  content:'';position:absolute;top:0;left:0;right:0;height:2px;
-  background:#c8a96a;border-radius:16px 16px 0 0;
+.pastry-why-story--reverse .pastry-why-story-bgnum{
+  left:auto;right:-.02em;
 }
-.pastry-why-feature-num{
-  font-family:var(--serif);font-size:clamp(1.1rem,1.4vw,1.25rem);
-  font-weight:300;line-height:1;letter-spacing:.08em;color:#c8a96a;
+.pastry-why-story-title{
+  position:relative;z-index:1;
+  font-family:var(--serif);font-size:clamp(1.25rem,1.8vw,1.55rem);
+  font-weight:400;line-height:1.45;letter-spacing:.04em;color:#b38c2f;
 }
-.pastry-why-feature-title{
-  font-family:var(--serif);font-size:clamp(1rem,1.25vw,1.1rem);
-  font-weight:400;line-height:1.5;letter-spacing:.03em;
-  color:#2a2823;margin:clamp(.85rem,1.2vw,1rem) 0 0;
+.pastry-why-story-body{
+  position:relative;z-index:1;
+  margin-top:clamp(1.1rem,1.8vw,1.45rem);
+  font-size:clamp(.86rem,.98vw,.92rem);line-height:2.05;
+  color:#4f4a42;font-weight:300;
 }
-.pastry-why-feature-desc{
-  font-size:clamp(.82rem,.92vw,.86rem);line-height:1.95;
-  color:#6b6354;font-weight:300;margin:clamp(.65rem,1vw,.75rem) 0 0;
+.pastry-why-story-body p+p{margin-top:1.2em}
+.pastry-why-closing{
+  text-align:center;
+  margin-top:clamp(3.5rem,6vw,4.5rem);
+  padding:clamp(2rem,4vw,3rem) 0 0;
 }
-@media(max-width:900px){
-  .pastry-why-hero{grid-template-columns:1fr;gap:clamp(2rem,4vw,2.5rem)}
-  .pastry-why-visual{max-width:none;justify-self:stretch}
-}
-@media(max-width:640px){
-  .pastry-why-features{grid-template-columns:1fr;margin-top:2.5rem}
+.pastry-why-closing p{
+  font-family:var(--serif);font-size:clamp(.82rem,.95vw,.88rem);
+  line-height:2.15;letter-spacing:.05em;color:#4f4a42;font-weight:300;
 }
 
 /* ── 04 WHOLESALE (黒背景 中央CTA) ── */
@@ -561,7 +567,19 @@ footer{
   .philosophy-pillar-title{font-size:.9rem;line-height:1.65}
   .philosophy-pillar-desc{font-size:.84rem}
   .pastry-why{padding:3rem 1.25rem 3.5rem}
-  .pastry-why-copy{max-width:none}
+  .pastry-why-intro{margin-bottom:3rem}
+  .pastry-why-story,
+  .pastry-why-story--reverse{
+    flex-direction:column;gap:0;margin-top:clamp(0px,2vw,1.5rem);
+  }
+  .pastry-why-story-photo{
+    flex:none;width:100%;min-height:clamp(220px,58vw,300px);
+  }
+  .pastry-why-story-copy{
+    flex:none;width:100%;padding:1.5rem 0 0;
+  }
+  .pastry-why-story-bgnum{font-size:clamp(96px,24vw,140px)}
+  .pastry-why-closing{margin-top:2.5rem;padding-top:1.5rem}
   .media-bar{flex-direction:column;align-items:flex-start;padding:2.5rem 2rem;gap:1.5rem}
   .media-bar-lbl{border-right:none;border-bottom:.5px solid #ddd;padding-right:0;padding-bottom:1rem}
   .wholesale{padding:6rem 2rem}
@@ -1132,24 +1150,22 @@ footer{
 :is(.philosophy,.pastry-why,.analysis,.voice,.pline,.media-wrap,.contact-wrap,.about-story,.about-shokuiku,.about-activities,.news-wrap) :is(.philosophy-en,.analysis-source,.an-val.gray,.an-val small,.an-vs,.legend-label,.voice-source,.voice-profile-role,.pline-sub,.pline-card-size,.pline-card-uses span,.pline-footer-note,.mc-program,.mc-date,.cf-label,.cf-note,.news-date,.shokuiku-maff){
   color:var(--ink-muted)!important;
 }
-:is(.philosophy,.pastry-why,.analysis,.voice,.pline,.media-wrap,.contact-wrap,.about-story,.about-shokuiku,.about-activities,.news-wrap) :is(.sec-label,.philosophy-title,.philosophy-headline,.philosophy-pillar-name,.pastry-why-title,.pastry-why-feature-title,.analysis-title,.compare-title,.pline-title,.about-sec-title,.page-hero-title){
+:is(.philosophy,.pastry-why,.analysis,.voice,.pline,.media-wrap,.contact-wrap,.about-story,.about-shokuiku,.about-activities,.news-wrap) :is(.sec-label,.philosophy-title,.philosophy-headline,.philosophy-pillar-name,.pastry-why-title,.pastry-why-story-title,.analysis-title,.compare-title,.pline-title,.about-sec-title,.page-hero-title){
   color:var(--ink-heading)!important;
 }
-:is(.philosophy,.pastry-why,.analysis,.voice,.pline,.media-wrap,.contact-wrap,.about-story,.about-shokuiku,.about-activities,.news-wrap) :is(.philosophy-eyebrow-text,.philosophy-pillar-num,.pastry-why-eyebrow,.pastry-why-feature-num,.an-title,.flow-num,.voice-en,.pline-footer-link,.cd-label,.sg-label,.news-cat,.shokuiku-maff a,.cf-note a){
+:is(.philosophy,.pastry-why,.analysis,.voice,.pline,.media-wrap,.contact-wrap,.about-story,.about-shokuiku,.about-activities,.news-wrap) :is(.philosophy-eyebrow-text,.philosophy-pillar-num,.pastry-why-label,.an-title,.flow-num,.voice-en,.pline-footer-link,.cd-label,.sg-label,.news-cat,.shokuiku-maff a,.cf-note a){
   color:var(--ink-gold)!important;
 }
-:is(.philosophy,.pastry-why,.analysis,.voice,.pline,.media-wrap,.contact-wrap,.about-story,.about-shokuiku,.about-activities,.news-wrap) :is(.philosophy-intro-body,.philosophy-pillar-title,.philosophy-pillar-desc,.pastry-why-body,.pastry-why-feature-desc,.an-desc,.voice-body,.voice-quote-main,.pline-card-desc,.pline-list-desc,.mc-desc,.contact-intro-body,.about-sec-body,.shokuiku-body,.sg-list li,.shokuiku-purpose p,.act-card-body){
+:is(.philosophy,.pastry-why,.analysis,.voice,.pline,.media-wrap,.contact-wrap,.about-story,.about-shokuiku,.about-activities,.news-wrap) :is(.philosophy-intro-body,.philosophy-pillar-title,.philosophy-pillar-desc,.pastry-why-intro-body,.pastry-why-story-body,.an-desc,.voice-body,.voice-quote-main,.pline-card-desc,.pline-list-desc,.mc-desc,.contact-intro-body,.about-sec-body,.shokuiku-body,.sg-list li,.shokuiku-purpose p,.act-card-body){
   color:var(--ink-body)!important;
 }
 .philosophy .philosophy-intro-body{color:#5f5849!important}
 .philosophy .philosophy-story-em{color:#3a3527!important}
 .philosophy .philosophy-pillar-desc{color:#857c68!important}
 .philosophy .philosophy-eyebrow-text,.philosophy .philosophy-pillar-num{color:#9c7b43!important}
-.pastry-why .pastry-why-body{color:#5f5849!important}
-.pastry-why .pastry-why-body em{color:#3a3527!important}
-.pastry-why .pastry-why-eyebrow{color:#8a7350!important}
-.pastry-why .pastry-why-feature-num{color:#c8a96a!important}
-.pastry-why .pastry-why-feature-desc{color:#6b6354!important}
+.pastry-why .pastry-why-intro-body,.pastry-why .pastry-why-story-body,.pastry-why .pastry-why-closing p{color:#4f4a42!important}
+.pastry-why .pastry-why-label{color:#b38c2f!important}
+.pastry-why .pastry-why-story-title{color:#b38c2f!important}
 .contact-wrap .cf-input,.contact-wrap .cf-textarea,.contact-wrap .cf-select{
   color:#16130f;border-color:#d6cec2;background:#fff;font-weight:400;
 }
@@ -1430,46 +1446,85 @@ footer{
 <!-- 03 PASTRY WHY -->
 <section class="pastry-why" id="pastry-why">
   <div class="pastry-why-inner">
-    <div class="pastry-why-hero">
-      <div class="pastry-why-copy">
-        <p class="pastry-why-eyebrow">30年以上、<br>洋菓子のためだけに。</p>
-        <h2 class="pastry-why-title">なぜ洋菓子専用なのか</h2>
-        <div class="pastry-why-body">
-          <p>日光金乃卵は、食卓向けではありません。</p>
-          <p>スポンジの色。<br>カスタードの艶。<br>プリンの口どけ。</p>
-          <p>洋菓子の仕上がりを少しでも良くするために、<br>飼料の配合から見直しを続けてきました。</p>
-          <p>私たちが目指したのは、<br><em>「卵の存在を主張すること」ではなく、</em><br>職人の技術や素材の魅力を引き立てること。</p>
-          <p>30年以上、<br>洋菓子のためだけに磨き続けてきた卵です。</p>
-        </div>
+    <div class="pastry-why-intro">
+      <p class="pastry-why-label">Why Patisserie Only</p>
+      <h2 class="pastry-why-title">なぜ、洋菓子専用なのか。</h2>
+      <div class="pastry-why-intro-body">
+        <p>食べるための卵ではなく、<br>菓子になるための卵。</p>
+        <p>三十余年、<br>洋菓子と向き合う中で、</p>
+        <p>私たちが辿り着いた答えは、<br>とてもシンプルでした。</p>
       </div>
-      <div class="pastry-why-visual">
+    </div>
+
+    <article class="pastry-why-story pastry-why-story--left">
+      <div class="pastry-why-story-photo">
         <img
           src="images/philosophy-kitchen.jpg"
-          alt="洋菓子の厨房（仮画像）"
+          alt="焼き上がったスポンジの断面（仮画像）"
           width="1024"
           height="682"
           loading="lazy"
           decoding="async"
+          class="pw-op-01"
         >
       </div>
-    </div>
+      <div class="pastry-why-story-copy">
+        <span class="pastry-why-story-bgnum" aria-hidden="true">01</span>
+        <h3 class="pastry-why-story-title">深い黄色</h3>
+        <div class="pastry-why-story-body">
+          <p>焼き上がったスポンジ。<br>カスタードの色。<br>ショーケースに並んだ瞬間の存在感。</p>
+          <p>洋菓子にとって、<br>色は味の前に伝わる価値だからです。</p>
+        </div>
+      </div>
+    </article>
 
-    <div class="pastry-why-features">
-      <article class="pastry-why-feature">
-        <p class="pastry-why-feature-num">01</p>
-        <h3 class="pastry-why-feature-title">自然な発色</h3>
-        <p class="pastry-why-feature-desc">焼成後も美しい色味。<br>ショーケースでの印象を高めます。</p>
-      </article>
-      <article class="pastry-why-feature">
-        <p class="pastry-why-feature-num">02</p>
-        <h3 class="pastry-why-feature-title">素材を活かす味</h3>
-        <p class="pastry-why-feature-desc">卵臭さを抑え、<br>主役素材の風味を引き立てます。</p>
-      </article>
-      <article class="pastry-why-feature">
-        <p class="pastry-why-feature-num">03</p>
-        <h3 class="pastry-why-feature-title">安定した仕上がり</h3>
-        <p class="pastry-why-feature-desc">季節ごとの飼料設計により、<br>品質のばらつきを抑えています。</p>
-      </article>
+    <article class="pastry-why-story pastry-why-story--reverse">
+      <div class="pastry-why-story-photo">
+        <img
+          src="images/pastry-why-02.png"
+          alt="プリンとカスタード系の洋菓子（仮画像）"
+          width="800"
+          height="600"
+          loading="lazy"
+          decoding="async"
+        >
+      </div>
+      <div class="pastry-why-story-copy">
+        <span class="pastry-why-story-bgnum" aria-hidden="true">02</span>
+        <h3 class="pastry-why-story-title">味と香り</h3>
+        <div class="pastry-why-story-body">
+          <p>卵が主張しすぎないこと。<br>素材の風味を邪魔しないこと。</p>
+          <p>それでいて、<br>奥行きのあるコクを残すこと。</p>
+          <p>主役を引き立てるための味を<br>追求しました。</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="pastry-why-story pastry-why-story--left">
+      <div class="pastry-why-story-photo">
+        <img
+          src="images/pastry-why-03.jpg"
+          alt="洋菓子工房での仕込み風景"
+          width="1024"
+          height="682"
+          loading="lazy"
+          decoding="async"
+          class="pw-op-03"
+        >
+      </div>
+      <div class="pastry-why-story-copy">
+        <span class="pastry-why-story-bgnum" aria-hidden="true">03</span>
+        <h3 class="pastry-why-story-title">安定性</h3>
+        <div class="pastry-why-story-body">
+          <p>毎日の仕込みに、<br>同じ品質を届けること。</p>
+          <p>職人の感覚を裏切らないこと。</p>
+          <p>見えない部分こそ、<br>素材としての責任だと考えています。</p>
+        </div>
+      </div>
+    </article>
+
+    <div class="pastry-why-closing">
+      <p>洋菓子の理想を叶えるために。<br>日光金乃卵は、すべてを最適化しています。</p>
     </div>
   </div>
 </section>
