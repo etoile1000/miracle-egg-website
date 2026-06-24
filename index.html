@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>日光金乃卵® | Miracle Egg</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200;300;400&family=Noto+Sans+JP:wght@200;300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Noto+Serif+JP:wght@200;300;400&family=Noto+Sans+JP:wght@200;300;400&family=Playfair+Display:wght@400&display=swap');
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --black:#080806;
@@ -384,7 +384,7 @@ nav{display:flex;align-items:center;gap:clamp(1rem,1.6vw,1.75rem)}
   border-top:.5px solid rgba(179,140,47,.1);
   scroll-margin-top:5rem;
 }
-.pastry-why-inner{max-width:1180px;margin:0 auto}
+.pastry-why-inner{max-width:1180px;margin:0 auto;overflow:visible}
 .pastry-why-intro{
   text-align:center;max-width:40rem;
   margin:0 auto 5rem;padding:0 clamp(.5rem,2vw,1rem);
@@ -404,6 +404,7 @@ nav{display:flex;align-items:center;gap:clamp(1rem,1.6vw,1.75rem)}
   position:relative;display:flex;align-items:stretch;
   gap:clamp(0px,3vw,4rem);
   margin-top:clamp(0px,2vw,2.5rem);
+  overflow:visible;
 }
 .pastry-why-story:first-of-type{margin-top:0}
 .pastry-why-story--reverse{flex-direction:row-reverse}
@@ -416,28 +417,36 @@ nav{display:flex;align-items:center;gap:clamp(1rem,1.6vw,1.75rem)}
   object-fit:cover;object-position:center;
 }
 .pastry-why-story-copy{
-  flex:0 0 50%;width:50%;position:relative;z-index:1;
+  flex:0 0 50%;width:50%;position:relative;z-index:2;
   display:flex;flex-direction:column;justify-content:center;
-  padding:clamp(1.25rem,2.5vw,2rem) clamp(.5rem,2vw,1.5rem);
+  padding:clamp(2rem,4vw,3.25rem) clamp(1rem,3vw,2rem) clamp(1.25rem,2.5vw,2rem);
   max-width:none;
 }
 .pastry-why-story-bgnum{
-  position:absolute;font-family:var(--serif);
-  font-size:clamp(120px,18vw,260px);font-weight:300;line-height:1;
-  color:rgba(179,140,47,.1);pointer-events:none;z-index:0;
-  user-select:none;top:-.08em;left:-.02em;
+  position:absolute;
+  font-family:"Cormorant Garamond","Playfair Display",serif;
+  font-size:clamp(180px,22vw,340px);font-weight:300;line-height:.9;
+  color:rgba(179,140,47,.08);pointer-events:none;z-index:0;
+  user-select:none;letter-spacing:-.02em;
 }
-.pastry-why-story--reverse .pastry-why-story-bgnum{
-  left:auto;right:-.02em;
+.pastry-why-story-bgnum--01{
+  top:clamp(-56px,-6vw,-80px);right:clamp(-16px,-3vw,-40px);left:auto;
+}
+.pastry-why-story-bgnum--02{
+  top:clamp(-40px,-5vw,-60px);left:clamp(-48px,-8vw,-120px);right:auto;
+}
+.pastry-why-story-bgnum--03{
+  top:clamp(-56px,-6vw,-80px);right:clamp(-16px,-3vw,-40px);left:auto;
 }
 .pastry-why-story-title{
-  position:relative;z-index:1;
+  position:relative;z-index:2;
   font-family:var(--serif);font-size:clamp(1.25rem,1.8vw,1.55rem);
   font-weight:400;line-height:1.45;letter-spacing:.04em;color:#b38c2f;
+  margin:0;padding-top:clamp(.75rem,1.5vw,1.25rem);
 }
 .pastry-why-story-body{
-  position:relative;z-index:1;
-  margin-top:clamp(1.1rem,1.8vw,1.45rem);
+  position:relative;z-index:2;
+  margin-top:clamp(1.35rem,2vw,1.75rem);
   font-size:clamp(.86rem,.98vw,.92rem);line-height:2.05;
   color:#4f4a42;font-weight:300;
 }
@@ -570,9 +579,18 @@ footer{
     flex:none;width:100%;min-height:clamp(220px,58vw,300px);
   }
   .pastry-why-story-copy{
-    flex:none;width:100%;padding:1.5rem 0 0;
+    flex:none;width:100%;
+    padding:clamp(2rem,5vw,2.5rem) 0 clamp(1rem,3vw,1.25rem);
   }
-  .pastry-why-story-bgnum{font-size:clamp(96px,24vw,140px)}
+  .pastry-why-story-bgnum{font-size:clamp(120px,34vw,200px);line-height:.88}
+  .pastry-why-story-bgnum--01,
+  .pastry-why-story-bgnum--03{
+    top:-28px;right:0;left:auto;
+  }
+  .pastry-why-story-bgnum--02{
+    top:-24px;left:-8px;right:auto;
+  }
+  .pastry-why-story-title{padding-top:1.5rem}
   .pastry-why-closing{margin-top:2.5rem;padding-top:1.5rem}
   .media-bar{flex-direction:column;align-items:flex-start;padding:2.5rem 2rem;gap:1.5rem}
   .media-bar-lbl{border-right:none;border-bottom:.5px solid #ddd;padding-right:0;padding-bottom:1rem}
@@ -1449,6 +1467,7 @@ footer{
     </div>
 
     <article class="pastry-why-story pastry-why-story--left">
+      <span class="pastry-why-story-bgnum pastry-why-story-bgnum--01" aria-hidden="true">01</span>
       <div class="pastry-why-story-photo">
         <img
           src="images/01_sponge_mockup_crop.png"
@@ -1460,7 +1479,6 @@ footer{
         >
       </div>
       <div class="pastry-why-story-copy">
-        <span class="pastry-why-story-bgnum" aria-hidden="true">01</span>
         <h3 class="pastry-why-story-title">深い黄色</h3>
         <div class="pastry-why-story-body">
           <p>焼き上がったスポンジ。<br>カスタードの色。<br>ショーケースに並んだ瞬間の存在感。</p>
@@ -1470,6 +1488,7 @@ footer{
     </article>
 
     <article class="pastry-why-story pastry-why-story--reverse">
+      <span class="pastry-why-story-bgnum pastry-why-story-bgnum--02" aria-hidden="true">02</span>
       <div class="pastry-why-story-photo">
         <img
           src="images/02_pudding_mockup_crop.png"
@@ -1481,7 +1500,6 @@ footer{
         >
       </div>
       <div class="pastry-why-story-copy">
-        <span class="pastry-why-story-bgnum" aria-hidden="true">02</span>
         <h3 class="pastry-why-story-title">味と香り</h3>
         <div class="pastry-why-story-body">
           <p>卵が主張しすぎないこと。<br>素材の風味を邪魔しないこと。</p>
@@ -1492,6 +1510,7 @@ footer{
     </article>
 
     <article class="pastry-why-story pastry-why-story--left">
+      <span class="pastry-why-story-bgnum pastry-why-story-bgnum--03" aria-hidden="true">03</span>
       <div class="pastry-why-story-photo">
         <img
           src="images/03_whisk_mockup_crop.png"
@@ -1503,7 +1522,6 @@ footer{
         >
       </div>
       <div class="pastry-why-story-copy">
-        <span class="pastry-why-story-bgnum" aria-hidden="true">03</span>
         <h3 class="pastry-why-story-title">安定性</h3>
         <div class="pastry-why-story-body">
           <p>毎日の仕込みに、<br>同じ品質を届けること。</p>
