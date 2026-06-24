@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>日光金乃卵® | Miracle Egg</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Noto+Serif+JP:wght@200;300;400&family=Noto+Sans+JP:wght@200;300;400&family=Playfair+Display:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&family=Noto+Serif+JP:wght@200;300;400&family=Noto+Sans+JP:wght@200;300;400&display=swap');
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --black:#080806;
@@ -424,19 +424,21 @@ nav{display:flex;align-items:center;gap:clamp(1rem,1.6vw,1.75rem)}
 }
 .pastry-why-story-bgnum{
   position:absolute;
-  font-family:"Cormorant Garamond","Playfair Display",serif;
-  font-size:clamp(180px,22vw,340px);font-weight:300;line-height:.9;
-  color:rgba(179,140,47,.08);pointer-events:none;z-index:0;
-  user-select:none;letter-spacing:-.02em;
+  font-family:"Cormorant Garamond",serif;
+  font-size:clamp(180px,22vw,340px);font-weight:300;font-style:normal;
+  line-height:.9;letter-spacing:-.03em;
+  color:rgba(179,140,47,.055);pointer-events:none;z-index:0;
+  user-select:none;
+  -webkit-font-smoothing:antialiased;
 }
 .pastry-why-story-bgnum--01{
-  top:clamp(-56px,-6vw,-80px);right:clamp(-16px,-3vw,-40px);left:auto;
+  top:-80px;right:-90px;left:auto;
 }
 .pastry-why-story-bgnum--02{
-  top:clamp(-40px,-5vw,-60px);left:clamp(-48px,-8vw,-120px);right:auto;
+  top:-60px;left:-180px;right:auto;
 }
 .pastry-why-story-bgnum--03{
-  top:clamp(-56px,-6vw,-80px);right:clamp(-16px,-3vw,-40px);left:auto;
+  top:-80px;right:-100px;left:auto;
 }
 .pastry-why-story-title{
   position:relative;z-index:2;
@@ -582,13 +584,18 @@ footer{
     flex:none;width:100%;
     padding:clamp(2rem,5vw,2.5rem) 0 clamp(1rem,3vw,1.25rem);
   }
-  .pastry-why-story-bgnum{font-size:clamp(120px,34vw,200px);line-height:.88}
-  .pastry-why-story-bgnum--01,
+  .pastry-why-story-bgnum{
+    font-size:clamp(110px,32vw,180px);line-height:.88;
+    color:rgba(179,140,47,.05);
+  }
+  .pastry-why-story-bgnum--01{
+    top:-36px;right:-12px;left:auto;
+  }
   .pastry-why-story-bgnum--03{
-    top:-28px;right:0;left:auto;
+    top:-36px;right:-16px;left:auto;
   }
   .pastry-why-story-bgnum--02{
-    top:-24px;left:-8px;right:auto;
+    top:-48px;left:-72px;right:auto;
   }
   .pastry-why-story-title{padding-top:1.5rem}
   .pastry-why-closing{margin-top:2.5rem;padding-top:1.5rem}
