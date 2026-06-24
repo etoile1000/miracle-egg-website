@@ -389,14 +389,10 @@ nav{display:flex;align-items:center;gap:clamp(1rem,1.6vw,1.75rem)}
   text-align:center;max-width:40rem;
   margin:0 auto 5rem;padding:0 clamp(.5rem,2vw,1rem);
 }
-.pastry-why-label{
-  font-size:clamp(.68rem,.85vw,.74rem);letter-spacing:.38em;
-  color:#b38c2f;text-transform:uppercase;margin:0;
-}
 .pastry-why-title{
   font-family:var(--serif);font-size:clamp(1.75rem,3.2vw,2.45rem);
   font-weight:400;line-height:1.5;letter-spacing:.04em;
-  color:#2f2b25;margin:clamp(1rem,1.6vw,1.25rem) 0 0;
+  color:#2f2b25;margin:0;
 }
 .pastry-why-intro-body{
   margin-top:clamp(1.75rem,3vw,2.25rem);
@@ -419,8 +415,6 @@ nav{display:flex;align-items:center;gap:clamp(1rem,1.6vw,1.75rem)}
   display:block;width:100%;height:100%;min-height:inherit;
   object-fit:cover;object-position:center;
 }
-.pastry-why-story-photo img.pw-op-01{object-position:center 28%}
-.pastry-why-story-photo img.pw-op-03{object-position:center 62%}
 .pastry-why-story-copy{
   flex:0 0 50%;width:50%;position:relative;z-index:1;
   display:flex;flex-direction:column;justify-content:center;
@@ -1153,7 +1147,7 @@ footer{
 :is(.philosophy,.pastry-why,.analysis,.voice,.pline,.media-wrap,.contact-wrap,.about-story,.about-shokuiku,.about-activities,.news-wrap) :is(.sec-label,.philosophy-title,.philosophy-headline,.philosophy-pillar-name,.pastry-why-title,.pastry-why-story-title,.analysis-title,.compare-title,.pline-title,.about-sec-title,.page-hero-title){
   color:var(--ink-heading)!important;
 }
-:is(.philosophy,.pastry-why,.analysis,.voice,.pline,.media-wrap,.contact-wrap,.about-story,.about-shokuiku,.about-activities,.news-wrap) :is(.philosophy-eyebrow-text,.philosophy-pillar-num,.pastry-why-label,.an-title,.flow-num,.voice-en,.pline-footer-link,.cd-label,.sg-label,.news-cat,.shokuiku-maff a,.cf-note a){
+:is(.philosophy,.pastry-why,.analysis,.voice,.pline,.media-wrap,.contact-wrap,.about-story,.about-shokuiku,.about-activities,.news-wrap) :is(.philosophy-eyebrow-text,.philosophy-pillar-num,.an-title,.flow-num,.voice-en,.pline-footer-link,.cd-label,.sg-label,.news-cat,.shokuiku-maff a,.cf-note a){
   color:var(--ink-gold)!important;
 }
 :is(.philosophy,.pastry-why,.analysis,.voice,.pline,.media-wrap,.contact-wrap,.about-story,.about-shokuiku,.about-activities,.news-wrap) :is(.philosophy-intro-body,.philosophy-pillar-title,.philosophy-pillar-desc,.pastry-why-intro-body,.pastry-why-story-body,.an-desc,.voice-body,.voice-quote-main,.pline-card-desc,.pline-list-desc,.mc-desc,.contact-intro-body,.about-sec-body,.shokuiku-body,.sg-list li,.shokuiku-purpose p,.act-card-body){
@@ -1164,7 +1158,6 @@ footer{
 .philosophy .philosophy-pillar-desc{color:#857c68!important}
 .philosophy .philosophy-eyebrow-text,.philosophy .philosophy-pillar-num{color:#9c7b43!important}
 .pastry-why .pastry-why-intro-body,.pastry-why .pastry-why-story-body,.pastry-why .pastry-why-closing p{color:#4f4a42!important}
-.pastry-why .pastry-why-label{color:#b38c2f!important}
 .pastry-why .pastry-why-story-title{color:#b38c2f!important}
 .contact-wrap .cf-input,.contact-wrap .cf-textarea,.contact-wrap .cf-select{
   color:#16130f;border-color:#d6cec2;background:#fff;font-weight:400;
@@ -1447,7 +1440,6 @@ footer{
 <section class="pastry-why" id="pastry-why">
   <div class="pastry-why-inner">
     <div class="pastry-why-intro">
-      <p class="pastry-why-label">Why Patisserie Only</p>
       <h2 class="pastry-why-title">なぜ、洋菓子専用なのか。</h2>
       <div class="pastry-why-intro-body">
         <p>食べるための卵ではなく、<br>菓子になるための卵。</p>
@@ -1459,13 +1451,12 @@ footer{
     <article class="pastry-why-story pastry-why-story--left">
       <div class="pastry-why-story-photo">
         <img
-          src="images/philosophy-kitchen.jpg"
-          alt="焼き上がったスポンジの断面（仮画像）"
-          width="1024"
-          height="682"
+          src="images/01_sponge_mockup_crop.png"
+          alt="焼き上がったスポンジの断面"
+          width="1200"
+          height="900"
           loading="lazy"
           decoding="async"
-          class="pw-op-01"
         >
       </div>
       <div class="pastry-why-story-copy">
@@ -1481,10 +1472,10 @@ footer{
     <article class="pastry-why-story pastry-why-story--reverse">
       <div class="pastry-why-story-photo">
         <img
-          src="images/pastry-why-02.png"
-          alt="プリンとカスタード系の洋菓子（仮画像）"
-          width="800"
-          height="600"
+          src="images/02_pudding_mockup_crop.png"
+          alt="プリンとカスタード系の洋菓子"
+          width="1200"
+          height="900"
           loading="lazy"
           decoding="async"
         >
@@ -1503,13 +1494,12 @@ footer{
     <article class="pastry-why-story pastry-why-story--left">
       <div class="pastry-why-story-photo">
         <img
-          src="images/pastry-why-03.jpg"
+          src="images/03_whisk_mockup_crop.png"
           alt="洋菓子工房での仕込み風景"
-          width="1024"
-          height="682"
+          width="1200"
+          height="900"
           loading="lazy"
           decoding="async"
-          class="pw-op-03"
         >
       </div>
       <div class="pastry-why-story-copy">
