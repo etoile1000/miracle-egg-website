@@ -117,6 +117,12 @@ nav{display:flex;align-items:center;gap:clamp(1rem,1.6vw,1.75rem)}
   opacity:var(--hero-dim,0);
   will-change:opacity;
 }
+.hero-text-shade{
+  position:absolute;inset:0;pointer-events:none;z-index:1;
+  background:
+    linear-gradient(0deg,rgba(0,0,0,.45) 0%,rgba(0,0,0,0) 40%),
+    linear-gradient(90deg,rgba(0,0,0,.72) 0%,rgba(0,0,0,.45) 35%,rgba(0,0,0,0) 70%);
+}
 .hero-copy{
   position:absolute;inset:0;
   display:flex;align-items:center;justify-content:center;
@@ -127,27 +133,35 @@ nav{display:flex;align-items:center;gap:clamp(1rem,1.6vw,1.75rem)}
   text-align:center;
   max-width:min(92vw,920px);
   padding:1.35rem clamp(1rem,4vw,2rem);
-  background:rgba(0,0,0,.35);
-  border-radius:2px;
+  background:none;
+  border:none;
+  box-shadow:none;
   opacity:var(--hero-copy-opacity,1);
   will-change:opacity;
 }
 .hero-center{position:relative;text-align:center}
 .hero-sub{
-  font-size:clamp(1.75rem,1.65rem + 0.55vw,2.15rem);letter-spacing:.38em;color:rgba(255,255,255,.75);
+  font-size:clamp(1.75rem,1.65rem + 0.55vw,2.15rem);letter-spacing:.38em;color:rgba(255,255,255,.92);
   text-transform:uppercase;margin-bottom:.9rem;white-space:nowrap;
   font-weight:300;font-family:var(--sans);
+  text-shadow:0 2px 24px rgba(0,0,0,.35);
   opacity:var(--hero-sub-opacity,1);
   transform:translate3d(0,var(--hero-sub-ty,8px),0);
   will-change:transform,opacity;
 }
 .hero-title{
   font-family:var(--serif);font-size:clamp(3.5rem,9vw,8rem);
-  font-weight:200;letter-spacing:.08em;color:rgba(255,255,255,.88);
+  font-weight:200;letter-spacing:.08em;color:#fff;
   line-height:1;white-space:nowrap;
+  text-shadow:0 2px 24px rgba(0,0,0,.35);
   opacity:var(--hero-title-opacity,1);
   transform:translate3d(0,var(--hero-title-ty,8px),0);
   will-change:transform,opacity;
+}
+@media (max-width:767px){
+  .hero-text-shade{
+    background:linear-gradient(0deg,rgba(0,0,0,.78) 0%,rgba(0,0,0,.45) 45%,rgba(0,0,0,0) 75%);
+  }
 }
 .hero-title sup{font-size:2rem;vertical-align:super;letter-spacing:0}
 .hero-bottom{
@@ -1282,6 +1296,7 @@ body{font-size:16px;line-height:1.8}
       </div>
       <div class="hero-dim"></div>
     </div>
+    <div class="hero-text-shade" aria-hidden="true"></div>
     <div class="hero-copy">
       <div class="hero-copy-panel">
         <div class="hero-center">
