@@ -270,12 +270,16 @@ nav{display:flex;align-items:center;gap:clamp(1rem,1.6vw,1.75rem)}
 /* ── 01 PHILOSOPHY (白背景 左テキスト 右写真) ── */
 .philosophy{
   background:var(--white);color:var(--black);
-  display:grid;grid-template-columns:1fr 1fr;
-  min-height:100vh;
+  display:block;
+  min-height:0;
 }
 .philosophy-text{
-  padding:8rem 5rem 8rem 6rem;
+  max-width:720px;
+  margin:0 auto;
+  padding:6.5rem 1.5rem;
   display:flex;flex-direction:column;justify-content:center;
+  align-items:center;
+  text-align:center;
 }
 .sec-label{
   font-family:var(--serif);font-size:clamp(1.45rem,2.6vw,2.15rem);
@@ -292,11 +296,11 @@ nav{display:flex;align-items:center;gap:clamp(1rem,1.6vw,1.75rem)}
   margin-bottom:2.5rem;line-height:1.8;
 }
 .philosophy-body{
-  font-size:1rem;line-height:2.1;color:#4a4845;
-  max-width:38ch;
+  font-size:1.0625rem;line-height:1.8;color:#4a4845;
+  max-width:none;
 }
 .philosophy-photo{
-  background:url('https://images.unsplash.com/photo-1612869538156-0e2491f89fec?w=900&q=85') center/cover no-repeat;
+  display:none;
 }
 
 /* ── 03 SPEC (白背景 数字3カラム + 写真) ── */
@@ -312,9 +316,9 @@ nav{display:flex;align-items:center;gap:clamp(1rem,1.6vw,1.75rem)}
   font-weight:300;letter-spacing:.04em;color:var(--black);
 }
 .spec-grid{
-  display:grid;grid-template-columns:1fr 1fr 1fr;
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
   gap:0;border:.5px solid #ddd;
-  margin-bottom:5rem;
+  margin-bottom:0;
 }
 .spec-card{
   padding:3rem 2.5rem;border-right:.5px solid #ddd;
@@ -1038,6 +1042,125 @@ footer{
 .f-shop{border-bottom-color:rgba(250,248,244,.32)!important;}
 .f-shop:hover{color:rgba(250,248,244,.78)!important;}
 
+/* ── readability: type, contrast, phone nav ── */
+body{font-size:16px;line-height:1.8}
+.h-cta-bar,.nav-toggle{display:none}
+.nav-link-ja{font-size:15px}
+.nav-link-en{font-size:14px;color:#c8c4b8}
+.h-cta .nav-link-en{color:var(--gold)!important}
+.hero-scroll{font-size:14px;color:#c8c4b8}
+.adoption-brand-tagline,
+.adoption-slide-logo,
+.adoption-slide-meta,
+.sc-unit,
+.spec-photo-loc,
+.ws-btn,
+.ws-note,
+.f-tag,
+.f-col-lbl,
+.f-links a,
+.f-contact p,
+.f-copy,
+.f-shop,
+.analysis-source,
+.an-label,
+.an-val small,
+.an-vs,
+.chart-title,
+.chart-note-title,
+.chart-note-inst,
+.chart-img-caption,
+.legend-label,
+.voice-en,
+.voice-shop,
+.video-note,
+.video-label,
+.voice-attr-main,
+.voice-badge,
+.voice-sub-attr,
+.pline-sub,
+.pline-badge,
+.pline-card-size,
+.pline-card-uses span,
+.pline-footer-note,
+.pline-footer-link,
+.compare-sub,
+.ctime-label,
+.ctime-steps span,
+.cg-col-label,
+.cg-col-label small,
+.cg-badge,
+.nav-toggle-icon{
+  font-size:14px;
+}
+.nav-toggle-icon{font-size:22px}
+.adoption-lead,
+.philosophy-en,
+.philosophy-body,
+.sc-desc,
+.an-desc,
+.voice-body,
+.voice-sub-quote,
+.ws-body,
+.f-desc,
+.pline-card-desc,
+.ctime-note,
+.cg-item,
+.cg-item-label{
+  font-size:17px;
+  line-height:1.8;
+}
+.voice-quote-main{line-height:1.8}
+.hero-scroll,
+.nav-link-en,
+.adoption-slide-meta,
+.ctime-steps span,
+.ctime-num--old,
+.video-note,
+.video-label{
+  color:#c8c4b8;
+}
+.h-cta .nav-link-en{color:var(--gold)!important}
+.ctime-steps span,.ctime-num--old,.video-note,.video-label{color:#c8c4b8!important}
+
+@media(max-width:767px){
+  header{
+    flex-direction:row;align-items:center;justify-content:flex-start;
+    gap:8px;padding:6px 10px;min-height:56px;
+  }
+  .h-logo{margin-right:auto;min-width:0}
+  .h-logo-icon{height:24px}
+  .h-logo-text-img{height:15px;width:auto;max-width:34vw}
+  .h-cta-bar{
+    display:inline-flex;flex:0 0 auto;align-items:center;justify-content:center;
+    min-height:44px;padding:4px 10px;
+  }
+  .nav-toggle{
+    display:inline-flex;align-items:center;justify-content:center;
+    flex:0 0 44px;width:44px;height:44px;padding:0;
+    background:transparent;color:#faf8f4;
+    border:0.5px solid rgba(201,168,76,.45);cursor:pointer;
+  }
+  .nav-toggle-icon{font-size:22px;line-height:1}
+  #site-nav{
+    display:none;position:absolute;top:100%;left:0;right:0;
+    flex-direction:column;align-items:stretch;gap:0;
+    margin:0;padding:8px 0 12px;overflow:visible;
+    mask-image:none;-webkit-mask-image:none;
+    background:rgba(8,8,6,.97);
+    border-bottom:0.5px solid rgba(201,168,76,.2);
+  }
+  header.nav-open #site-nav{display:flex}
+  #site-nav .nav-link{
+    min-height:44px;width:100%;
+    align-items:flex-start;justify-content:center;
+    padding:8px 16px;
+  }
+  .h-cta-in-nav{display:none!important}
+  .footer-btm{flex-direction:column;align-items:flex-start;gap:.75rem}
+  .ws-btn{letter-spacing:.08em;padding:.9rem 1.2rem}
+}
+
 </style>
 </head>
 <body>
@@ -1048,7 +1171,14 @@ footer{
     <img src="images/logo-icon.png" alt="" class="h-logo-icon" width="169" height="208" aria-hidden="true">
     <img src="images/logo-text.png" alt="MIRACLE EGG" class="h-logo-text-img" width="451" height="41">
   </a>
-  <nav>
+  <a class='nav-link h-cta h-cta-bar' href='contact.html'>
+    <span class="nav-link-ja">お問い合わせ</span>
+    <span class="nav-link-en">CONTACT</span>
+  </a>
+  <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="メニュー">
+    <span class="nav-toggle-icon" aria-hidden="true">≡</span>
+  </button>
+  <nav id="site-nav">
     <a class='nav-link' href='index.html'>
       <span class="nav-link-ja">日光金乃卵</span>
       <span class="nav-link-en">NIKKO KINNORAN</span>
@@ -1065,7 +1195,7 @@ footer{
       <span class="nav-link-ja">メディア掲載</span>
       <span class="nav-link-en">MEDIA</span>
     </a>
-    <a class='nav-link h-cta' href='contact.html'>
+    <a class='nav-link h-cta h-cta-in-nav' href='contact.html'>
       <span class="nav-link-ja">お問い合わせ</span>
       <span class="nav-link-en">CONTACT</span>
     </a>
@@ -1266,9 +1396,11 @@ footer{
       <p class="sc-desc">採卵から最短24時間以内に冷凍加工。最大の鮮度を保った状態でプロの厨房へ届ける。</p>
     </div>
   </div>
+  <!-- 空の「全国対応」と、表示されない写真帯。採用実績のスライドは対象外。
   <div class="spec-photo">
 <span class="spec-photo-loc">全国対応</span>
   </div>
+  -->
 </section>
 
 <!-- DATA ANALYSIS -->
@@ -1604,6 +1736,33 @@ footer{
     <a href="https://miracle-egg.myshopify.com/" target="_blank" class="f-shop">自社農場の平飼いたまご オンラインショップ →</a>
   </div>
 </footer>
+<script>
+(function () {
+  var header = document.querySelector("header");
+  var button = document.querySelector(".nav-toggle");
+  var icon = document.querySelector(".nav-toggle-icon");
+  var nav = document.getElementById("site-nav");
+  if (!header || !button || !nav) return;
+  function setOpen(open) {
+    header.classList.toggle("nav-open", open);
+    button.setAttribute("aria-expanded", open ? "true" : "false");
+    button.setAttribute("aria-label", open ? "メニューを閉じる" : "メニュー");
+    if (icon) icon.textContent = open ? "×" : "≡";
+  }
+  button.addEventListener("click", function () {
+    setOpen(!header.classList.contains("nav-open"));
+  });
+  nav.addEventListener("click", function (event) {
+    if (event.target.closest("a")) setOpen(false);
+  });
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") setOpen(false);
+  });
+  window.matchMedia("(max-width: 767px)").addEventListener("change", function (event) {
+    if (!event.matches) setOpen(false);
+  });
+})();
+</script>
 
 </body>
 </html>
