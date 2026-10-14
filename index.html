@@ -2,10 +2,13 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
+<!-- This site is hosted on Netlify. Anyone can build and deploy a site
+     like this one for free: https://netlify.new/?utm_campaign=loops&utm_source=ai-legible&utm_medium=owned&utm_content=comment&utm_id=88af47b0-719d-4fe0-ba24-cec48e415a89
+     Netlify hosting facts for this site: static/SSR served via Netlify Edge. -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>日光金乃卵® | Miracle Egg</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&family=Noto+Serif+JP:wght@200;300;400&family=Noto+Sans+JP:wght@200;300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200;300;400&family=Noto+Sans+JP:wght@200;300;400&display=swap');
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --black:#080806;
@@ -21,7 +24,7 @@ html{scroll-behavior:smooth}
 body{background:var(--black);color:var(--white);font-family:var(--sans);font-weight:300;-webkit-font-smoothing:antialiased}
 
 /* ── HEADER ── */
-.site-header{
+header{
   position:fixed;top:0;left:0;right:0;z-index:200;
   display:flex;align-items:center;justify-content:space-between;
   padding:.72rem 3rem;min-height:68px;
@@ -72,25 +75,19 @@ nav{display:flex;align-items:center;gap:clamp(1rem,1.6vw,1.75rem)}
 
 /* ── HERO ── */
 .hero{
-  min-height:calc(100svh + 2.5rem);height:auto;
-  position:relative;
+  height:100vh;position:relative;
   display:flex;align-items:center;justify-content:center;
   overflow:hidden;background:#080806;
-}
-.hero::after{
-  content:'';position:absolute;left:0;right:0;bottom:0;height:min(22vh,180px);
-  background:linear-gradient(to bottom,transparent,rgba(8,8,6,.72) 58%,rgba(8,8,6,.92));
-  pointer-events:none;z-index:1;
 }
 .hero-img{
   position:absolute;inset:0;
   width:100%;height:100%;
-  object-fit:cover;object-position:center 38%;
+  object-fit:cover;object-position:center 40%;
 }
 .hero-center{
   position:absolute;
   top:50%;left:50%;transform:translate(-50%,-50%);
-  text-align:center;z-index:2;
+  text-align:center;
 }
 .hero-sub{
   font-size:clamp(1.75rem,1.65rem + 0.55vw,2.15rem);letter-spacing:.38em;color:rgba(255,255,255,.75);
@@ -106,7 +103,6 @@ nav{display:flex;align-items:center;gap:clamp(1rem,1.6vw,1.75rem)}
 .hero-bottom{
   position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);
   display:flex;flex-direction:column;align-items:center;gap:.6rem;
-  z-index:2;
 }
 .hero-scroll{
   font-size:.48rem;letter-spacing:.32em;color:rgba(255,255,255,.3);
@@ -130,70 +126,49 @@ nav{display:flex;align-items:center;gap:clamp(1rem,1.6vw,1.75rem)}
 }
 .adoption{
   background:#11100e;color:var(--white);
-  padding:5.5rem 6rem 1.45rem;
+  padding:5.5rem 6rem 3.5rem;
   border-top:.5px solid rgba(201,168,76,.12);
   border-bottom:.5px solid rgba(201,168,76,.08);
-  position:relative;z-index:2;
 }
 .adoption-inner{max-width:1120px;margin:0 auto;}
-.adoption-header{text-align:left;margin-bottom:clamp(1.25rem,2vw,1.5rem);}
-.adoption-header-main{margin-bottom:clamp(.45rem,2.2vw,.65rem);}
-.adoption-brand{
-  display:flex;flex-direction:row;flex-wrap:nowrap;
-  align-items:center;gap:clamp(.35rem,2.5vw,.5rem);
+.adoption-header{
+  display:flex;flex-direction:column;align-items:center;text-align:center;
+  margin-bottom:2.25rem;
 }
-.adoption-logo{
-  height:clamp(1.15rem,5vw,1.45rem);width:auto;flex-shrink:0;
+.adoption-heading-stack{
+  display:flex;flex-direction:column;align-items:center;width:100%;
+}
+.adoption-brand-block{
+  display:flex;flex-direction:column;align-items:center;
+  gap:clamp(.55rem,1.15vw,.8rem);
+  margin-bottom:clamp(1.15rem,2.2vw,1.55rem);
+}
+.adoption-brand-logo{
+  height:clamp(2.75rem,4.5vw,3.5rem);width:auto;display:block;
 }
 .adoption-brand-name{
-  font-family:var(--serif);font-size:clamp(1.05rem,4.2vw,1.29rem);
-  font-weight:200;line-height:1;letter-spacing:.1em;color:rgba(250,248,244,.82);
-  margin:0;white-space:nowrap;
+  font-family:var(--serif);font-size:clamp(1.35rem,2.5vw,1.85rem);
+  font-weight:200;line-height:1.35;letter-spacing:.2em;color:var(--white);
+  margin:0;
 }
-.adoption-heading-divider{display:none;}
+.adoption-brand-tagline{
+  font-size:clamp(.52rem,.9vw,.66rem);font-weight:300;line-height:1;
+  letter-spacing:.26em;text-transform:lowercase;
+  color:rgba(250,248,244,.48);margin:0;
+}
+.adoption-heading-rule{
+  display:block;width:min(11rem,42vw);height:.5px;
+  background:rgba(201,168,76,.28);border:0;
+  margin:0 auto clamp(1rem,2vw,1.45rem);
+}
 .adoption-title{
-  font-family:var(--serif);font-size:clamp(1.75rem,7vw,2.15rem);
-  font-weight:300;line-height:1.1;letter-spacing:.06em;color:var(--white);
-  margin:clamp(.5rem,2.5vw,.7rem) 0 clamp(.45rem,2.2vw,.65rem);
+  font-family:var(--serif);font-size:clamp(1.35rem,2.5vw,1.85rem);
+  font-weight:300;line-height:1.35;letter-spacing:.12em;color:var(--white);
+  margin:0 0 clamp(1.25rem,2.5vw,1.75rem);
 }
 .adoption-lead{
-  font-size:.88rem;line-height:1.9;color:rgba(250,248,244,.6);letter-spacing:.04em;
-  margin:0;text-align:left;max-width:none;
-}
-@media(min-width:768px){
-  .adoption{
-    padding:calc(5.5rem - 2.75rem) 6rem 1.4rem;
-    margin-top:calc(-1 * clamp(3.5rem,8.25vh,5.5rem));
-  }
-  .adoption-header{
-    display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);
-    align-items:center;justify-items:start;column-gap:clamp(2rem,3.5vw,2.75rem);
-    row-gap:0;margin-bottom:clamp(2rem,2.8vw,2.5rem);
-  }
-  .adoption-header-main{
-    display:flex;flex-direction:row;flex-wrap:nowrap;
-    align-items:center;justify-content:flex-start;text-align:left;
-    gap:clamp(.55rem,1.1vw,.85rem);width:100%;min-width:0;margin:0;
-  }
-  .adoption-brand{
-    display:flex;flex-direction:row;flex-wrap:nowrap;
-    align-items:center;justify-content:flex-start;
-    gap:clamp(.4rem,.85vw,.6rem);flex-shrink:0;
-  }
-  .adoption-logo{height:clamp(1.3rem,2.3vw,1.85rem);}
-  .adoption-brand-name{font-size:clamp(1.2rem,2.16vw,1.8rem);letter-spacing:.12em;}
-  .adoption-heading-divider{
-    display:inline-block;width:.5px;height:clamp(1.2rem,2.15vw,1.8rem);
-    background:rgba(201,168,76,.32);border:0;flex-shrink:0;
-    margin:0 clamp(.25rem,.55vw,.45rem);vertical-align:middle;
-  }
-  .adoption-title{
-    font-size:clamp(2rem,3.6vw,3rem);
-    margin:0;flex-shrink:0;white-space:nowrap;
-  }
-  .adoption-lead{
-    align-self:center;max-width:31em;line-height:1.95;margin:0;text-align:left;
-  }
+  font-size:.88rem;line-height:2;color:rgba(250,248,244,.6);letter-spacing:.04em;
+  max-width:36ch;margin:0 auto;
 }
 .adoption-cinema{
   position:relative;margin:0 -6rem;background:#1c1810;overflow:hidden;
@@ -241,7 +216,7 @@ nav{display:flex;align-items:center;gap:clamp(1rem,1.6vw,1.75rem)}
   font-size:.68rem;color:rgba(244,238,226,.62);margin-top:.35rem;letter-spacing:.04em;
 }
 .adoption-foot{
-  display:flex;justify-content:flex-end;margin-top:clamp(1.2rem,1.75vw,1.4rem);
+  display:flex;justify-content:flex-end;margin-top:1.6rem;
 }
 .adoption-more{
   display:inline-block;font-size:.9rem;letter-spacing:.08em;
@@ -253,10 +228,23 @@ nav{display:flex;align-items:center;gap:clamp(1rem,1.6vw,1.75rem)}
   color:var(--gold);border-color:rgba(201,168,76,.58);
   background:rgba(201,168,76,.06);
 }
-@media(max-width:767px){
-  .hero{min-height:calc(100svh + 1.25rem);}
-  .adoption{padding:3.5rem 2rem 1.15rem;margin-top:calc(-1 * clamp(4rem,10vh,5.5rem));}
-  .adoption-foot{justify-content:center;margin-top:1.15rem;}
+@media(max-width:768px){
+  .adoption{padding:4.5rem 2rem 3rem;}
+  .adoption-header{margin-bottom:1.9rem;}
+  .adoption-brand-block{
+    gap:clamp(.7rem,3.8vw,.95rem);
+    margin-bottom:clamp(1.35rem,5.5vw,1.75rem);
+  }
+  .adoption-brand-logo{height:clamp(2.65rem,14vw,3.2rem);}
+  .adoption-brand-name{font-size:clamp(1.25rem,5.5vw,1.55rem);letter-spacing:.18em;}
+  .adoption-brand-tagline{font-size:clamp(.5rem,2.8vw,.58rem);letter-spacing:.22em;}
+  .adoption-heading-rule{width:min(9rem,52vw);margin-bottom:clamp(1.15rem,4.8vw,1.55rem);}
+  .adoption-title{
+    font-size:clamp(1.25rem,5.5vw,1.55rem);
+    margin-bottom:clamp(1.4rem,5.5vw,1.9rem);
+  }
+  .adoption-lead{max-width:32ch;line-height:2.1;padding:0 .25rem;}
+  .adoption-foot{justify-content:center;margin-top:1.35rem;}
   .adoption-more{
     font-size:clamp(.88rem,3.6vw,.94rem);
     padding:.72rem 1.2rem;border-color:rgba(201,168,76,.42);
@@ -279,201 +267,80 @@ nav{display:flex;align-items:center;gap:clamp(1rem,1.6vw,1.75rem)}
   .adoption-marquee-track[aria-hidden="true"]{display:none;}
 }
 
-/* ── 01 PHILOSOPHY (素材ブランド再設計) ── */
+/* ── 01 PHILOSOPHY (白背景 左テキスト 右写真) ── */
 .philosophy{
-  background:#f3efe6;color:#2a2823;
-  padding:clamp(3.25rem,5.5vw,4.75rem) clamp(2rem,5vw,5rem) clamp(2.25rem,3.5vw,3rem);
-  border-top:.5px solid rgba(201,168,76,.14);
+  background:var(--white);color:var(--black);
+  display:grid;grid-template-columns:1fr 1fr;
+  min-height:100vh;
 }
-.philosophy-inner{
-  max-width:1200px;margin:0 auto;
-  display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);
-  gap:clamp(1.75rem,3vw,2.75rem);align-items:center;
-}
-.philosophy-eyebrow{
-  display:flex;align-items:center;gap:.8rem;
-}
-.philosophy-eyebrow-line{
-  flex:none;width:26px;height:1px;background:#9c7b43;
-}
-.philosophy-eyebrow-text{
-  font-size:clamp(.72rem,.95vw,.78rem);letter-spacing:.22em;
-  color:#9c7b43;font-weight:500;margin:0;
-}
-.philosophy-headline{
-  font-family:var(--serif);font-size:clamp(1.65rem,3.2vw,2.4rem);
-  font-weight:500;line-height:1.48;letter-spacing:.04em;
-  color:#2a2823;margin:clamp(.85rem,1.4vw,1.05rem) 0 0;
-}
-.philosophy-story{
-  margin-top:clamp(.85rem,1.4vw,1.05rem);max-width:26rem;
-}
-.philosophy-framing{
-  display:flex;flex-direction:column;height:100%;
-}
-.philosophy-story-block{
-  font-size:clamp(.9rem,1.05vw,.95rem);line-height:2.1;
-  color:#5f5849;font-weight:300;margin:0 0 clamp(.95rem,1.5vw,1.15rem);
-}
-.philosophy-story-em{
-  font-family:var(--serif);font-size:clamp(.98rem,1.12vw,1.02rem);
-  color:#3a3527;letter-spacing:.02em;
-}
-.philosophy-story .philosophy-intro-body{
-  margin-top:0;margin-bottom:clamp(.95rem,1.5vw,1.15rem);line-height:2.1;
-}
-.philosophy-story .philosophy-intro-body:last-child{margin-bottom:0}
-.philosophy-intro-body{
-  margin-top:clamp(.85rem,1.3vw,1rem);
-  font-size:clamp(.9rem,1.05vw,.95rem);line-height:1.95;
-  color:#5f5849;font-weight:300;max-width:26rem;
-}
-.philosophy-photo{
-  margin-top:clamp(1.75rem,3vw,2.25rem);
-  position:relative;overflow:hidden;
-  width:min(100%,24rem);max-width:92%;
-  height:clamp(220px,18vw,280px);max-height:300px;
-}
-.philosophy-photo img{
-  display:block;width:100%;height:100%;
-  object-fit:cover;object-position:center 42%;
-}
-.philosophy-photo::after{
-  content:'';position:absolute;inset:0;
-  background:rgba(42,40,35,.1);pointer-events:none;
-}
-.philosophy-pillars{display:flex;flex-direction:column}
-.philosophy-pillar{
-  display:grid;grid-template-columns:minmax(80px,132px) 1fr;
-  gap:clamp(.75rem,1.2vw,1rem);align-items:start;
-  padding:clamp(.85rem,1.3vw,1.05rem) 0;
-  border-bottom:.5px solid #e2dbcb;
-}
-.philosophy-pillar:first-child{padding-top:0}
-.philosophy-pillar:last-child{border-bottom:none;padding-bottom:0}
-.philosophy-pillar-num{
-  display:block;font-size:clamp(.68rem,.85vw,.72rem);
-  letter-spacing:.2em;color:#9c7b43;font-weight:500;
-}
-.philosophy-pillar-name{
-  font-family:var(--serif);font-size:clamp(1.05rem,1.5vw,1.25rem);
-  font-weight:400;letter-spacing:.06em;line-height:1.2;
-  color:#2a2823;margin:.3rem 0 0;
-}
-.philosophy-pillar-copy{padding-top:.08rem}
-.philosophy-pillar-title{
-  font-size:clamp(.92rem,1.05vw,1rem);line-height:1.65;
-  font-weight:400;color:#2a2823;margin:0;
-}
-.philosophy-pillar-desc{
-  margin-top:.35rem;font-size:clamp(.82rem,.95vw,.86rem);
-  line-height:1.85;color:#857c68;font-weight:300;
+.philosophy-text{
+  padding:8rem 5rem 8rem 6rem;
+  display:flex;flex-direction:column;justify-content:center;
 }
 .sec-label{
   font-family:var(--serif);font-size:clamp(1.45rem,2.6vw,2.15rem);
   font-weight:300;letter-spacing:.04em;line-height:1.45;
   color:var(--black);margin-bottom:1.2rem;text-transform:none;
 }
+.philosophy-title{
+  font-family:var(--serif);font-size:clamp(1.2rem,2vw,1.55rem);
+  font-weight:300;line-height:1.75;letter-spacing:.03em;
+  margin-bottom:1.8rem;color:#4a4845;
+}
+.philosophy-en{
+  font-size:.78rem;letter-spacing:.1em;color:var(--gray);
+  margin-bottom:2.5rem;line-height:1.8;
+}
+.philosophy-body{
+  font-size:1rem;line-height:2.1;color:#4a4845;
+  max-width:38ch;
+}
+.philosophy-photo{
+  background:url('https://images.unsplash.com/photo-1612869538156-0e2491f89fec?w=900&q=85') center/cover no-repeat;
+}
 
-/* ── 03 PASTRY WHY (洋菓子専用・雑誌特集) ── */
-.pastry-why{
-  position:relative;z-index:1;isolation:isolate;
-  background:linear-gradient(180deg,#f7f0e4 0%,#fbf5ea 100%);
-  color:#2f2b25;
-  padding:clamp(4.5rem,8vw,6.5rem) clamp(1.25rem,4vw,3.5rem);
-  border-top:.5px solid rgba(179,140,47,.1);
-  scroll-margin-top:5rem;
+/* ── 03 SPEC (白背景 数字3カラム + 写真) ── */
+.spec{
+  background:var(--white);color:var(--black);
+  padding:8rem 6rem;
 }
-.pastry-why-inner{max-width:1180px;margin:0 auto;overflow:visible}
-.pastry-why-intro{
-  text-align:center;max-width:40rem;
-  margin:0 auto 5rem;padding:0 clamp(.5rem,2vw,1rem);
+.spec-header{
+  margin-bottom:4rem;
 }
-.pastry-why-title{
-  font-family:var(--serif);font-size:clamp(1.75rem,3.2vw,2.45rem);
-  font-weight:400;line-height:1.5;letter-spacing:.04em;
-  color:#2f2b25;margin:0;
+.spec-title{
+  font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.8rem);
+  font-weight:300;letter-spacing:.04em;color:var(--black);
 }
-.pastry-why-intro-body{
-  margin-top:clamp(1.75rem,3vw,2.25rem);
-  font-family:var(--serif);font-size:clamp(.92rem,1.1vw,1rem);
-  line-height:2.15;color:#4f4a42;font-weight:300;
+.spec-grid{
+  display:grid;grid-template-columns:1fr 1fr 1fr;
+  gap:0;border:.5px solid #ddd;
+  margin-bottom:5rem;
 }
-.pastry-why-intro-body p+p{margin-top:1.5em}
-.pastry-why-stories{
-  display:grid;grid-template-columns:1fr 1fr;
-  column-gap:clamp(1rem,2.5vw,3rem);row-gap:0;
+.spec-card{
+  padding:3rem 2.5rem;border-right:.5px solid #ddd;
 }
-.pastry-why-story{display:contents}
-.pastry-why-story-photo{
-  position:relative;z-index:1;line-height:0;margin:0;padding:0;
-  min-height:clamp(240px,28vw,360px);height:100%;
+.spec-card:last-child{border-right:none}
+.sc-num{
+  font-family:var(--serif);font-size:3.5rem;font-weight:300;
+  color:var(--black);line-height:1;margin-bottom:.6rem;
 }
-.pastry-why-story-photo img{
-  display:block;width:100%;height:100%;
-  min-height:clamp(240px,28vw,360px);
-  object-fit:cover;object-position:center;
+.sc-unit{
+  font-size:.65rem;font-family:var(--sans);color:var(--gray);
+  letter-spacing:.1em;margin-left:.2rem;
 }
-.pastry-why-stories > .pastry-why-story:nth-child(1) .pastry-why-story-photo{grid-row:1;grid-column:1}
-.pastry-why-stories > .pastry-why-story:nth-child(1) .pastry-why-story-copy{grid-row:1;grid-column:2}
-.pastry-why-stories > .pastry-why-story:nth-child(2) .pastry-why-story-copy{grid-row:2;grid-column:1}
-.pastry-why-stories > .pastry-why-story:nth-child(2) .pastry-why-story-photo{grid-row:2;grid-column:2}
-.pastry-why-stories > .pastry-why-story:nth-child(3) .pastry-why-story-photo{grid-row:3;grid-column:1}
-.pastry-why-stories > .pastry-why-story:nth-child(3) .pastry-why-story-copy{grid-row:3;grid-column:2}
-.pastry-why-story-copy{
-  position:relative;z-index:2;
-  display:flex;flex-direction:column;justify-content:center;align-items:stretch;
-  padding:clamp(2rem,3.5vw,2.75rem) clamp(1.25rem,2.5vw,2rem);
-  min-height:clamp(240px,28vw,360px);height:100%;
-  overflow:visible;margin:0;
+.sc-desc{
+  font-size:.88rem;color:#6a6866;line-height:1.75;margin-top:1.2rem;
 }
-.pastry-why-story-content{
-  position:relative;z-index:1;max-width:22rem;width:100%;
-  margin-block:auto;
+.spec-photo{
+  height:50vh;
+  background:url('https://images.unsplash.com/photo-1607283838483-5e9b03df5a1d?w=1800&q=85') center 30%/cover no-repeat;
+  position:relative;
 }
-.pastry-why-story--left .pastry-why-story-content{
-  padding-right:clamp(2rem,5vw,3.5rem);
+.spec-photo-loc{
+  position:absolute;bottom:1.8rem;right:2.5rem;
+  font-size:.52rem;letter-spacing:.18em;color:rgba(250,248,244,.45);text-transform:uppercase;
 }
-.pastry-why-story--reverse .pastry-why-story-content{
-  padding-left:clamp(1rem,2vw,1.5rem);
-}
-.pastry-why-story-bgnum{
-  position:absolute;
-  font-family:"Cormorant Garamond",serif;
-  font-size:clamp(140px,16vw,260px);font-weight:300;font-style:normal;
-  line-height:.88;letter-spacing:-.04em;
-  color:rgba(179,140,47,.04);pointer-events:none;z-index:0;
-  user-select:none;-webkit-font-smoothing:antialiased;
-}
-.pastry-why-story-bgnum--01,
-.pastry-why-story-bgnum--03{
-  top:.25rem;right:.75rem;left:auto;
-}
-.pastry-why-story-bgnum--02{
-  top:-40px;left:-220px;right:auto;
-}
-.pastry-why-story-title{
-  position:relative;z-index:1;
-  font-family:var(--serif);font-size:clamp(1.25rem,1.8vw,1.55rem);
-  font-weight:400;line-height:1.45;letter-spacing:.04em;color:#b38c2f;
-  margin:0;padding-top:0;
-}
-.pastry-why-story-body{
-  position:relative;z-index:1;
-  margin-top:clamp(1.35rem,2vw,1.75rem);
-  font-size:clamp(.86rem,.98vw,.92rem);line-height:2.05;
-  color:#4f4a42;font-weight:300;
-}
-.pastry-why-story-body p+p{margin-top:1.2em}
-.pastry-why-closing{
-  text-align:center;
-  margin-top:clamp(3.5rem,6vw,4.5rem);
-  padding:clamp(2rem,4vw,3rem) 0 0;
-}
-.pastry-why-closing p{
-  font-family:var(--serif);font-size:clamp(.82rem,.95vw,.88rem);
-  line-height:2.15;letter-spacing:.05em;color:#4f4a42;font-weight:300;
-}
+
 
 /* ── 04 WHOLESALE (黒背景 中央CTA) ── */
 .wholesale{
@@ -550,7 +417,7 @@ footer{
 
 /* ── MOBILE ── */
 @media(max-width:768px){
-  .site-header{
+  header{
     flex-direction:column;align-items:stretch;gap:.5rem;
     padding:.65rem 1rem .72rem;min-height:0;
   }
@@ -568,57 +435,12 @@ footer{
   .nav-link-ja{font-size:.76rem;letter-spacing:.08em}
   .nav-link-en{font-size:.44rem;letter-spacing:.16em;margin-top:.1rem}
   .h-cta{padding:.28rem .62rem}
-  .philosophy{padding:2.5rem 1.5rem 2.5rem}
-  .philosophy-inner{grid-template-columns:1fr;gap:1.75rem;align-items:start}
-  .philosophy-intro-body{max-width:none}
-  .philosophy-photo{
-    margin-top:clamp(1.5rem,3vw,2rem);
-    width:100%;max-width:none;
-    height:clamp(180px,48vw,200px);max-height:220px;
-  }
-  .philosophy-pillar{
-    grid-template-columns:minmax(62px,72px) 1fr;
-    gap:.75rem;padding:.85rem 0;
-  }
-  .philosophy-pillar-name{font-size:1rem}
-  .philosophy-pillar-title{font-size:.9rem;line-height:1.65}
-  .philosophy-pillar-desc{font-size:.84rem}
-  .pastry-why{padding:3rem 1.25rem 3.5rem}
-  .pastry-why-intro{margin-bottom:3rem}
-  .pastry-why-stories{
-    display:flex;flex-direction:column;gap:0;
-  }
-  .pastry-why-story{
-    display:flex;flex-direction:column;gap:0;margin:0;
-  }
-  .pastry-why-stories > .pastry-why-story:nth-child(n) .pastry-why-story-photo,
-  .pastry-why-stories > .pastry-why-story:nth-child(n) .pastry-why-story-copy{
-    grid-row:auto;grid-column:auto;
-  }
-  .pastry-why-story-photo{
-    width:100%;min-height:clamp(220px,58vw,300px);height:auto;
-  }
-  .pastry-why-story-photo img{
-    min-height:clamp(220px,58vw,300px);
-  }
-  .pastry-why-story-copy{
-    width:100%;min-height:0;height:auto;
-    padding:clamp(2rem,5vw,2.5rem) clamp(.5rem,3vw,1rem) clamp(1.5rem,4vw,2rem);
-  }
-  .pastry-why-story-content{max-width:none}
-  .pastry-why-story--reverse .pastry-why-story-content{padding-left:0}
-  .pastry-why-story-bgnum{
-    font-size:clamp(100px,28vw,160px);line-height:.86;
-    color:rgba(179,140,47,.04);
-  }
-  .pastry-why-story-bgnum--01,
-  .pastry-why-story-bgnum--03{
-    top:.15rem;right:.35rem;left:auto;
-  }
-  .pastry-why-story-bgnum--02{
-    top:-28px;left:-88px;right:auto;
-  }
-  .pastry-why-closing{margin-top:2.5rem;padding-top:1.5rem}
+  .philosophy{grid-template-columns:1fr;min-height:auto}
+  .philosophy-text{padding:5rem 2rem}
+  .philosophy-photo{height:50vw}
+  .spec{padding:5rem 2rem}
+  .spec-grid{grid-template-columns:1fr}
+  .spec-card{border-right:none;border-bottom:.5px solid #ddd}
   .media-bar{flex-direction:column;align-items:flex-start;padding:2.5rem 2rem;gap:1.5rem}
   .media-bar-lbl{border-right:none;border-bottom:.5px solid #ddd;padding-right:0;padding-bottom:1rem}
   .wholesale{padding:6rem 2rem}
@@ -1178,32 +1000,25 @@ footer{
 :root{
   --ink-muted:#625d55;
   --ink-body:#403b34;
-  --ink-heading:#2a2823;
   --ink-gold:#8f6918;
   --dark-readable:rgba(250,248,244,.68);
   --dark-muted:rgba(250,248,244,.58);
 }
-:is(.philosophy,.pastry-why,.analysis,.voice,.pline,.media-wrap,.contact-wrap,.about-story,.about-shokuiku,.about-activities,.news-wrap){
+:is(.philosophy,.spec,.analysis,.voice,.pline,.media-wrap,.contact-wrap,.about-story,.about-shokuiku,.about-activities,.news-wrap){
   --gray:var(--ink-muted);
 }
-:is(.philosophy,.pastry-why,.analysis,.voice,.pline,.media-wrap,.contact-wrap,.about-story,.about-shokuiku,.about-activities,.news-wrap) :is(.philosophy-en,.analysis-source,.an-val.gray,.an-val small,.an-vs,.legend-label,.voice-source,.voice-profile-role,.pline-sub,.pline-card-size,.pline-card-uses span,.pline-footer-note,.mc-program,.mc-date,.cf-label,.cf-note,.news-date,.shokuiku-maff){
+:is(.philosophy,.spec,.analysis,.voice,.pline,.media-wrap,.contact-wrap,.about-story,.about-shokuiku,.about-activities,.news-wrap) :is(.philosophy-en,.analysis-source,.sc-unit,.an-val.gray,.an-val small,.an-vs,.legend-label,.voice-source,.voice-profile-role,.pline-sub,.pline-card-size,.pline-card-uses span,.pline-footer-note,.mc-program,.mc-date,.cf-label,.cf-note,.news-date,.shokuiku-maff){
   color:var(--ink-muted)!important;
 }
-:is(.philosophy,.pastry-why,.analysis,.voice,.pline,.media-wrap,.contact-wrap,.about-story,.about-shokuiku,.about-activities,.news-wrap) :is(.sec-label,.philosophy-title,.philosophy-headline,.philosophy-pillar-name,.pastry-why-title,.pastry-why-story-title,.analysis-title,.compare-title,.pline-title,.about-sec-title,.page-hero-title){
+:is(.philosophy,.spec,.analysis,.voice,.pline,.media-wrap,.contact-wrap,.about-story,.about-shokuiku,.about-activities,.news-wrap) :is(.sec-label,.philosophy-title,.spec-title,.analysis-title,.compare-title,.pline-title,.about-sec-title,.page-hero-title){
   color:var(--ink-heading)!important;
 }
-:is(.philosophy,.pastry-why,.analysis,.voice,.pline,.media-wrap,.contact-wrap,.about-story,.about-shokuiku,.about-activities,.news-wrap) :is(.philosophy-eyebrow-text,.philosophy-pillar-num,.an-title,.flow-num,.voice-en,.pline-footer-link,.cd-label,.sg-label,.news-cat,.shokuiku-maff a,.cf-note a){
+:is(.philosophy,.spec,.analysis,.voice,.pline,.media-wrap,.contact-wrap,.about-story,.about-shokuiku,.about-activities,.news-wrap) :is(.an-title,.flow-num,.voice-en,.pline-footer-link,.cd-label,.sg-label,.news-cat,.shokuiku-maff a,.cf-note a){
   color:var(--ink-gold)!important;
 }
-:is(.philosophy,.pastry-why,.analysis,.voice,.pline,.media-wrap,.contact-wrap,.about-story,.about-shokuiku,.about-activities,.news-wrap) :is(.philosophy-intro-body,.philosophy-pillar-title,.philosophy-pillar-desc,.pastry-why-intro-body,.pastry-why-story-body,.an-desc,.voice-body,.voice-quote-main,.pline-card-desc,.pline-list-desc,.mc-desc,.contact-intro-body,.about-sec-body,.shokuiku-body,.sg-list li,.shokuiku-purpose p,.act-card-body){
+:is(.philosophy,.spec,.analysis,.voice,.pline,.media-wrap,.contact-wrap,.about-story,.about-shokuiku,.about-activities,.news-wrap) :is(.philosophy-body,.sc-desc,.an-desc,.voice-body,.voice-quote-main,.pline-card-desc,.pline-list-desc,.mc-desc,.contact-intro-body,.about-sec-body,.shokuiku-body,.sg-list li,.shokuiku-purpose p,.act-card-body){
   color:var(--ink-body)!important;
 }
-.philosophy .philosophy-intro-body{color:#5f5849!important}
-.philosophy .philosophy-story-em{color:#3a3527!important}
-.philosophy .philosophy-pillar-desc{color:#857c68!important}
-.philosophy .philosophy-eyebrow-text,.philosophy .philosophy-pillar-num{color:#9c7b43!important}
-.pastry-why .pastry-why-intro-body,.pastry-why .pastry-why-story-body,.pastry-why .pastry-why-closing p{color:#4f4a42!important}
-.pastry-why .pastry-why-story-title{color:#b38c2f!important}
 .contact-wrap .cf-input,.contact-wrap .cf-textarea,.contact-wrap .cf-select{
   color:#16130f;border-color:#d6cec2;background:#fff;font-weight:400;
 }
@@ -1228,29 +1043,29 @@ footer{
 <body>
 
 <!-- HEADER -->
-<header class="site-header">
-  <a href="index.html" class="h-logo" aria-label="MIRACLE EGG">
+<header>
+  <a aria-label='MIRACLE EGG' class='h-logo' href='index.html'>
     <img src="images/logo-icon.png" alt="" class="h-logo-icon" width="169" height="208" aria-hidden="true">
     <img src="images/logo-text.png" alt="MIRACLE EGG" class="h-logo-text-img" width="451" height="41">
   </a>
   <nav>
-    <a href="index.html" class="nav-link">
+    <a class='nav-link' href='index.html'>
       <span class="nav-link-ja">日光金乃卵</span>
       <span class="nav-link-en">NIKKO KINNORAN</span>
     </a>
-    <a href="about.html" class="nav-link">
+    <a class='nav-link' href='about.html'>
       <span class="nav-link-ja">私たちについて</span>
       <span class="nav-link-en">ABOUT</span>
     </a>
-    <a href="news.html" class="nav-link">
+    <a class='nav-link' href='news.html'>
       <span class="nav-link-ja">お知らせ</span>
       <span class="nav-link-en">NEWS</span>
     </a>
-    <a href="media.html" class="nav-link">
+    <a class='nav-link' href='media.html'>
       <span class="nav-link-ja">メディア掲載</span>
       <span class="nav-link-en">MEDIA</span>
     </a>
-    <a href="contact.html" class="nav-link h-cta">
+    <a class='nav-link h-cta' href='contact.html'>
       <span class="nav-link-ja">お問い合わせ</span>
       <span class="nav-link-en">CONTACT</span>
     </a>
@@ -1273,15 +1088,16 @@ footer{
 <section class="adoption" aria-labelledby="adoption-title">
   <div class="adoption-inner">
     <div class="adoption-header">
-      <div class="adoption-header-main">
-        <div class="adoption-brand">
-          <img src="images/kinnoran-logo-mark.png" alt="" class="adoption-logo" width="734" height="894" aria-hidden="true">
+      <div class="adoption-heading-stack">
+        <div class="adoption-brand-block">
+          <img src="images/kinnoran-logo-mark.png" alt="" class="adoption-brand-logo" width="734" height="894" aria-hidden="true">
           <p class="adoption-brand-name">日光金乃卵</p>
+          <p class="adoption-brand-tagline">egg for sweets</p>
         </div>
-        <span class="adoption-heading-divider" aria-hidden="true"></span>
+        <span class="adoption-heading-rule" aria-hidden="true"></span>
         <h2 class="adoption-title" id="adoption-title">採用実績</h2>
       </div>
-      <p class="adoption-lead">全国の洋菓子店やホテルで、<br>理想の味わいを追求する職人たちに選ばれ続けています。</p>
+      <p class="adoption-lead">全国の洋菓子店から指名され、パティシエの厨房で素材の色・香り・仕込み効率を支えています。</p>
     </div>
   </div>
   <div class="adoption-cinema" aria-label="導入店舗">
@@ -1404,171 +1220,54 @@ footer{
   </div>
   <div class="adoption-inner">
     <div class="adoption-foot">
-      <a href="stores.html" class="adoption-more">導入店舗を見る →</a>
+      <a class='adoption-more' href='about.html'>導入店舗を見る →</a>
     </div>
   </div>
 </section>
 
 <!-- 02 ABOUT -->
 <section class="philosophy" id="about">
-  <div class="philosophy-inner">
-    <div class="philosophy-framing">
-      <div class="philosophy-eyebrow">
-        <span class="philosophy-eyebrow-line" aria-hidden="true"></span>
-        <p class="philosophy-eyebrow-text">日光金乃卵とは</p>
-      </div>
-      <div class="philosophy-story">
-        <p class="philosophy-story-block">
-          <span class="philosophy-story-em">三十余年、洋菓子のためだけに作り上げてきた卵。</span><br>
-          それが、日光金乃卵です。
-        </p>
-        <p class="philosophy-intro-body">焼き上がりの色。<br>口に入れたときの香り。<br>毎日の仕込みのしやすさ。</p>
-        <p class="philosophy-intro-body">だからこそ今も、多くの職人に選ばれています。</p>
-      </div>
-      <div class="philosophy-photo">
-        <img
-          src="images/philosophy-kitchen.jpg"
-          alt="洋菓子の厨房で仕込む職人と黄身"
-          width="1024"
-          height="682"
-          loading="lazy"
-          decoding="async"
-        >
-      </div>
-    </div>
-    <div class="philosophy-pillars">
-      <article class="philosophy-pillar">
-        <div class="philosophy-pillar-label">
-          <span class="philosophy-pillar-num">01</span>
-          <h3 class="philosophy-pillar-name">色</h3>
-        </div>
-        <div class="philosophy-pillar-copy">
-          <p class="philosophy-pillar-title">焼き上がりに映える、深い黄色。</p>
-          <p class="philosophy-pillar-desc">クリームもスポンジも、ひと目で違う仕上がりの色に。</p>
-        </div>
-      </article>
-      <article class="philosophy-pillar">
-        <div class="philosophy-pillar-label">
-          <span class="philosophy-pillar-num">02</span>
-          <h3 class="philosophy-pillar-name">味</h3>
-        </div>
-        <div class="philosophy-pillar-copy">
-          <p class="philosophy-pillar-title">雑味のない、澄んだ卵のコク。</p>
-          <p class="philosophy-pillar-desc">卵特有の臭みを抑え、素材本来の香りを邪魔しない。</p>
-        </div>
-      </article>
-      <article class="philosophy-pillar">
-        <div class="philosophy-pillar-label">
-          <span class="philosophy-pillar-num">03</span>
-          <h3 class="philosophy-pillar-name">安定性</h3>
-        </div>
-        <div class="philosophy-pillar-copy">
-          <p class="philosophy-pillar-title">季節や個体差に左右されない、一定の規格。</p>
-          <p class="philosophy-pillar-desc">いつ仕込んでも同じ仕上がり。高い再現性が信頼になる。</p>
-        </div>
-      </article>
-      <article class="philosophy-pillar">
-        <div class="philosophy-pillar-label">
-          <span class="philosophy-pillar-num">04</span>
-          <h3 class="philosophy-pillar-name">現場メリット</h3>
-        </div>
-        <div class="philosophy-pillar-copy">
-          <p class="philosophy-pillar-title">割卵いらずで、衛生も歩留まりも向上。</p>
-          <p class="philosophy-pillar-desc">仕込み時間とロスを削減し、厨房の手を空ける。</p>
-        </div>
-      </article>
-    </div>
+  <div class="philosophy-text">
+<h2 class="sec-label">日光金乃卵とは</h2>
+    <p class="philosophy-title">
+      日光金乃卵®は、<br>
+      洋菓子のためだけに<br>
+      三十余年、磨かれた卵です。
+    </p>
+    <p class="philosophy-en">Not a general-purpose egg. Every variable — feed, pigment, protein structure — has been optimised exclusively for the pâtissier's kitchen.</p>
+    <p class="philosophy-body">
+      色は、自然着色料の深いオレンジ色。加熱後も落ちず、プリンもカスタードもスポンジも、ショーケースで一段と輝きます。<br><br>
+      味は、一般卵を圧倒するコクと旨味。しかし後味はすっきりと、主役素材の風味を殺しません。<br><br>
+      品質は、季節ごとに飼料配合を見直すことで年間を通じて安定。メレンゲの失敗が減り、仕込みのストレスが消えます。<br><br>
+      合成着色料・排卵促進剤・抗生物質・次亜塩素酸——一切不使用。
+    </p>
   </div>
+  <div class="philosophy-photo"></div>
 </section>
 
-<!-- 03 PASTRY WHY -->
-<section class="pastry-why" id="pastry-why">
-  <div class="pastry-why-inner">
-    <div class="pastry-why-intro">
-      <h2 class="pastry-why-title">なぜ、洋菓子専用なのか。</h2>
-      <div class="pastry-why-intro-body">
-        <p>食べるための卵ではなく、<br>菓子になるための卵。</p>
-        <p>三十余年、<br>洋菓子と向き合う中で、</p>
-        <p>私たちが辿り着いた答えは、<br>とてもシンプルでした。</p>
-      </div>
+<!-- 03 PASTRY ONLY -->
+<section class="spec">
+  <div class="spec-header">
+    <div>
+<h2 class="spec-title">なぜ、洋菓子専用なのか。</h2>
     </div>
-
-    <div class="pastry-why-stories">
-    <article class="pastry-why-story pastry-why-story--left">
-      <div class="pastry-why-story-photo">
-        <img
-          src="images/01_sponge_mockup_crop.png"
-          alt="焼き上がったスポンジの断面"
-          width="1200"
-          height="900"
-          loading="lazy"
-          decoding="async"
-        >
-      </div>
-      <div class="pastry-why-story-copy">
-        <span class="pastry-why-story-bgnum pastry-why-story-bgnum--01" aria-hidden="true">01</span>
-        <div class="pastry-why-story-content">
-          <h3 class="pastry-why-story-title">深い黄色</h3>
-          <div class="pastry-why-story-body">
-            <p>焼き上がったスポンジ。<br>カスタードの色。<br>ショーケースに並んだ瞬間の存在感。</p>
-            <p>洋菓子にとって、<br>色は味の前に伝わる価値だからです。</p>
-          </div>
-        </div>
-      </div>
-    </article>
-
-    <article class="pastry-why-story pastry-why-story--reverse">
-      <div class="pastry-why-story-photo">
-        <img
-          src="images/02_pudding_mockup_crop.png"
-          alt="プリンとカスタード系の洋菓子"
-          width="1200"
-          height="900"
-          loading="lazy"
-          decoding="async"
-        >
-      </div>
-      <div class="pastry-why-story-copy">
-        <span class="pastry-why-story-bgnum pastry-why-story-bgnum--02" aria-hidden="true">02</span>
-        <div class="pastry-why-story-content">
-          <h3 class="pastry-why-story-title">味と香り</h3>
-          <div class="pastry-why-story-body">
-            <p>卵が主張しすぎないこと。<br>素材の風味を邪魔しないこと。</p>
-            <p>それでいて、<br>奥行きのあるコクを残すこと。</p>
-            <p>主役を引き立てるための味を<br>追求しました。</p>
-          </div>
-        </div>
-      </div>
-    </article>
-
-    <article class="pastry-why-story pastry-why-story--left">
-      <div class="pastry-why-story-photo">
-        <img
-          src="images/03_whisk_mockup_crop.png"
-          alt="洋菓子工房での仕込み風景"
-          width="1200"
-          height="900"
-          loading="lazy"
-          decoding="async"
-        >
-      </div>
-      <div class="pastry-why-story-copy">
-        <span class="pastry-why-story-bgnum pastry-why-story-bgnum--03" aria-hidden="true">03</span>
-        <div class="pastry-why-story-content">
-          <h3 class="pastry-why-story-title">安定性</h3>
-          <div class="pastry-why-story-body">
-            <p>毎日の仕込みに、<br>同じ品質を届けること。</p>
-            <p>職人の感覚を裏切らないこと。</p>
-            <p>見えない部分こそ、<br>素材としての責任だと考えています。</p>
-          </div>
-        </div>
-      </div>
-    </article>
+</div>
+  <div class="spec-grid">
+    <div class="spec-card">
+<p class="sc-num">深金<span class="sc-unit">色</span></p>
+      <p class="sc-desc">天然マリーゴールドとパプリカ由来の安定した深いマリーゴールド色。加熱後も色が落ちない。</p>
     </div>
-
-    <div class="pastry-why-closing">
-      <p>洋菓子の理想を叶えるために。<br>日光金乃卵は、すべてを最適化しています。</p>
+    <div class="spec-card">
+<p class="sc-num">高<span class="sc-unit">HU</span></p>
+      <p class="sc-desc">高いハウユニット値が、メレンゲの起泡性と構造的安定性を保証。シフォン・マカロンに最適。</p>
     </div>
+    <div class="spec-card">
+<p class="sc-num">24<span class="sc-unit">HRS</span></p>
+      <p class="sc-desc">採卵から最短24時間以内に冷凍加工。最大の鮮度を保った状態でプロの厨房へ届ける。</p>
+    </div>
+  </div>
+  <div class="spec-photo">
+<span class="spec-photo-loc">全国対応</span>
   </div>
 </section>
 
@@ -1885,11 +1584,11 @@ footer{
     <div>
       <p class="f-col-lbl">Navigation</p>
       <ul class="f-links">
-        <li><a href="index.html">日光金乃卵®</a></li>
-        <li><a href="about.html">私たちについて</a></li>
-        <li><a href="news.html">お知らせ</a></li>
-        <li><a href="media.html">メディア掲載履歴</a></li>
-        <li><a href="contact.html">お問い合わせ</a></li>
+        <li><a href='index.html'>日光金乃卵®</a></li>
+        <li><a href='about.html'>私たちについて</a></li>
+        <li><a href='news.html'>お知らせ</a></li>
+        <li><a href='media.html'>メディア掲載履歴</a></li>
+        <li><a href='contact.html'>お問い合わせ</a></li>
       </ul>
     </div>
     <div class="f-contact">
