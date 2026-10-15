@@ -192,8 +192,8 @@ body{background:var(--black);color:var(--white);font-family:var(--sans);font-wei
 }
 @media(min-width:768px){
   .adoption{
-    padding:calc(5.5rem - 2.75rem) 6rem 1.4rem;
-    margin-top:calc(-1 * clamp(3.5rem,8.25vh,5.5rem));
+    padding:5.5rem 6rem 1.4rem;
+    margin-top:0;
   }
   .adoption-header{
     display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);
@@ -283,7 +283,7 @@ body{background:var(--black);color:var(--white);font-family:var(--sans);font-wei
   background:rgba(201,168,76,.06);
 }
 @media(max-width:767px){
-  .adoption{padding:3.5rem 2rem 1.15rem;margin-top:calc(-1 * clamp(4rem,10vh,5.5rem));}
+  .adoption{padding:3.5rem 2rem 1.15rem;margin-top:0;}
   .adoption-header{margin-bottom:clamp(1.25rem,2vw,1.5rem);}
   .adoption-brand-block{
     gap:clamp(.7rem,3.8vw,.95rem);
@@ -1231,147 +1231,6 @@ body{font-size:16px;line-height:1.8}
   </div>
 </section>
 
-<!-- 01 ADOPTION -->
-<section class="adoption" aria-labelledby="adoption-title">
-  <div class="adoption-inner">
-    <div class="adoption-header">
-      <div class="adoption-heading-stack">
-        <div class="adoption-brand-block">
-          <img src="images/kinnoran-logo-mark.png" alt="" class="adoption-brand-logo" width="734" height="894" aria-hidden="true">
-          <p class="adoption-brand-name">日光金乃卵</p>
-          <p class="adoption-brand-tagline">egg for sweets</p>
-        </div>
-        <span class="adoption-heading-rule" aria-hidden="true"></span>
-        <h2 class="adoption-title" id="adoption-title">採用実績</h2>
-      </div>
-      <p class="adoption-lead">全国の洋菓子店から指名され、パティシエの厨房で素材の色・香り・仕込み効率を支えています。</p>
-    </div>
-  </div>
-  <div class="adoption-cinema" aria-label="導入店舗">
-    <div class="adoption-cinema-fade adoption-cinema-fade--l"></div>
-    <div class="adoption-cinema-fade adoption-cinema-fade--r"></div>
-    <div class="adoption-marquee">
-      <div class="adoption-marquee-track">
-    <article class="adoption-slide" data-adoption-item>
-      <div class="adoption-slide-visual" style="background-image:url('images/placeholder/sweets-set.jpg')"></div>
-      <div class="adoption-slide-shade"></div>
-      <div class="adoption-slide-copy">
-        <p class="adoption-slide-logo">SWEETS garden</p>
-        <p class="adoption-slide-name">SWEETS garden YUJI AJIKI</p>
-        <p class="adoption-slide-meta">安食雄二シェフ ／ 東京</p>
-      </div>
-    </article>
-    <article class="adoption-slide" data-adoption-item>
-      <div class="adoption-slide-visual" style="background-image:url('images/placeholder/roll.jpg')"></div>
-      <div class="adoption-slide-shade"></div>
-      <div class="adoption-slide-copy">
-        <p class="adoption-slide-logo">PÂTISSERIE</p>
-        <p class="adoption-slide-name">都内洋菓子店</p>
-        <p class="adoption-slide-meta">東京・銀座</p>
-      </div>
-    </article>
-    <article class="adoption-slide" data-adoption-item>
-      <div class="adoption-slide-visual" style="background-image:url('images/placeholder/tart.jpg')"></div>
-      <div class="adoption-slide-shade"></div>
-      <div class="adoption-slide-copy">
-        <p class="adoption-slide-logo">MAISON</p>
-        <p class="adoption-slide-name">表参道パティスリー</p>
-        <p class="adoption-slide-meta">東京・表参道</p>
-      </div>
-    </article>
-    <article class="adoption-slide" data-adoption-item>
-      <div class="adoption-slide-visual" style="background-image:url('https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=640&q=80')"></div>
-      <div class="adoption-slide-shade"></div>
-      <div class="adoption-slide-copy">
-        <p class="adoption-slide-logo">CHOCOLAT</p>
-        <p class="adoption-slide-name">ショコラトリー</p>
-        <p class="adoption-slide-meta">神奈川・横浜</p>
-      </div>
-    </article>
-    <article class="adoption-slide" data-adoption-item>
-      <div class="adoption-slide-visual" style="background-image:url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=640&q=80')"></div>
-      <div class="adoption-slide-shade"></div>
-      <div class="adoption-slide-copy">
-        <p class="adoption-slide-logo">HÔTEL</p>
-        <p class="adoption-slide-name">ホテル製菓部門</p>
-        <p class="adoption-slide-meta">東京・丸の内</p>
-      </div>
-    </article>
-    <article class="adoption-slide" data-adoption-item>
-      <div class="adoption-slide-visual" style="background-image:url('images/placeholder/sponge.jpg')"></div>
-      <div class="adoption-slide-shade"></div>
-      <div class="adoption-slide-copy">
-        <p class="adoption-slide-logo">ATELIER</p>
-        <p class="adoption-slide-name">神戸パティスリー</p>
-        <p class="adoption-slide-meta">兵庫・神戸</p>
-      </div>
-    </article>
-      </div>
-      <div class="adoption-marquee-track" aria-hidden="true">
-    <article class="adoption-slide" data-adoption-item>
-      <div class="adoption-slide-visual" style="background-image:url('images/placeholder/sweets-set.jpg')"></div>
-      <div class="adoption-slide-shade"></div>
-      <div class="adoption-slide-copy">
-        <p class="adoption-slide-logo">SWEETS garden</p>
-        <p class="adoption-slide-name">SWEETS garden YUJI AJIKI</p>
-        <p class="adoption-slide-meta">安食雄二シェフ ／ 東京</p>
-      </div>
-    </article>
-    <article class="adoption-slide" data-adoption-item>
-      <div class="adoption-slide-visual" style="background-image:url('images/placeholder/roll.jpg')"></div>
-      <div class="adoption-slide-shade"></div>
-      <div class="adoption-slide-copy">
-        <p class="adoption-slide-logo">PÂTISSERIE</p>
-        <p class="adoption-slide-name">都内洋菓子店</p>
-        <p class="adoption-slide-meta">東京・銀座</p>
-      </div>
-    </article>
-    <article class="adoption-slide" data-adoption-item>
-      <div class="adoption-slide-visual" style="background-image:url('images/placeholder/tart.jpg')"></div>
-      <div class="adoption-slide-shade"></div>
-      <div class="adoption-slide-copy">
-        <p class="adoption-slide-logo">MAISON</p>
-        <p class="adoption-slide-name">表参道パティスリー</p>
-        <p class="adoption-slide-meta">東京・表参道</p>
-      </div>
-    </article>
-    <article class="adoption-slide" data-adoption-item>
-      <div class="adoption-slide-visual" style="background-image:url('https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=640&q=80')"></div>
-      <div class="adoption-slide-shade"></div>
-      <div class="adoption-slide-copy">
-        <p class="adoption-slide-logo">CHOCOLAT</p>
-        <p class="adoption-slide-name">ショコラトリー</p>
-        <p class="adoption-slide-meta">神奈川・横浜</p>
-      </div>
-    </article>
-    <article class="adoption-slide" data-adoption-item>
-      <div class="adoption-slide-visual" style="background-image:url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=640&q=80')"></div>
-      <div class="adoption-slide-shade"></div>
-      <div class="adoption-slide-copy">
-        <p class="adoption-slide-logo">HÔTEL</p>
-        <p class="adoption-slide-name">ホテル製菓部門</p>
-        <p class="adoption-slide-meta">東京・丸の内</p>
-      </div>
-    </article>
-    <article class="adoption-slide" data-adoption-item>
-      <div class="adoption-slide-visual" style="background-image:url('images/placeholder/sponge.jpg')"></div>
-      <div class="adoption-slide-shade"></div>
-      <div class="adoption-slide-copy">
-        <p class="adoption-slide-logo">ATELIER</p>
-        <p class="adoption-slide-name">神戸パティスリー</p>
-        <p class="adoption-slide-meta">兵庫・神戸</p>
-      </div>
-    </article>
-      </div>
-    </div>
-  </div>
-  <div class="adoption-inner">
-    <div class="adoption-foot">
-      <a class='adoption-more' href='about.html'>導入店舗を見る →</a>
-    </div>
-  </div>
-</section>
-
 <!-- 02 ABOUT -->
 <section class="philosophy" id="about">
   <div class="philosophy-text">
@@ -1562,6 +1421,147 @@ body{font-size:16px;line-height:1.8}
       </div>
     </div>
 
+  </div>
+</section>
+
+<!-- ADOPTION (after voice) -->
+<section class="adoption" aria-labelledby="adoption-title">
+  <div class="adoption-inner">
+    <div class="adoption-header">
+      <div class="adoption-heading-stack">
+        <div class="adoption-brand-block">
+          <img src="images/kinnoran-logo-mark.png" alt="" class="adoption-brand-logo" width="734" height="894" aria-hidden="true">
+          <p class="adoption-brand-name">日光金乃卵</p>
+          <p class="adoption-brand-tagline">egg for sweets</p>
+        </div>
+        <span class="adoption-heading-rule" aria-hidden="true"></span>
+        <h2 class="adoption-title" id="adoption-title">採用実績</h2>
+      </div>
+      <p class="adoption-lead">全国の洋菓子店から指名され、パティシエの厨房で素材の色・香り・仕込み効率を支えています。</p>
+    </div>
+  </div>
+  <div class="adoption-cinema" aria-label="導入店舗">
+    <div class="adoption-cinema-fade adoption-cinema-fade--l"></div>
+    <div class="adoption-cinema-fade adoption-cinema-fade--r"></div>
+    <div class="adoption-marquee">
+      <div class="adoption-marquee-track">
+    <article class="adoption-slide" data-adoption-item>
+      <div class="adoption-slide-visual" style="background-image:url('images/placeholder/sweets-set.jpg')"></div>
+      <div class="adoption-slide-shade"></div>
+      <div class="adoption-slide-copy">
+        <p class="adoption-slide-logo">SWEETS garden</p>
+        <p class="adoption-slide-name">SWEETS garden YUJI AJIKI</p>
+        <p class="adoption-slide-meta">安食雄二シェフ ／ 東京</p>
+      </div>
+    </article>
+    <article class="adoption-slide" data-adoption-item>
+      <div class="adoption-slide-visual" style="background-image:url('images/placeholder/roll.jpg')"></div>
+      <div class="adoption-slide-shade"></div>
+      <div class="adoption-slide-copy">
+        <p class="adoption-slide-logo">PÂTISSERIE</p>
+        <p class="adoption-slide-name">都内洋菓子店</p>
+        <p class="adoption-slide-meta">東京・銀座</p>
+      </div>
+    </article>
+    <article class="adoption-slide" data-adoption-item>
+      <div class="adoption-slide-visual" style="background-image:url('images/placeholder/tart.jpg')"></div>
+      <div class="adoption-slide-shade"></div>
+      <div class="adoption-slide-copy">
+        <p class="adoption-slide-logo">MAISON</p>
+        <p class="adoption-slide-name">表参道パティスリー</p>
+        <p class="adoption-slide-meta">東京・表参道</p>
+      </div>
+    </article>
+    <article class="adoption-slide" data-adoption-item>
+      <div class="adoption-slide-visual" style="background-image:url('https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=640&q=80')"></div>
+      <div class="adoption-slide-shade"></div>
+      <div class="adoption-slide-copy">
+        <p class="adoption-slide-logo">CHOCOLAT</p>
+        <p class="adoption-slide-name">ショコラトリー</p>
+        <p class="adoption-slide-meta">神奈川・横浜</p>
+      </div>
+    </article>
+    <article class="adoption-slide" data-adoption-item>
+      <div class="adoption-slide-visual" style="background-image:url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=640&q=80')"></div>
+      <div class="adoption-slide-shade"></div>
+      <div class="adoption-slide-copy">
+        <p class="adoption-slide-logo">HÔTEL</p>
+        <p class="adoption-slide-name">ホテル製菓部門</p>
+        <p class="adoption-slide-meta">東京・丸の内</p>
+      </div>
+    </article>
+    <article class="adoption-slide" data-adoption-item>
+      <div class="adoption-slide-visual" style="background-image:url('images/placeholder/sponge.jpg')"></div>
+      <div class="adoption-slide-shade"></div>
+      <div class="adoption-slide-copy">
+        <p class="adoption-slide-logo">ATELIER</p>
+        <p class="adoption-slide-name">神戸パティスリー</p>
+        <p class="adoption-slide-meta">兵庫・神戸</p>
+      </div>
+    </article>
+      </div>
+      <div class="adoption-marquee-track" aria-hidden="true">
+    <article class="adoption-slide" data-adoption-item>
+      <div class="adoption-slide-visual" style="background-image:url('images/placeholder/sweets-set.jpg')"></div>
+      <div class="adoption-slide-shade"></div>
+      <div class="adoption-slide-copy">
+        <p class="adoption-slide-logo">SWEETS garden</p>
+        <p class="adoption-slide-name">SWEETS garden YUJI AJIKI</p>
+        <p class="adoption-slide-meta">安食雄二シェフ ／ 東京</p>
+      </div>
+    </article>
+    <article class="adoption-slide" data-adoption-item>
+      <div class="adoption-slide-visual" style="background-image:url('images/placeholder/roll.jpg')"></div>
+      <div class="adoption-slide-shade"></div>
+      <div class="adoption-slide-copy">
+        <p class="adoption-slide-logo">PÂTISSERIE</p>
+        <p class="adoption-slide-name">都内洋菓子店</p>
+        <p class="adoption-slide-meta">東京・銀座</p>
+      </div>
+    </article>
+    <article class="adoption-slide" data-adoption-item>
+      <div class="adoption-slide-visual" style="background-image:url('images/placeholder/tart.jpg')"></div>
+      <div class="adoption-slide-shade"></div>
+      <div class="adoption-slide-copy">
+        <p class="adoption-slide-logo">MAISON</p>
+        <p class="adoption-slide-name">表参道パティスリー</p>
+        <p class="adoption-slide-meta">東京・表参道</p>
+      </div>
+    </article>
+    <article class="adoption-slide" data-adoption-item>
+      <div class="adoption-slide-visual" style="background-image:url('https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=640&q=80')"></div>
+      <div class="adoption-slide-shade"></div>
+      <div class="adoption-slide-copy">
+        <p class="adoption-slide-logo">CHOCOLAT</p>
+        <p class="adoption-slide-name">ショコラトリー</p>
+        <p class="adoption-slide-meta">神奈川・横浜</p>
+      </div>
+    </article>
+    <article class="adoption-slide" data-adoption-item>
+      <div class="adoption-slide-visual" style="background-image:url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=640&q=80')"></div>
+      <div class="adoption-slide-shade"></div>
+      <div class="adoption-slide-copy">
+        <p class="adoption-slide-logo">HÔTEL</p>
+        <p class="adoption-slide-name">ホテル製菓部門</p>
+        <p class="adoption-slide-meta">東京・丸の内</p>
+      </div>
+    </article>
+    <article class="adoption-slide" data-adoption-item>
+      <div class="adoption-slide-visual" style="background-image:url('images/placeholder/sponge.jpg')"></div>
+      <div class="adoption-slide-shade"></div>
+      <div class="adoption-slide-copy">
+        <p class="adoption-slide-logo">ATELIER</p>
+        <p class="adoption-slide-name">神戸パティスリー</p>
+        <p class="adoption-slide-meta">兵庫・神戸</p>
+      </div>
+    </article>
+      </div>
+    </div>
+  </div>
+  <div class="adoption-inner">
+    <div class="adoption-foot">
+      <a class='adoption-more' href='about.html'>導入店舗を見る →</a>
+    </div>
   </div>
 </section>
 
