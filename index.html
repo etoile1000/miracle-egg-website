@@ -330,7 +330,7 @@ body{background:var(--black);color:var(--white);font-family:var(--sans);font-wei
 .philosophy-text{
   max-width:min(1120px,calc(100% - 3rem));
   margin:0 auto;
-  padding:6.5rem 1.5rem 5rem;
+  padding:6.5rem 1.5rem 6.5rem;
   display:flex;flex-direction:column;justify-content:center;
   align-items:stretch;
 }
@@ -405,18 +405,6 @@ body{background:var(--black);color:var(--white);font-family:var(--sans);font-wei
 }
 .philosophy-photo{
   display:none;
-}
-.philosophy .spec-photo{
-  height:50vh;
-  position:relative;overflow:hidden;
-}
-.spec-photo-img{
-  position:absolute;inset:0;width:100%;height:100%;
-  object-fit:cover;object-position:center 38%;
-}
-.spec-photo-loc{
-  position:absolute;bottom:1.8rem;right:2.5rem;z-index:1;
-  font-size:.52rem;letter-spacing:.18em;color:rgba(250,248,244,.45);text-transform:uppercase;
 }
 
 /* ── 04 WHOLESALE (黒背景 中央CTA) ── */
@@ -496,11 +484,10 @@ footer{
 @media(max-width:768px){
   .f-logo-img{height:34px}
   .philosophy{grid-template-columns:1fr;min-height:auto}
-  .philosophy-text{padding:5rem 2rem 4.25rem}
+  .philosophy-text{padding:5rem 2rem 5rem}
   .philosophy-pillars{gap:1.75rem}
   .philosophy-band{margin-top:2rem;padding:1.45rem .5rem;font-size:1.05rem}
   .philosophy-photo{height:50vw}
-  .philosophy .spec-photo{height:42vw;min-height:220px}
   .media-bar{flex-direction:column;align-items:flex-start;padding:2.5rem 2rem;gap:1.5rem}
   .media-bar-lbl{border-right:none;border-bottom:.5px solid #ddd;padding-right:0;padding-bottom:1rem}
   .wholesale{padding:6rem 2rem}
@@ -1108,7 +1095,6 @@ body{font-size:16px;line-height:1.8}
 .adoption-slide-logo,
 .adoption-slide-meta,
 .sc-unit,
-.spec-photo-loc,
 .ws-btn,
 .ws-note,
 .f-tag,
@@ -1293,10 +1279,6 @@ body{font-size:16px;line-height:1.8}
       </article>
     </div>
     <p class="philosophy-band">合成着色料・排卵促進剤・抗生物質──一切不使用。</p>
-  </div>
-  <div class="spec-photo">
-    <img src="images/placeholder/feed-hands.jpg" alt="" class="spec-photo-img" width="887" height="591" aria-hidden="true">
-    <span class="spec-photo-loc">全国対応</span>
   </div>
   <div class="philosophy-photo"></div>
 </section>
