@@ -335,7 +335,7 @@ body{background:var(--black);color:var(--white);font-family:var(--sans);font-wei
   align-items:stretch;
 }
 .philosophy-intro{
-  max-width:720px;width:100%;margin:0 auto 2.75rem;
+  max-width:720px;width:100%;margin:0 auto 3rem;
   text-align:center;
 }
 .sec-label{
@@ -347,14 +347,8 @@ body{background:var(--black);color:var(--white);font-family:var(--sans);font-wei
 .philosophy-title{
   font-family:var(--serif);font-size:clamp(1.2rem,2vw,1.55rem);
   font-weight:300;line-height:1.75;letter-spacing:.03em;
-  margin-bottom:1.8rem;color:#4a4845;
+  margin-bottom:0;color:#4a4845;
   text-wrap:balance;
-}
-.philosophy-en{
-  font-size:.8125rem;letter-spacing:.08em;color:#403b34;
-  margin-bottom:0;line-height:1.85;
-  text-wrap:balance;
-  max-width:42em;margin-left:auto;margin-right:auto;
 }
 .philosophy-pillars{
   display:grid;grid-template-columns:1fr;gap:2rem;
@@ -365,16 +359,12 @@ body{background:var(--black);color:var(--white);font-family:var(--sans);font-wei
   padding-top:1.35rem;text-align:left;
 }
 .philosophy-pillar-head{
-  display:flex;flex-direction:column;align-items:flex-start;gap:.35rem;
-  margin-bottom:1rem;
+  margin-bottom:.85rem;
 }
 .philosophy-pillar-ja{
   font-family:var(--serif);font-size:1.05rem;font-weight:400;
   letter-spacing:.18em;color:var(--black);line-height:1.2;
-}
-.philosophy-pillar-en{
-  font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;
-  color:#8f6918;line-height:1;
+  display:block;
 }
 .philosophy-pillar-body{
   font-size:1.0625rem;line-height:1.85;color:#403b34;
@@ -1110,9 +1100,6 @@ footer{
 :is(.philosophy,.spec,.analysis,.voice,.pline,.media-wrap,.contact-wrap,.about-story,.about-shokuiku,.about-activities,.news-wrap) :is(.philosophy-body,.philosophy-pillar-body,.philosophy-band,.sc-desc,.an-desc,.voice-body,.voice-quote-main,.pline-card-desc,.pline-list-desc,.mc-desc,.contact-intro-body,.about-sec-body,.shokuiku-body,.sg-list li,.shokuiku-purpose p,.act-card-body){
   color:var(--ink-body)!important;
 }
-.philosophy .philosophy-text .philosophy-en{
-  color:var(--ink-body)!important;
-}
 .contact-wrap .cf-input,.contact-wrap .cf-textarea,.contact-wrap .cf-select{
   color:#16130f;border-color:#d6cec2;background:#fff;font-weight:400;
 }
@@ -1180,7 +1167,6 @@ body{font-size:16px;line-height:1.8}
   font-size:14px;
 }
 .adoption-lead,
-.philosophy-en,
 .philosophy-body,
 .sc-desc,
 .an-desc,
@@ -1291,27 +1277,23 @@ body{font-size:16px;line-height:1.8}
         洋菓子のためだけに<br>
         三十余年、磨かれた卵です。
       </p>
-      <p class="philosophy-en">Not a general-purpose egg. Every variable — feed, pigment, protein structure — has been optimised exclusively for the pâtissier's kitchen.</p>
     </div>
     <div class="philosophy-pillars">
       <article class="philosophy-pillar">
         <div class="philosophy-pillar-head">
           <span class="philosophy-pillar-ja">色</span>
-          <span class="philosophy-pillar-en">COLOR</span>
         </div>
         <p class="philosophy-pillar-body">色は、自然着色料の深いオレンジ色。加熱後も落ちず、プリンもカスタードもスポンジも、ショーケースで一段と輝きます。</p>
       </article>
       <article class="philosophy-pillar">
         <div class="philosophy-pillar-head">
           <span class="philosophy-pillar-ja">味</span>
-          <span class="philosophy-pillar-en">TASTE</span>
         </div>
         <p class="philosophy-pillar-body">味は、一般卵を圧倒するコクと旨味。しかし後味はすっきりと、主役素材の風味を殺しません。</p>
       </article>
       <article class="philosophy-pillar">
         <div class="philosophy-pillar-head">
           <span class="philosophy-pillar-ja">品質</span>
-          <span class="philosophy-pillar-en">QUALITY</span>
         </div>
         <p class="philosophy-pillar-body">品質は、季節ごとに飼料配合を見直すことで年間を通じて安定。メレンゲの失敗が減り、仕込みのストレスが消えます。</p>
       </article>
