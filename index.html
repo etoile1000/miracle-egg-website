@@ -348,9 +348,10 @@ body{background:var(--black);color:var(--white);font-family:var(--sans);font-wei
 .philosophy-main{
   font-family:var(--serif);font-size:clamp(1.45rem,2rem,2rem);
   font-weight:300;line-height:1.7;letter-spacing:.03em;
-  color:#403b34;text-wrap:balance;
+  color:#403b34;
   margin:0;
 }
+.philosophy-main-line{display:block;}
 .philosophy-right{
   display:flex;flex-direction:column;gap:0;
   min-width:0;
@@ -414,6 +415,7 @@ body{background:var(--black);color:var(--white);font-family:var(--sans);font-wei
   }
   .philosophy-lead{position:static;}
   .philosophy-main{font-size:1.45rem;}
+  .philosophy-main-line{display:inline-block;}
   .philosophy-row{
     grid-template-columns:3.4rem minmax(0,1fr);
     column-gap:1rem;padding:1.25rem 0 1.5rem;
@@ -1254,7 +1256,11 @@ body{font-size:16px;line-height:1.8}
   <div class="philosophy-layout">
     <div class="philosophy-lead">
       <p class="philosophy-kicker">日光金乃卵とは</p>
-      <p class="philosophy-main">日光金乃卵®は、洋菓子のためだけに三十余年、磨かれた卵です。</p>
+      <p class="philosophy-main">
+        <span class="philosophy-main-line">日光金乃卵®は、</span>
+        <span class="philosophy-main-line">洋菓子のためだけに</span>
+        <span class="philosophy-main-line">三十余年、磨かれた卵です。</span>
+      </p>
     </div>
     <div class="philosophy-right">
       <article class="philosophy-row">
