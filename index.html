@@ -321,11 +321,15 @@ body{background:var(--black);color:var(--white);font-family:var(--sans);font-wei
   .adoption-marquee-track[aria-hidden="true"]{display:none;}
 }
 
-/* ── 01 PHILOSOPHY (#about) ── */
+/* ── 01 PHILOSOPHY (#about · 案E 卵の輪郭) ── */
 .philosophy{
+  --philosophy-ink:#16130f;
+  --philosophy-gold:#8a6a1f;
+  --philosophy-rule:#d8c79a;
   background:var(--white);color:var(--black);
   display:block;
-  padding:5rem 6rem;
+  padding:4.8rem 3.5rem;
+  overflow:hidden;
 }
 .philosophy-layout{
   max-width:min(1200px,calc(100% - 1rem));
@@ -339,76 +343,96 @@ body{background:var(--black);color:var(--white);font-family:var(--sans);font-wei
   position:sticky;
   top:calc(68px + 1.5rem);
   align-self:start;
+  isolation:isolate;
+}
+.philosophy-egg{
+  position:absolute;z-index:-1;
+  left:-5rem;top:-4.4rem;
+  width:27rem;height:35.1rem;
+  overflow:visible;pointer-events:none;
 }
 .philosophy-kicker{
-  font-size:.85rem;font-weight:400;letter-spacing:.32em;
-  color:#8f6918;text-transform:none;
-  margin-bottom:1.35rem;line-height:1.4;
+  position:relative;z-index:1;
+  font-size:.85rem;font-weight:400;letter-spacing:.3em;
+  color:var(--philosophy-gold);text-transform:none;
+  margin-bottom:1.6rem;line-height:1.4;
 }
 .philosophy-main{
+  position:relative;z-index:1;
   font-family:var(--serif);font-size:clamp(1.45rem,2rem,2rem);
-  font-weight:300;line-height:1.7;letter-spacing:.03em;
-  color:#16130f;
+  font-weight:500;line-height:1.75;letter-spacing:.03em;
+  color:var(--philosophy-ink);
   margin:0;
+  max-width:11em;
+  padding-left:1.35rem;
 }
 .philosophy-main-line{display:block;}
 .philosophy-band{
-  margin-top:2.4rem;padding:1.15rem 0 0;
-  border-top:.5px solid var(--gold-dim);
+  position:relative;z-index:1;
+  margin-top:2.4rem;padding:1.2rem 0 0;
+  border-top:1px solid var(--philosophy-rule);
   border-bottom:none;
   font-family:var(--serif);font-size:1.05rem;
-  font-weight:400;line-height:1.75;letter-spacing:.06em;
+  font-weight:400;line-height:1.75;letter-spacing:.05em;
   color:#403b34;text-align:left;
   text-wrap:pretty;word-break:auto-phrase;
 }
 .philosophy-right{
   display:flex;flex-direction:column;gap:0;
   min-width:0;
-  border-bottom:.5px solid var(--gold-dim);
 }
 .philosophy-row{
   display:grid;
-  grid-template-columns:5.5rem minmax(0,1fr);
+  grid-template-columns:9rem minmax(0,1fr);
   column-gap:1.5rem;
-  border-top:.5px solid var(--gold-dim);
-  padding:1.35rem 0 1.75rem;
+  border-top:1px solid var(--philosophy-rule);
+  padding:1.7rem 0;
   text-align:left;
 }
+.philosophy-row:last-child{
+  border-bottom:1px solid var(--philosophy-rule);
+}
 .philosophy-row-head{
-  font-family:var(--serif);font-size:2rem;font-weight:400;
-  letter-spacing:.12em;line-height:1.15;color:#16130f;
+  font-family:var(--serif);font-size:2rem;font-weight:500;
+  letter-spacing:.06em;line-height:1.3;color:var(--philosophy-ink);
   margin:0;
 }
 .philosophy-row-body{min-width:0;}
 .philosophy-pillar-body{
-  font-size:1.0625rem;line-height:1.85;color:#403b34;
+  font-size:.96rem;line-height:2;color:#403b34;
   text-align:left;text-wrap:pretty;word-break:auto-phrase;
   margin:0;
 }
-.philosophy-pillar-evidence{
+.philosophy-evidence{
+  margin:1.1rem 0 0;padding:0;border:none;
+}
+.philosophy-evidence-item{
   display:grid;
-  grid-template-columns:4.5rem minmax(0,1fr);
-  column-gap:1rem;align-items:start;
-  margin-top:1.1rem;padding:0;border:none;
+  grid-template-columns:4.4rem minmax(0,1fr);
+  gap:.8rem;align-items:start;
+  margin:0 0 .55rem;
 }
-.philosophy-pillar-evidence + .philosophy-pillar-evidence{
-  margin-top:1.1rem;padding:0;border:none;
-}
+.philosophy-evidence-item:last-child{margin-bottom:0;}
 .philosophy-evidence-label{
-  font-size:.8rem;font-weight:400;letter-spacing:.24em;
-  color:#8f6918;line-height:1.35;margin:0;
+  font-size:.8rem;font-weight:500;letter-spacing:.14em;
+  color:var(--philosophy-gold);line-height:1.35;margin:0;
 }
 .philosophy-evidence-text{
-  font-size:.85rem;line-height:1.75;color:#625d55;
+  font-size:.85rem;line-height:1.85;color:#625d55;
   text-wrap:pretty;word-break:auto-phrase;margin:0;
 }
+.philosophy-evidence-item dd{margin:0;}
+.philosophy-evidence-item dt{margin:0;}
 .philosophy-analysis-link{
-  color:#8f6918;text-decoration:none;
-  border-bottom:.5px solid rgba(143,105,24,.35);
+  color:var(--philosophy-gold);text-decoration:none;
+  border-bottom:1px solid var(--philosophy-rule);
   padding-bottom:1px;transition:color .2s,border-color .2s;
 }
 .philosophy-analysis-link:hover{
-  color:#6b4f12;border-bottom-color:rgba(107,79,18,.55);
+  color:#6b4f12;border-bottom-color:#b9a574;
+}
+@media(min-width:769px){
+  .philosophy-main-line{display:block;}
 }
 @media(max-width:768px){
   .philosophy{padding:5rem 2rem;}
@@ -416,21 +440,28 @@ body{background:var(--black);color:var(--white);font-family:var(--sans);font-wei
     grid-template-columns:1fr;gap:2.25rem;
   }
   .philosophy-lead{position:static;}
-  .philosophy-main{font-size:1.45rem;}
-  .philosophy-main-line{display:inline-block;}
-  .philosophy-band{margin-top:2rem;padding-top:1rem;font-size:1.05rem;}
-  .philosophy-row{
-    grid-template-columns:3.4rem minmax(0,1fr);
-    column-gap:1rem;padding:1.25rem 0 1.5rem;
+  .philosophy-egg{
+    width:19rem;height:24.7rem;
+    left:-3rem;top:-3rem;
   }
-  .philosophy-row-head{font-size:1.75rem;}
-  .philosophy-pillar-evidence{
-    grid-template-columns:3.6rem minmax(0,1fr);
-    column-gap:.75rem;
+  .philosophy-main{font-size:1.5rem;max-width:8.5em;padding-left:.85rem;}
+  .philosophy-main-line{display:inline-block;}
+  .philosophy-main-line:nth-child(3){white-space:nowrap;}
+  .philosophy-band{margin-top:2.4rem;padding-top:1.2rem;}
+  .philosophy-row{
+    grid-template-columns:7.6rem minmax(0,1fr);
+    column-gap:1rem;padding:1.7rem 0;
+  }
+  .philosophy-row-head{font-size:1.6rem;}
+  .philosophy-evidence-item{
+    grid-template-columns:4.4rem minmax(0,1fr);
   }
 }
-@media(max-width:360px){
-  .philosophy-pillar-evidence{grid-template-columns:1fr;}
+@media(max-width:560px){
+  .philosophy-row{grid-template-columns:1fr;row-gap:.65rem;}
+}
+@media(max-width:480px){
+  .philosophy-evidence-item{grid-template-columns:1fr;gap:.35rem;}
 }
 .philosophy-photo{
   display:none;
@@ -1264,6 +1295,10 @@ body{font-size:16px;line-height:1.8}
 <section class="philosophy" id="about">
   <div class="philosophy-layout">
     <div class="philosophy-lead">
+      <svg class="philosophy-egg" viewBox="0 0 200 260" aria-hidden="true" focusable="false">
+        <path d="M100 4C62 4 10 92 10 160C10 218 50 256 100 256C150 256 190 218 190 160C190 92 138 4 100 4Z" fill="none" stroke="#d8c79a" stroke-width="1.2" vector-effect="non-scaling-stroke"/>
+        <circle cx="159" cy="56" r="3.8" fill="#d9600d"/>
+      </svg>
       <p class="philosophy-kicker">日光金乃卵とは</p>
       <p class="philosophy-main">
         <span class="philosophy-main-line">日光金乃卵®は、</span>
@@ -1277,34 +1312,40 @@ body{font-size:16px;line-height:1.8}
         <h3 class="philosophy-row-head">色</h3>
         <div class="philosophy-row-body">
           <p class="philosophy-pillar-body">色は、自然着色料の深いオレンジ色。加熱後も落ちず、プリンもカスタードもスポンジも、ショーケースで一段と輝きます。</p>
-          <div class="philosophy-pillar-evidence">
-            <p class="philosophy-evidence-label">深金</p>
-            <p class="philosophy-evidence-text">天然マリーゴールドとパプリカ由来の安定した深いマリーゴールド色。</p>
-          </div>
+          <dl class="philosophy-evidence">
+            <div class="philosophy-evidence-item">
+              <dt class="philosophy-evidence-label">深金</dt>
+              <dd class="philosophy-evidence-text">天然マリーゴールドとパプリカ由来の安定した深いマリーゴールド色。</dd>
+            </div>
+          </dl>
         </div>
       </article>
       <article class="philosophy-row">
         <h3 class="philosophy-row-head">味</h3>
         <div class="philosophy-row-body">
           <p class="philosophy-pillar-body">味は、一般卵を圧倒するコクと旨味。しかし後味はすっきりと、主役素材の風味を引き立てます。</p>
-          <div class="philosophy-pillar-evidence">
-            <p class="philosophy-evidence-label">分析</p>
-            <p class="philosophy-evidence-text"><a class="philosophy-analysis-link" href="#analysis">味香り戦略研究所の分析結果を見る →</a></p>
-          </div>
+          <dl class="philosophy-evidence">
+            <div class="philosophy-evidence-item">
+              <dt class="philosophy-evidence-label">分析</dt>
+              <dd class="philosophy-evidence-text"><a class="philosophy-analysis-link" href="#analysis">味香り戦略研究所の分析結果を見る →</a></dd>
+            </div>
+          </dl>
         </div>
       </article>
       <article class="philosophy-row">
         <h3 class="philosophy-row-head">品質</h3>
         <div class="philosophy-row-body">
           <p class="philosophy-pillar-body">品質は、季節ごとに飼料配合を見直すことで年間を通じて安定。メレンゲの失敗が減り、仕込みのストレスが消えます。</p>
-          <div class="philosophy-pillar-evidence">
-            <p class="philosophy-evidence-label">高HU</p>
-            <p class="philosophy-evidence-text">高いハウユニット値が、メレンゲの起泡性と構造的安定性を保証。シフォン・マカロンに最適。</p>
-          </div>
-          <div class="philosophy-pillar-evidence">
-            <p class="philosophy-evidence-label">24HRS</p>
-            <p class="philosophy-evidence-text">採卵から最短24時間以内に冷凍加工。最大の鮮度を保った状態でプロの厨房へ届ける。</p>
-          </div>
+          <dl class="philosophy-evidence">
+            <div class="philosophy-evidence-item">
+              <dt class="philosophy-evidence-label">高HU</dt>
+              <dd class="philosophy-evidence-text">高いハウユニット値が、メレンゲの起泡性と構造的安定性を保証。シフォン・マカロンに最適。</dd>
+            </div>
+            <div class="philosophy-evidence-item">
+              <dt class="philosophy-evidence-label">24HRS</dt>
+              <dd class="philosophy-evidence-text">採卵から最短24時間以内に冷凍加工。最大の鮮度を保った状態でプロの厨房へ届ける。</dd>
+            </div>
+          </dl>
         </div>
       </article>
     </div>
