@@ -371,6 +371,21 @@ body{background:var(--black);color:var(--white);font-family:var(--sans);font-wei
   max-width:32em;text-align:left;
   text-wrap:pretty;word-break:auto-phrase;
 }
+.philosophy-pillar-evidence{
+  margin-top:1.35rem;
+}
+.philosophy-pillar-evidence + .philosophy-pillar-evidence{
+  margin-top:1rem;
+}
+.philosophy-evidence-label{
+  font-family:var(--serif);font-size:.92rem;font-weight:400;
+  letter-spacing:.12em;color:var(--black);line-height:1.3;
+  margin-bottom:.45rem;
+}
+.philosophy-evidence-text{
+  font-size:.88rem;line-height:1.75;color:#625d55;
+  text-wrap:pretty;word-break:auto-phrase;
+}
 .philosophy-band{
   margin-top:2.5rem;padding:1.65rem 1rem;
   border-top:.5px solid var(--gold-dim);
@@ -391,40 +406,7 @@ body{background:var(--black);color:var(--white);font-family:var(--sans);font-wei
 .philosophy-photo{
   display:none;
 }
-
-/* ── 03 SPEC (白背景 数字3カラム + 写真) ── */
-.spec{
-  background:var(--white);color:var(--black);
-  padding:8rem 6rem;
-}
-.spec-header{
-  margin-bottom:4rem;
-}
-.spec-title{
-  font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.8rem);
-  font-weight:300;letter-spacing:.04em;color:var(--black);
-}
-.spec-grid{
-  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:0;border:.5px solid #ddd;
-  margin-bottom:0;
-}
-.spec-card{
-  padding:3rem 2.5rem;border-right:.5px solid #ddd;
-}
-.spec-card:last-child{border-right:none}
-.sc-num{
-  font-family:var(--serif);font-size:3.5rem;font-weight:300;
-  color:var(--black);line-height:1;margin-bottom:.6rem;
-}
-.sc-unit{
-  font-size:.65rem;font-family:var(--sans);color:var(--gray);
-  letter-spacing:.1em;margin-left:.2rem;
-}
-.sc-desc{
-  font-size:.88rem;color:#6a6866;line-height:1.75;margin-top:1.2rem;
-}
-.spec-photo{
+.philosophy .spec-photo{
   height:50vh;
   position:relative;overflow:hidden;
 }
@@ -436,7 +418,6 @@ body{background:var(--black);color:var(--white);font-family:var(--sans);font-wei
   position:absolute;bottom:1.8rem;right:2.5rem;z-index:1;
   font-size:.52rem;letter-spacing:.18em;color:rgba(250,248,244,.45);text-transform:uppercase;
 }
-
 
 /* ── 04 WHOLESALE (黒背景 中央CTA) ── */
 .wholesale{
@@ -519,9 +500,7 @@ footer{
   .philosophy-pillars{gap:1.75rem}
   .philosophy-band{margin-top:2rem;padding:1.45rem .5rem;font-size:1.05rem}
   .philosophy-photo{height:50vw}
-  .spec{padding:5rem 2rem}
-  .spec-grid{grid-template-columns:1fr}
-  .spec-card{border-right:none;border-bottom:.5px solid #ddd}
+  .philosophy .spec-photo{height:42vw;min-height:220px}
   .media-bar{flex-direction:column;align-items:flex-start;padding:2.5rem 2rem;gap:1.5rem}
   .media-bar-lbl{border-right:none;border-bottom:.5px solid #ddd;padding-right:0;padding-bottom:1rem}
   .wholesale{padding:6rem 2rem}
@@ -1097,8 +1076,11 @@ footer{
 :is(.philosophy,.spec,.analysis,.voice,.pline,.media-wrap,.contact-wrap,.about-story,.about-shokuiku,.about-activities,.news-wrap) :is(.an-title,.flow-num,.voice-en,.pline-footer-link,.cd-label,.sg-label,.news-cat,.shokuiku-maff a,.cf-note a){
   color:var(--ink-gold)!important;
 }
-:is(.philosophy,.spec,.analysis,.voice,.pline,.media-wrap,.contact-wrap,.about-story,.about-shokuiku,.about-activities,.news-wrap) :is(.philosophy-body,.philosophy-pillar-body,.philosophy-band,.sc-desc,.an-desc,.voice-body,.voice-quote-main,.pline-card-desc,.pline-list-desc,.mc-desc,.contact-intro-body,.about-sec-body,.shokuiku-body,.sg-list li,.shokuiku-purpose p,.act-card-body){
+:is(.philosophy,.spec,.analysis,.voice,.pline,.media-wrap,.contact-wrap,.about-story,.about-shokuiku,.about-activities,.news-wrap) :is(.philosophy-body,.philosophy-pillar-body,.philosophy-band,.philosophy-evidence-text,.an-desc,.voice-body,.voice-quote-main,.pline-card-desc,.pline-list-desc,.mc-desc,.contact-intro-body,.about-sec-body,.shokuiku-body,.sg-list li,.shokuiku-purpose p,.act-card-body){
   color:var(--ink-body)!important;
+}
+.philosophy .philosophy-evidence-text{
+  color:var(--ink-muted)!important;
 }
 .contact-wrap .cf-input,.contact-wrap .cf-textarea,.contact-wrap .cf-select{
   color:#16130f;border-color:#d6cec2;background:#fff;font-weight:400;
@@ -1168,7 +1150,7 @@ body{font-size:16px;line-height:1.8}
 }
 .adoption-lead,
 .philosophy-body,
-.sc-desc,
+.philosophy-evidence-text,
 .an-desc,
 .voice-body,
 .voice-sub-quote,
@@ -1284,50 +1266,39 @@ body{font-size:16px;line-height:1.8}
           <span class="philosophy-pillar-ja">色</span>
         </div>
         <p class="philosophy-pillar-body">色は、自然着色料の深いオレンジ色。加熱後も落ちず、プリンもカスタードもスポンジも、ショーケースで一段と輝きます。</p>
+        <div class="philosophy-pillar-evidence">
+          <p class="philosophy-evidence-label">深金</p>
+          <p class="philosophy-evidence-text">天然マリーゴールドとパプリカ由来の安定した深いマリーゴールド色。</p>
+        </div>
       </article>
       <article class="philosophy-pillar">
         <div class="philosophy-pillar-head">
           <span class="philosophy-pillar-ja">味</span>
         </div>
-        <p class="philosophy-pillar-body">味は、一般卵を圧倒するコクと旨味。しかし後味はすっきりと、主役素材の風味を殺しません。</p>
+        <p class="philosophy-pillar-body">味は、一般卵を圧倒するコクと旨味。しかし後味はすっきりと、主役素材の風味を引き立てます。</p>
       </article>
       <article class="philosophy-pillar">
         <div class="philosophy-pillar-head">
           <span class="philosophy-pillar-ja">品質</span>
         </div>
         <p class="philosophy-pillar-body">品質は、季節ごとに飼料配合を見直すことで年間を通じて安定。メレンゲの失敗が減り、仕込みのストレスが消えます。</p>
+        <div class="philosophy-pillar-evidence">
+          <p class="philosophy-evidence-label">高HU</p>
+          <p class="philosophy-evidence-text">高いハウユニット値が、メレンゲの起泡性と構造的安定性を保証。シフォン・マカロンに最適。</p>
+        </div>
+        <div class="philosophy-pillar-evidence">
+          <p class="philosophy-evidence-label">24HRS</p>
+          <p class="philosophy-evidence-text">採卵から最短24時間以内に冷凍加工。最大の鮮度を保った状態でプロの厨房へ届ける。</p>
+        </div>
       </article>
     </div>
-    <p class="philosophy-band">合成着色料・排卵促進剤・抗生物質・次亜塩素酸——一切不使用。</p>
-  </div>
-  <div class="philosophy-photo"></div>
-</section>
-
-<!-- 03 PASTRY ONLY -->
-<section class="spec">
-  <div class="spec-header">
-    <div>
-<h2 class="spec-title">なぜ、洋菓子専用なのか。</h2>
-    </div>
-</div>
-  <div class="spec-grid">
-    <div class="spec-card">
-<p class="sc-num">深金<span class="sc-unit">色</span></p>
-      <p class="sc-desc">天然マリーゴールドとパプリカ由来の安定した深いマリーゴールド色。加熱後も色が落ちない。</p>
-    </div>
-    <div class="spec-card">
-<p class="sc-num">高<span class="sc-unit">HU</span></p>
-      <p class="sc-desc">高いハウユニット値が、メレンゲの起泡性と構造的安定性を保証。シフォン・マカロンに最適。</p>
-    </div>
-    <div class="spec-card">
-<p class="sc-num">24<span class="sc-unit">HRS</span></p>
-      <p class="sc-desc">採卵から最短24時間以内に冷凍加工。最大の鮮度を保った状態でプロの厨房へ届ける。</p>
-    </div>
+    <p class="philosophy-band">合成着色料・排卵促進剤・抗生物質──一切不使用。</p>
   </div>
   <div class="spec-photo">
-<img src="images/placeholder/feed-hands.jpg" alt="" class="spec-photo-img" width="887" height="591" aria-hidden="true">
-<span class="spec-photo-loc">全国対応</span>
+    <img src="images/placeholder/feed-hands.jpg" alt="" class="spec-photo-img" width="887" height="591" aria-hidden="true">
+    <span class="spec-photo-loc">全国対応</span>
   </div>
+  <div class="philosophy-photo"></div>
 </section>
 
 <!-- DATA ANALYSIS -->
