@@ -328,30 +328,75 @@ body{background:var(--black);color:var(--white);font-family:var(--sans);font-wei
   min-height:0;
 }
 .philosophy-text{
-  max-width:720px;
+  max-width:min(1120px,calc(100% - 3rem));
   margin:0 auto;
-  padding:6.5rem 1.5rem;
+  padding:6.5rem 1.5rem 5rem;
   display:flex;flex-direction:column;justify-content:center;
-  align-items:center;
+  align-items:stretch;
+}
+.philosophy-intro{
+  max-width:720px;width:100%;margin:0 auto 2.75rem;
   text-align:center;
 }
 .sec-label{
   font-family:var(--serif);font-size:clamp(1.45rem,2.6vw,2.15rem);
   font-weight:300;letter-spacing:.04em;line-height:1.45;
   color:var(--black);margin-bottom:1.2rem;text-transform:none;
+  text-wrap:balance;
 }
 .philosophy-title{
   font-family:var(--serif);font-size:clamp(1.2rem,2vw,1.55rem);
   font-weight:300;line-height:1.75;letter-spacing:.03em;
   margin-bottom:1.8rem;color:#4a4845;
+  text-wrap:balance;
 }
 .philosophy-en{
-  font-size:.78rem;letter-spacing:.1em;color:var(--gray);
-  margin-bottom:2.5rem;line-height:1.8;
+  font-size:.8125rem;letter-spacing:.08em;color:#403b34;
+  margin-bottom:0;line-height:1.85;
+  text-wrap:balance;
+  max-width:42em;margin-left:auto;margin-right:auto;
 }
-.philosophy-body{
-  font-size:1.0625rem;line-height:1.8;color:#4a4845;
-  max-width:none;
+.philosophy-pillars{
+  display:grid;grid-template-columns:1fr;gap:2rem;
+  width:100%;
+}
+.philosophy-pillar{
+  border-top:.5px solid var(--gold-dim);
+  padding-top:1.35rem;text-align:left;
+}
+.philosophy-pillar-head{
+  display:flex;flex-direction:column;align-items:flex-start;gap:.35rem;
+  margin-bottom:1rem;
+}
+.philosophy-pillar-ja{
+  font-family:var(--serif);font-size:1.05rem;font-weight:400;
+  letter-spacing:.18em;color:var(--black);line-height:1.2;
+}
+.philosophy-pillar-en{
+  font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;
+  color:#8f6918;line-height:1;
+}
+.philosophy-pillar-body{
+  font-size:1.0625rem;line-height:1.85;color:#403b34;
+  max-width:32em;text-align:left;
+  text-wrap:pretty;word-break:auto-phrase;
+}
+.philosophy-band{
+  margin-top:2.5rem;padding:1.65rem 1rem;
+  border-top:.5px solid var(--gold-dim);
+  border-bottom:.5px solid var(--gold-dim);
+  font-family:var(--serif);font-size:clamp(1.08rem,1.35vw,1.2rem);
+  font-weight:400;line-height:1.75;letter-spacing:.04em;
+  color:#403b34;text-align:center;
+  text-wrap:pretty;word-break:auto-phrase;
+}
+@media(min-width:769px){
+  .philosophy-pillars{
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:clamp(1.75rem,3vw,2.75rem);
+    align-items:start;
+  }
+  .philosophy-pillar-body{max-width:none;}
 }
 .philosophy-photo{
   display:none;
@@ -480,7 +525,9 @@ footer{
 @media(max-width:768px){
   .f-logo-img{height:34px}
   .philosophy{grid-template-columns:1fr;min-height:auto}
-  .philosophy-text{padding:5rem 2rem}
+  .philosophy-text{padding:5rem 2rem 4.25rem}
+  .philosophy-pillars{gap:1.75rem}
+  .philosophy-band{margin-top:2rem;padding:1.45rem .5rem;font-size:1.05rem}
   .philosophy-photo{height:50vw}
   .spec{padding:5rem 2rem}
   .spec-grid{grid-template-columns:1fr}
@@ -1060,7 +1107,10 @@ footer{
 :is(.philosophy,.spec,.analysis,.voice,.pline,.media-wrap,.contact-wrap,.about-story,.about-shokuiku,.about-activities,.news-wrap) :is(.an-title,.flow-num,.voice-en,.pline-footer-link,.cd-label,.sg-label,.news-cat,.shokuiku-maff a,.cf-note a){
   color:var(--ink-gold)!important;
 }
-:is(.philosophy,.spec,.analysis,.voice,.pline,.media-wrap,.contact-wrap,.about-story,.about-shokuiku,.about-activities,.news-wrap) :is(.philosophy-body,.sc-desc,.an-desc,.voice-body,.voice-quote-main,.pline-card-desc,.pline-list-desc,.mc-desc,.contact-intro-body,.about-sec-body,.shokuiku-body,.sg-list li,.shokuiku-purpose p,.act-card-body){
+:is(.philosophy,.spec,.analysis,.voice,.pline,.media-wrap,.contact-wrap,.about-story,.about-shokuiku,.about-activities,.news-wrap) :is(.philosophy-body,.philosophy-pillar-body,.philosophy-band,.sc-desc,.an-desc,.voice-body,.voice-quote-main,.pline-card-desc,.pline-list-desc,.mc-desc,.contact-intro-body,.about-sec-body,.shokuiku-body,.sg-list li,.shokuiku-purpose p,.act-card-body){
+  color:var(--ink-body)!important;
+}
+.philosophy .philosophy-text .philosophy-en{
   color:var(--ink-body)!important;
 }
 .contact-wrap .cf-input,.contact-wrap .cf-textarea,.contact-wrap .cf-select{
@@ -1234,19 +1284,39 @@ body{font-size:16px;line-height:1.8}
 <!-- 02 ABOUT -->
 <section class="philosophy" id="about">
   <div class="philosophy-text">
-<h2 class="sec-label">日光金乃卵とは</h2>
-    <p class="philosophy-title">
-      日光金乃卵®は、<br>
-      洋菓子のためだけに<br>
-      三十余年、磨かれた卵です。
-    </p>
-    <p class="philosophy-en">Not a general-purpose egg. Every variable — feed, pigment, protein structure — has been optimised exclusively for the pâtissier's kitchen.</p>
-    <p class="philosophy-body">
-      色は、自然着色料の深いオレンジ色。加熱後も落ちず、プリンもカスタードもスポンジも、ショーケースで一段と輝きます。<br><br>
-      味は、一般卵を圧倒するコクと旨味。しかし後味はすっきりと、主役素材の風味を殺しません。<br><br>
-      品質は、季節ごとに飼料配合を見直すことで年間を通じて安定。メレンゲの失敗が減り、仕込みのストレスが消えます。<br><br>
-      合成着色料・排卵促進剤・抗生物質・次亜塩素酸——一切不使用。
-    </p>
+    <div class="philosophy-intro">
+      <h2 class="sec-label">日光金乃卵とは</h2>
+      <p class="philosophy-title">
+        日光金乃卵®は、<br>
+        洋菓子のためだけに<br>
+        三十余年、磨かれた卵です。
+      </p>
+      <p class="philosophy-en">Not a general-purpose egg. Every variable — feed, pigment, protein structure — has been optimised exclusively for the pâtissier's kitchen.</p>
+    </div>
+    <div class="philosophy-pillars">
+      <article class="philosophy-pillar">
+        <div class="philosophy-pillar-head">
+          <span class="philosophy-pillar-ja">色</span>
+          <span class="philosophy-pillar-en">COLOR</span>
+        </div>
+        <p class="philosophy-pillar-body">色は、自然着色料の深いオレンジ色。加熱後も落ちず、プリンもカスタードもスポンジも、ショーケースで一段と輝きます。</p>
+      </article>
+      <article class="philosophy-pillar">
+        <div class="philosophy-pillar-head">
+          <span class="philosophy-pillar-ja">味</span>
+          <span class="philosophy-pillar-en">TASTE</span>
+        </div>
+        <p class="philosophy-pillar-body">味は、一般卵を圧倒するコクと旨味。しかし後味はすっきりと、主役素材の風味を殺しません。</p>
+      </article>
+      <article class="philosophy-pillar">
+        <div class="philosophy-pillar-head">
+          <span class="philosophy-pillar-ja">品質</span>
+          <span class="philosophy-pillar-en">QUALITY</span>
+        </div>
+        <p class="philosophy-pillar-body">品質は、季節ごとに飼料配合を見直すことで年間を通じて安定。メレンゲの失敗が減り、仕込みのストレスが消えます。</p>
+      </article>
+    </div>
+    <p class="philosophy-band">合成着色料・排卵促進剤・抗生物質・次亜塩素酸——一切不使用。</p>
   </div>
   <div class="philosophy-photo"></div>
 </section>
