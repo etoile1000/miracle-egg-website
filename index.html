@@ -441,11 +441,14 @@ nav{display:flex;align-items:center;gap:clamp(1rem,1.6vw,1.75rem)}
 }
 .spec-photo{
   height:50vh;
-  background:url('https://images.unsplash.com/photo-1607283838483-5e9b03df5a1d?w=1800&q=85') center 30%/cover no-repeat;
-  position:relative;
+  position:relative;overflow:hidden;
+}
+.spec-photo-img{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;object-position:center 38%;
 }
 .spec-photo-loc{
-  position:absolute;bottom:1.8rem;right:2.5rem;
+  position:absolute;bottom:1.8rem;right:2.5rem;z-index:1;
   font-size:.52rem;letter-spacing:.18em;color:rgba(250,248,244,.45);text-transform:uppercase;
 }
 
@@ -1516,11 +1519,10 @@ body{font-size:16px;line-height:1.8}
       <p class="sc-desc">採卵から最短24時間以内に冷凍加工。最大の鮮度を保った状態でプロの厨房へ届ける。</p>
     </div>
   </div>
-  <!-- 空の「全国対応」と、表示されない写真帯。採用実績のスライドは対象外。
   <div class="spec-photo">
+<img src="images/placeholder/feed-hands.jpg" alt="" class="spec-photo-img" width="887" height="591" aria-hidden="true">
 <span class="spec-photo-loc">全国対応</span>
   </div>
-  -->
 </section>
 
 <!-- DATA ANALYSIS -->
