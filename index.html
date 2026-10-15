@@ -195,14 +195,15 @@ nav{display:flex;align-items:center;gap:clamp(1rem,1.6vw,1.75rem)}
 }
 .adoption{
   background:#11100e;color:var(--white);
-  padding:5.5rem 6rem 3.5rem;
+  padding:5.5rem 6rem 1.45rem;
   border-top:.5px solid rgba(201,168,76,.12);
   border-bottom:.5px solid rgba(201,168,76,.08);
+  position:relative;z-index:2;
 }
 .adoption-inner{max-width:1120px;margin:0 auto;}
 .adoption-header{
   display:flex;flex-direction:column;align-items:center;text-align:center;
-  margin-bottom:2.25rem;
+  margin-bottom:clamp(1.25rem,2vw,1.5rem);
 }
 .adoption-heading-stack{
   display:flex;flex-direction:column;align-items:center;width:100%;
@@ -236,8 +237,42 @@ nav{display:flex;align-items:center;gap:clamp(1rem,1.6vw,1.75rem)}
   margin:0 0 clamp(1.25rem,2.5vw,1.75rem);
 }
 .adoption-lead{
-  font-size:.88rem;line-height:2;color:rgba(250,248,244,.6);letter-spacing:.04em;
+  font-size:.88rem;line-height:1.9;color:rgba(250,248,244,.6);letter-spacing:.04em;
   max-width:36ch;margin:0 auto;
+}
+@media(min-width:768px){
+  .adoption{
+    padding:calc(5.5rem - 2.75rem) 6rem 1.4rem;
+    margin-top:calc(-1 * clamp(3.5rem,8.25vh,5.5rem));
+  }
+  .adoption-header{
+    display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);
+    align-items:center;justify-items:start;column-gap:clamp(2rem,3.5vw,2.75rem);
+    row-gap:0;margin-bottom:clamp(2rem,2.8vw,2.5rem);text-align:left;
+  }
+  .adoption-heading-stack{
+    flex-direction:row;flex-wrap:nowrap;justify-content:flex-start;
+    align-items:center;gap:clamp(.55rem,1.1vw,.85rem);width:100%;min-width:0;
+  }
+  .adoption-brand-block{
+    flex-direction:row;flex-wrap:nowrap;gap:clamp(.4rem,.85vw,.6rem);
+    margin-bottom:0;
+  }
+  .adoption-brand-logo{height:clamp(1.3rem,2.3vw,1.85rem);}
+  .adoption-brand-name{font-size:clamp(1.2rem,2.16vw,1.8rem);letter-spacing:.12em;line-height:1;}
+  .adoption-brand-tagline{display:none;}
+  .adoption-heading-rule{
+    display:inline-block;width:.5px;height:clamp(1.2rem,2.15vw,1.8rem);
+    background:rgba(201,168,76,.32);border:0;flex-shrink:0;
+    margin:0 clamp(.25rem,.55vw,.45rem);
+  }
+  .adoption-title{
+    font-size:clamp(2rem,3.6vw,3rem);
+    margin:0;flex-shrink:0;white-space:nowrap;
+  }
+  .adoption-lead{
+    align-self:center;max-width:31em;line-height:1.95;margin:0;text-align:left;
+  }
 }
 .adoption-cinema{
   position:relative;margin:0 -6rem;background:#1c1810;overflow:hidden;
@@ -285,7 +320,7 @@ nav{display:flex;align-items:center;gap:clamp(1rem,1.6vw,1.75rem)}
   font-size:.68rem;color:rgba(244,238,226,.62);margin-top:.35rem;letter-spacing:.04em;
 }
 .adoption-foot{
-  display:flex;justify-content:flex-end;margin-top:1.6rem;
+  display:flex;justify-content:flex-end;margin-top:clamp(1.2rem,1.75vw,1.4rem);
 }
 .adoption-more{
   display:inline-block;font-size:.9rem;letter-spacing:.08em;
@@ -297,9 +332,9 @@ nav{display:flex;align-items:center;gap:clamp(1rem,1.6vw,1.75rem)}
   color:var(--gold);border-color:rgba(201,168,76,.58);
   background:rgba(201,168,76,.06);
 }
-@media(max-width:768px){
-  .adoption{padding:4.5rem 2rem 3rem;}
-  .adoption-header{margin-bottom:1.9rem;}
+@media(max-width:767px){
+  .adoption{padding:3.5rem 2rem 1.15rem;margin-top:calc(-1 * clamp(4rem,10vh,5.5rem));}
+  .adoption-header{margin-bottom:clamp(1.25rem,2vw,1.5rem);}
   .adoption-brand-block{
     gap:clamp(.7rem,3.8vw,.95rem);
     margin-bottom:clamp(1.35rem,5.5vw,1.75rem);
@@ -313,7 +348,7 @@ nav{display:flex;align-items:center;gap:clamp(1rem,1.6vw,1.75rem)}
     margin-bottom:clamp(1.4rem,5.5vw,1.9rem);
   }
   .adoption-lead{max-width:32ch;line-height:2.1;padding:0 .25rem;}
-  .adoption-foot{justify-content:center;margin-top:1.35rem;}
+  .adoption-foot{justify-content:center;margin-top:1.15rem;}
   .adoption-more{
     font-size:clamp(.88rem,3.6vw,.94rem);
     padding:.72rem 1.2rem;border-color:rgba(201,168,76,.42);
