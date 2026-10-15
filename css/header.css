@@ -49,8 +49,8 @@ header .h-cta:hover{background:var(--gold)!important;border-color:var(--gold)!im
 header .h-cta:hover .nav-link-ja,
 header .h-cta:hover .nav-link-en{color:var(--black)!important}
 
-.h-cta-bar,
-.nav-toggle{display:none}
+header .nav-link.h-cta-bar,
+header button.nav-toggle{display:none}
 
 .nav-toggle-icon{font-size:22px;line-height:1}
 
@@ -62,11 +62,11 @@ header .h-cta:hover .nav-link-en{color:var(--black)!important}
   header .h-logo{margin-right:auto;min-width:0}
   header .h-logo-icon{height:24px}
   header .h-logo-text-img{height:15px;width:auto;max-width:34vw}
-  .h-cta-bar{
+  header .nav-link.h-cta-bar{
     display:inline-flex;flex:0 0 auto;align-items:center;justify-content:center;
     min-height:44px;padding:4px 10px;
   }
-  .nav-toggle{
+  header button.nav-toggle{
     display:inline-flex;align-items:center;justify-content:center;
     flex:0 0 44px;width:44px;height:44px;padding:0;
     background:transparent;color:#faf8f4;
