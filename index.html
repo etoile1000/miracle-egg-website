@@ -1227,6 +1227,22 @@ body{font-size:16px;line-height:1.8}
   .ws-btn{letter-spacing:.08em;padding:.9rem 1.2rem}
 }
 
+/* ── #about 卵の位置調整（C案：卵を左上にずらし、タイトルが半分かかる）── */
+.philosophy-egg{width:26rem;height:33.8rem;left:-10rem;top:0;}
+.philosophy-lead{padding-top:15.5rem;}
+@media(min-width:769px) and (max-width:1100px){
+  .philosophy-layout{gap:2.5rem;}
+  .philosophy-egg{width:20rem;height:26rem;left:-8.5rem;}
+  .philosophy-lead{padding-top:12rem;}
+  .philosophy-main{font-size:1.4rem;padding-left:1rem;}
+  .philosophy-band{white-space:normal;max-width:none;margin-left:1.6rem;font-size:.95rem;}
+}
+@media(max-width:768px){
+  .philosophy-lead{position:relative;top:0;padding-top:4.5rem;}
+  .philosophy-egg{display:block;width:11rem;height:14.3rem;left:-5.5rem;top:-3.5rem;}
+  .philosophy-band{white-space:normal;}
+}
+
 </style>
 <link rel="stylesheet" href="css/header.css">
 </head>
