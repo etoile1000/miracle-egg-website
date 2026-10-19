@@ -1323,6 +1323,12 @@ body{font-size:16px;line-height:1.8}
   .vd-subs{grid-template-columns:1fr;gap:2rem;margin-top:3rem;padding-top:2.2rem;}
 }
 
+.vd-video{overflow:hidden;}
+.vd-poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 12%;}
+.vd-video::after{content:"";position:absolute;inset:0;background:rgba(12,11,9,.38);}
+.vd-play,.vd-video-label{position:relative;z-index:2;}
+@media(max-width:860px){.vd-video::after{background:rgba(12,11,9,.5);}}
+
 </style>
 <link rel="stylesheet" href="css/header.css">
 </head>
@@ -1499,7 +1505,8 @@ body{font-size:16px;line-height:1.8}
     <h2 class="vd-title" id="vd-title">お客様の声</h2>
 
     <!-- メイン動画（※ 現在は仮表示。動画ファイルまたはYouTube URLが届いたら差し替える） -->
-    <div class="vd-video" role="img" aria-label="安食雄二シェフのインタビュー動画（準備中）">
+    <div class="vd-video" role="img" aria-label="安食雄二シェフのインタビュー動画のサムネイル（動画は準備中）">
+      <img class="vd-poster" src="images/voice-poster.jpg" alt="" width="1280" height="688" loading="lazy" decoding="async">
       <div class="vd-play"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><polygon points="6,3 19,11 6,19" fill="#faf8f4"/></svg></div>
       <p class="vd-video-label">インタビュー動画を見る</p>
     </div>
