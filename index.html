@@ -1372,6 +1372,20 @@ footer{background:#121110!important}
   .pline-circle{height:240px!important}
 }
 
+/* ── 最終CTA：卵輪郭・ボタン ── */
+.wholesale::before{
+  width:540px!important;height:700px!important;border:0!important;border-radius:0!important;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 260'%3E%3Cpath d='M100 4C62 4 10 92 10 160C10 218 50 256 100 256C150 256 190 218 190 160C190 92 138 4 100 4Z' fill='none' stroke='rgb(224,200,130)' stroke-opacity='.3' stroke-width='1' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E") center/contain no-repeat!important;
+  pointer-events:none;
+}
+.wholesale::after{display:none!important}
+.wholesale .ws-btn{text-transform:none!important;letter-spacing:.12em!important;font-size:.95rem!important}
+@media (max-width:860px){.wholesale::before{width:400px!important;height:520px!important}}
+
+/* ── フッター：Instagramリンク ── */
+footer a[href*="instagram.com"]{color:inherit;text-decoration:underline;text-decoration-thickness:.5px;text-underline-offset:.15em}
+footer a[href*="instagram.com"]:hover{color:var(--gold)}
+
 </style>
 <link rel="stylesheet" href="css/header.css">
 </head>
@@ -1785,7 +1799,7 @@ footer{background:#121110!important}
     新規お取引をご検討のパティシエ、ブーランジェリー、<br>
     食品メーカーの方は下記よりお問い合わせください。
   </p>
-  <a href="mailto:info@miracle-egg.com" class="ws-btn">REQUEST WHOLESALE GUIDE</a>
+  <a href="contact.html" class="ws-btn">お取引のご相談はこちら</a>
   <span class="ws-note">info@miracle-egg.com ／ 0287-59-0882</span>
 </section>
 
@@ -1796,7 +1810,6 @@ footer{background:#121110!important}
       <div class="f-brand" aria-label="MIRACLE EGG">
       <img src="images/logo.png" alt="MIRACLE EGG" class="f-logo-img" width="656" height="208">
     </div>
-      <p class="f-tag">日光金乃卵®</p>
       <p class="f-desc">「１つの卵が世界を変える」<br>命に責任を持つ卵づくりを信念に、<br>養鶏場への飼料提供から洋菓子専用卵の<br>供給まで全工程に責任を持って取り組む。</p>
     </div>
     <div>
@@ -1813,7 +1826,7 @@ footer{background:#121110!important}
       <p class="f-col-lbl">Contact</p>
       <p>0287-59-0882</p>
       <p>info@miracle-egg.com</p>
-      <p style="margin-top:.8rem">Instagram: @kinnoran.sweets</p>
+      <p style="margin-top:.8rem">Instagram: <a href="https://www.instagram.com/kinnoran.sweets/" target="_blank" rel="noopener">@kinnoran.sweets</a></p>
       <p>© 2019–2026 株式会社Miracle Egg</p>
     </div>
   </div>
