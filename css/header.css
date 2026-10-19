@@ -88,3 +88,6 @@ header button.nav-toggle{display:none}
   }
   .h-cta-in-nav{display:none!important}
 }
+
+/* ── ヘッダーロゴを白に（ナビ文字と同系色） ── */
+header .h-logo img{filter:brightness(0) invert(1) opacity(.88)}
