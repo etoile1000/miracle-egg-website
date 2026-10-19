@@ -1329,6 +1329,14 @@ body{font-size:16px;line-height:1.8}
 .vd-play,.vd-video-label{position:relative;z-index:2;}
 @media(max-width:860px){.vd-video::after{background:rgba(12,11,9,.5);}}
 
+/* お客様の声：実際の声に差し替え */
+.vd-cap{align-items:flex-start;}
+.vd-q{max-width:520px;}
+.vd-q-lead{margin:0;font-family:var(--serif);font-size:clamp(1.6rem,2.8vw,2.4rem);line-height:1.5;color:#faf8f4;}
+.vd-q-body{margin:.8rem 0 0;font-size:17px;line-height:1.9;color:#cfc7b6;}
+.vd-sub-lead{display:block;margin-bottom:.6rem;font-family:var(--serif);font-size:clamp(1.4rem,2.2vw,1.8rem);line-height:1.6;color:#faf8f4;}
+@media(max-width:860px){.vd-q{max-width:none;}}
+
 </style>
 <link rel="stylesheet" href="css/header.css">
 </head>
@@ -1517,18 +1525,21 @@ body{font-size:16px;line-height:1.8}
         <p class="vd-name">安食 雄二 シェフ</p>
         <p class="vd-cred"><span class="vd-cred-line">世界No.1パティシエ</span><span class="vd-cred-line"><span>1996年</span> <span>グランプリインターナショナル</span> <span>マンダリンナポレオンコンクール</span> <span>日本人初優勝</span></span></p>
       </div>
-      <p class="vd-quote">「ミラクルエッグの<br>金乃卵がなかったら…」</p>
+      <div class="vd-q">
+        <p class="vd-q-lead">「あぁ、これだ」</p>
+        <p class="vd-q-body">初めてミラクルエッグさんの卵を食べた時に、久しぶりに「あぁ、これだ」と思うような味に出会ったというか、思い出したんです。</p>
+      </div>
     </div>
 
-    <!-- 下の2つの声（※ 仮の文章。実際にいただいた声に差し替える） -->
+    <!-- 下の2つの声（店名はイニシャル表記。各店の確認が取れたら店名を公表する） -->
     <div class="vd-subs">
       <figure class="vd-sub">
-        <blockquote>「プリンの色と風味が見違えました。お客様にも『卵が違う』と言っていただけるようになりました。」</blockquote>
-        <figcaption>洋菓子店オーナー</figcaption>
+        <blockquote><span class="vd-sub-lead">「他の卵では無理でした。」</span>「結局、これはミラクルエッグさんの卵じゃないと、このなめらかプリンは出来上がらない…」</blockquote>
+        <figcaption>N店</figcaption>
       </figure>
       <figure class="vd-sub">
-        <blockquote>「シフォンケーキの生地がしっとりと仕上がり、リピート率が上がりました。素材の力を実感しています。」</blockquote>
-        <figcaption>パティシエ / 都内洋菓子店</figcaption>
+        <blockquote>「結局、僕が日光金乃卵を使ってる理由というのは、色んな卵を食べて、日本の卵を試して、自分が気に入ってるから使ってるんです。」</blockquote>
+        <figcaption>P店 ／ オーナーパティシエ</figcaption>
       </figure>
     </div>
   </div>
