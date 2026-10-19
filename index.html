@@ -1289,6 +1289,13 @@ body{font-size:16px;line-height:1.8}
 .rd-src{font-size:15px;line-height:1.8;color:#6b645a;margin:1.4rem 0 0;}
 @media(max-width:1100px){.rd-grid{grid-template-columns:1fr;gap:1.6rem;}.rd-svg{max-width:520px;margin:0 auto;}}
 
+/* 分析結果：補足（引用文を置き換え） */
+.rd-notes{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:2.5rem;}
+.rd-note{padding:1.4rem 1.6rem;background:#f3ecd9;border-left:4px solid #b08a2e;}
+.rd-note-title{font-family:var(--serif);font-size:21px;font-weight:500;color:#16130f;margin:0 0 .5rem;letter-spacing:.04em;}
+.rd-note p{font-size:17px;line-height:1.9;color:#403b34;margin:0;}
+@media(max-width:860px){.rd-notes{grid-template-columns:1fr;gap:1rem;}}
+
 </style>
 <link rel="stylesheet" href="css/header.css">
 </head>
@@ -1390,7 +1397,7 @@ body{font-size:16px;line-height:1.8}
       <article class="philosophy-row">
         <h3 class="philosophy-row-head">味</h3>
         <div class="philosophy-row-body">
-          <p class="philosophy-pillar-body">味は、先味にインパクトがあり、旨味とコクが強い。しかし後味はすっきりと、主役素材の風味を活かします。</p>
+          <p class="philosophy-pillar-body">味は、旨味とコクが強く、後味はすっきり。主役素材の風味を活かします。</p>
           <dl class="philosophy-evidence">
             <div class="philosophy-evidence-item">
               <dt class="philosophy-evidence-label">分析</dt>
@@ -1442,11 +1449,17 @@ body{font-size:16px;line-height:1.8}
         </figure>
         <ol class="rd-list"><li><span class="rd-li-name">旨味</span><span class="rd-li-val">+2.73</span><span class="rd-li-desc">口に入れた瞬間の旨味が、とても強い</span></li><li><span class="rd-li-name">味の濃さ</span><span class="rd-li-val">+1.16</span><span class="rd-li-desc">濃厚な味わい</span></li><li><span class="rd-li-name">あと口のすっきり感</span><span class="rd-li-val">+1.02</span><span class="rd-li-desc">後味がすっきりして、しつこくない</span></li><li><span class="rd-li-name">コク</span><span class="rd-li-val">+0.38</span><span class="rd-li-desc">平均より、やや強い</span></li><li><span class="rd-li-name">コクの余韻</span><span class="rd-li-val">−0.27</span><span class="rd-li-desc">平均より、わずかに控えめ</span></li></ol>
       </div>
-      <blockquote class="rd-quote">
-        <p>先味の旨味がとても強く、「味の濃さ」も強い。濃厚な味わいであるが、あとくちはすっきりしていてしつこくない。</p>
-        <cite>味・香り戦略研究所</cite>
-      </blockquote>
-      <p class="rd-src">出典：味・香り戦略研究所（九州大学と㈱インテリジェントセンサーテクノロジーが共同開発した味覚センサーによる分析）。数値は「白卵平均値」との差です。</p>
+      <div class="rd-notes">
+        <section class="rd-note">
+          <h3 class="rd-note-title">この分析について</h3>
+          <p>味を測定する世界初のセンサーで、「おいしさ」の重要な構成要素を数値化し、客観的に評価しています。</p>
+        </section>
+        <section class="rd-note">
+          <h3 class="rd-note-title">一般卵との違い</h3>
+          <p>卵臭さ・生臭さが少なく、主役の風味を活かします。色味が濃く、焼き上がりの違いは明確です。</p>
+        </section>
+      </div>
+      <p class="rd-src">出典：味・香り戦略研究所の分析、ならびにご提案資料。数値は「白卵平均値」との差です。</p>
     </div>
 
 
