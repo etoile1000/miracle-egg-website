@@ -1296,6 +1296,33 @@ body{font-size:16px;line-height:1.8}
 .rd-note p{font-size:17px;line-height:1.9;color:#403b34;margin:0;}
 @media(max-width:860px){.rd-notes{grid-template-columns:1fr;gap:1rem;}}
 
+/* ── お客様の声（A案：映像主役・暗い背景） ── */
+.vd{background:#16130f;padding:8rem 6rem;}
+.vd-inner{max-width:1100px;margin:0 auto;}
+.vd-title{font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.8rem);font-weight:300;line-height:1.4;letter-spacing:.04em;color:#faf8f4;margin:0 0 2.5rem;}
+.vd-video{position:relative;aspect-ratio:21/9;border-radius:4px;background:linear-gradient(135deg,#2a241a,#0c0b09);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;}
+.vd-play{width:72px;height:72px;border:1px solid rgba(250,248,244,.6);border-radius:50%;display:grid;place-items:center;}
+.vd-play svg{margin-left:4px;}
+.vd-video-label{margin:0;font-size:16px;letter-spacing:.12em;color:#e9e1cf;}
+.vd-cap{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;margin-top:2.2rem;}
+.vd-shop{margin:0 0 .6rem;font-size:16px;letter-spacing:.18em;color:#cfae5a;}
+.vd-name{margin:0;font-family:var(--serif);font-size:22px;letter-spacing:.08em;color:#faf8f4;}
+.vd-cred{margin:.8rem 0 0;font-size:16px;line-height:1.8;color:#b5ac99;}
+.vd-cred-line{display:block;}
+.vd-cred-line>span{display:inline-block;}
+.vd-quote{margin:0;font-family:var(--serif);font-size:clamp(1.3rem,2.2vw,1.9rem);line-height:1.7;color:#faf8f4;text-align:right;white-space:nowrap;}
+.vd-subs{display:grid;grid-template-columns:1fr 1fr;gap:3rem;margin-top:4rem;padding-top:3rem;border-top:1px solid #3a342a;}
+.vd-sub{margin:0;}
+.vd-sub blockquote{margin:0;font-family:var(--serif);font-size:18px;line-height:2;color:#faf8f4;}
+.vd-sub figcaption{margin-top:.8rem;font-size:16px;letter-spacing:.06em;color:#a39a88;}
+@media(max-width:860px){
+  .vd{padding:5rem 1.5rem;}
+  .vd-video{aspect-ratio:16/9;}
+  .vd-cap{flex-direction:column;align-items:flex-start;gap:1.4rem;}
+  .vd-quote{text-align:left;}
+  .vd-subs{grid-template-columns:1fr;gap:2rem;margin-top:3rem;padding-top:2.2rem;}
+}
+
 </style>
 <link rel="stylesheet" href="css/header.css">
 </head>
@@ -1467,53 +1494,39 @@ body{font-size:16px;line-height:1.8}
 </section>
 
 <!-- VOICE -->
-<section class="voice-sec">
-  <div class="voice-inner">
+<section class="vd" id="voice" aria-labelledby="vd-title">
+  <div class="vd-inner">
+    <h2 class="vd-title" id="vd-title">お客様の声</h2>
 
-    <div class="voice-header">
-<h2 class="voice-title">お客様の声</h2>
-      <p class="voice-en">安食雄二シェフが語る、日光金乃卵®</p>
+    <!-- メイン動画（※ 現在は仮表示。動画ファイルまたはYouTube URLが届いたら差し替える） -->
+    <div class="vd-video" role="img" aria-label="安食雄二シェフのインタビュー動画（準備中）">
+      <div class="vd-play"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><polygon points="6,3 19,11 6,19" fill="#faf8f4"/></svg></div>
+      <p class="vd-video-label">インタビュー動画を見る</p>
     </div>
 
-    <!-- レイアウトB：左テキスト・右動画（シンプル横並び） -->
-    <div class="voice-simple">
-      <div class="voice-simple-left">
-        <p class="voice-shop">SWEETS garden YUJI AJIKI</p>
-        <div class="voice-simple-badges">
-          <span class="voice-badge">世界No.1 パティシエ</span>
-          <span class="voice-badge">1996年 グランプリインターナショナル<br>マンダリンナポレオンコンクール 日本人初優勝</span>
-        </div>
-        <p class="voice-name">安食 雄二 シェフ</p>
-        <p class="voice-quote-main">「ミラクルエッグの<br>金乃卵がなかったら…」</p>
+    <div class="vd-cap">
+      <div class="vd-who">
+        <p class="vd-shop">SWEETS garden YUJI AJIKI</p>
+        <p class="vd-name">安食 雄二 シェフ</p>
+        <p class="vd-cred"><span class="vd-cred-line">世界No.1パティシエ</span><span class="vd-cred-line"><span>1996年</span> <span>グランプリインターナショナル</span> <span>マンダリンナポレオンコンクール</span> <span>日本人初優勝</span></span></p>
       </div>
-      <div class="voice-simple-right">
-        <div class="voice-video-placeholder">
-          <div class="play-btn">
-            <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
-              <polygon points="6,3 19,11 6,19" fill="rgba(255,255,255,.9)"/>
-            </svg>
-          </div>
-          <p class="video-label">インタビュー動画</p>
-        </div>
-      </div>
+      <p class="vd-quote">「ミラクルエッグの<br>金乃卵がなかったら…」</p>
     </div>
 
-    <!-- サブVOICE -->
-    <div class="voice-sub-grid">
-      <div class="voice-sub-item">
-        <p class="voice-sub-quote">「プリンの色と風味が見違えました。お客様にも『卵が違う』と言っていただけるようになりました。」</p>
-        <div class="voice-sub-divider"></div>
-        <p class="voice-sub-attr">洋菓子店オーナー</p>
-      </div>
-      <div class="voice-sub-item">
-        <p class="voice-sub-quote">「シフォンケーキの生地がしっとりと仕上がり、リピート率が上がりました。素材の力を実感しています。」</p>
-        <div class="voice-sub-divider"></div>
-        <p class="voice-sub-attr">パティシエ / 都内洋菓子店</p>
-      </div>
+    <!-- 下の2つの声（※ 仮の文章。実際にいただいた声に差し替える） -->
+    <div class="vd-subs">
+      <figure class="vd-sub">
+        <blockquote>「プリンの色と風味が見違えました。お客様にも『卵が違う』と言っていただけるようになりました。」</blockquote>
+        <figcaption>洋菓子店オーナー</figcaption>
+      </figure>
+      <figure class="vd-sub">
+        <blockquote>「シフォンケーキの生地がしっとりと仕上がり、リピート率が上がりました。素材の力を実感しています。」</blockquote>
+        <figcaption>パティシエ / 都内洋菓子店</figcaption>
+      </figure>
     </div>
-
   </div>
 </section>
+
 
 <!-- ADOPTION (after voice) -->
 <section class="adoption" aria-labelledby="adoption-title">
